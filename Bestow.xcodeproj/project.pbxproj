@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
+		9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9415C15517319BF9003454F7 /* Bestow.h */; };
+		9415C15817319BF9003454F7 /* Bestow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415C15717319BF9003454F7 /* Bestow.m */; };
+		9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15F17319BF9003454F7 /* SenTestingKit.framework */; };
+		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
+		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
+		9415C16617319BF9003454F7 /* libBestow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libBestow.a */; };
+		9415C16C17319BF9003454F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9415C16A17319BF9003454F7 /* InfoPlist.strings */; };
+		9415C16F17319BF9003454F7 /* BestowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415C16E17319BF9003454F7 /* BestowTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9415C16417319BF9003454F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9415C14517319BF9003454F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9415C14C17319BF9003454F7;
+			remoteInfo = Bestow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9415C14B17319BF9003454F7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9415C14D17319BF9003454F7 /* libBestow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBestow.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9415C15417319BF9003454F7 /* Bestow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bestow-Prefix.pch"; sourceTree = "<group>"; };
+		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
+		9415C15717319BF9003454F7 /* Bestow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bestow.m; sourceTree = "<group>"; };
+		9415C15E17319BF9003454F7 /* BestowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9415C16917319BF9003454F7 /* BestowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BestowTests-Info.plist"; sourceTree = "<group>"; };
+		9415C16B17319BF9003454F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9415C16D17319BF9003454F7 /* BestowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BestowTests.h; sourceTree = "<group>"; };
+		9415C16E17319BF9003454F7 /* BestowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BestowTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9415C14A17319BF9003454F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415C15A17319BF9003454F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */,
+				9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */,
+				9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */,
+				9415C16617319BF9003454F7 /* libBestow.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9415C14417319BF9003454F7 = {
+			isa = PBXGroup;
+			children = (
+				9415C15217319BF9003454F7 /* Bestow */,
+				9415C16717319BF9003454F7 /* BestowTests */,
+				9415C14F17319BF9003454F7 /* Frameworks */,
+				9415C14E17319BF9003454F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9415C14E17319BF9003454F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9415C14D17319BF9003454F7 /* libBestow.a */,
+				9415C15E17319BF9003454F7 /* BestowTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9415C14F17319BF9003454F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9415C15017319BF9003454F7 /* Foundation.framework */,
+				9415C15F17319BF9003454F7 /* SenTestingKit.framework */,
+				9415C16117319BF9003454F7 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9415C15217319BF9003454F7 /* Bestow */ = {
+			isa = PBXGroup;
+			children = (
+				9415C15517319BF9003454F7 /* Bestow.h */,
+				9415C15717319BF9003454F7 /* Bestow.m */,
+				9415C15317319BF9003454F7 /* Supporting Files */,
+			);
+			path = Bestow;
+			sourceTree = "<group>";
+		};
+		9415C15317319BF9003454F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9415C15417319BF9003454F7 /* Bestow-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9415C16717319BF9003454F7 /* BestowTests */ = {
+			isa = PBXGroup;
+			children = (
+				9415C16D17319BF9003454F7 /* BestowTests.h */,
+				9415C16E17319BF9003454F7 /* BestowTests.m */,
+				9415C16817319BF9003454F7 /* Supporting Files */,
+			);
+			path = BestowTests;
+			sourceTree = "<group>";
+		};
+		9415C16817319BF9003454F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9415C16917319BF9003454F7 /* BestowTests-Info.plist */,
+				9415C16A17319BF9003454F7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9415C14C17319BF9003454F7 /* Bestow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9415C17217319BF9003454F7 /* Build configuration list for PBXNativeTarget "Bestow" */;
+			buildPhases = (
+				9415C14917319BF9003454F7 /* Sources */,
+				9415C14A17319BF9003454F7 /* Frameworks */,
+				9415C14B17319BF9003454F7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bestow;
+			productName = Bestow;
+			productReference = 9415C14D17319BF9003454F7 /* libBestow.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9415C15D17319BF9003454F7 /* BestowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "BestowTests" */;
+			buildPhases = (
+				9415C15917319BF9003454F7 /* Sources */,
+				9415C15A17319BF9003454F7 /* Frameworks */,
+				9415C15B17319BF9003454F7 /* Resources */,
+				9415C15C17319BF9003454F7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9415C16517319BF9003454F7 /* PBXTargetDependency */,
+			);
+			name = BestowTests;
+			productName = BestowTests;
+			productReference = 9415C15E17319BF9003454F7 /* BestowTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9415C14517319BF9003454F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Ryan Davies";
+			};
+			buildConfigurationList = 9415C14817319BF9003454F7 /* Build configuration list for PBXProject "Bestow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9415C14417319BF9003454F7;
+			productRefGroup = 9415C14E17319BF9003454F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9415C14C17319BF9003454F7 /* Bestow */,
+				9415C15D17319BF9003454F7 /* BestowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9415C15B17319BF9003454F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9415C16C17319BF9003454F7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9415C15C17319BF9003454F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9415C14917319BF9003454F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9415C15817319BF9003454F7 /* Bestow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9415C15917319BF9003454F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9415C16F17319BF9003454F7 /* BestowTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9415C16517319BF9003454F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9415C14C17319BF9003454F7 /* Bestow */;
+			targetProxy = 9415C16417319BF9003454F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9415C16A17319BF9003454F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9415C16B17319BF9003454F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9415C17017319BF9003454F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9415C17117319BF9003454F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9415C17317319BF9003454F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Bestow.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9415C17417319BF9003454F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Bestow.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9415C17617319BF9003454F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
+				INFOPLIST_FILE = "BestowTests/BestowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9415C17717319BF9003454F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
+				INFOPLIST_FILE = "BestowTests/BestowTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9415C14817319BF9003454F7 /* Build configuration list for PBXProject "Bestow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415C17017319BF9003454F7 /* Debug */,
+				9415C17117319BF9003454F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9415C17217319BF9003454F7 /* Build configuration list for PBXNativeTarget "Bestow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415C17317319BF9003454F7 /* Debug */,
+				9415C17417319BF9003454F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "BestowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9415C17617319BF9003454F7 /* Debug */,
+				9415C17717319BF9003454F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9415C14517319BF9003454F7 /* Project object */;
+}
