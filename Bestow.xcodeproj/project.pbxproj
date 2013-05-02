@@ -14,8 +14,7 @@
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libBestow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libBestow.a */; };
-		9415C16C17319BF9003454F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9415C16A17319BF9003454F7 /* InfoPlist.strings */; };
-		9415C16F17319BF9003454F7 /* BestowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415C16E17319BF9003454F7 /* BestowTests.m */; };
+		9415C1A41731E091003454F7 /* BestowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415C1A01731E091003454F7 /* BestowTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +46,12 @@
 		9415C15417319BF9003454F7 /* Bestow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bestow-Prefix.pch"; sourceTree = "<group>"; };
 		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
 		9415C15717319BF9003454F7 /* Bestow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bestow.m; sourceTree = "<group>"; };
-		9415C15E17319BF9003454F7 /* BestowTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestowTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415C15E17319BF9003454F7 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9415C16917319BF9003454F7 /* BestowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BestowTests-Info.plist"; sourceTree = "<group>"; };
-		9415C16B17319BF9003454F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9415C16D17319BF9003454F7 /* BestowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BestowTests.h; sourceTree = "<group>"; };
-		9415C16E17319BF9003454F7 /* BestowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BestowTests.m; sourceTree = "<group>"; };
+		9415C19F1731E091003454F7 /* BestowTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BestowTests.h; sourceTree = "<group>"; };
+		9415C1A01731E091003454F7 /* BestowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BestowTests.m; sourceTree = "<group>"; };
+		9415C1A31731E091003454F7 /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				9415C15217319BF9003454F7 /* Bestow */,
-				9415C16717319BF9003454F7 /* BestowTests */,
+				9415C19E1731E091003454F7 /* Tests */,
 				9415C14F17319BF9003454F7 /* Frameworks */,
 				9415C14E17319BF9003454F7 /* Products */,
 			);
@@ -93,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				9415C14D17319BF9003454F7 /* libBestow.a */,
-				9415C15E17319BF9003454F7 /* BestowTests.octest */,
+				9415C15E17319BF9003454F7 /* Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,23 +124,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9415C16717319BF9003454F7 /* BestowTests */ = {
+		9415C19E1731E091003454F7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9415C16D17319BF9003454F7 /* BestowTests.h */,
-				9415C16E17319BF9003454F7 /* BestowTests.m */,
-				9415C16817319BF9003454F7 /* Supporting Files */,
+				9415C19F1731E091003454F7 /* BestowTests.h */,
+				9415C1A01731E091003454F7 /* BestowTests.m */,
+				9415C1A31731E091003454F7 /* Tests-Info.plist */,
 			);
-			path = BestowTests;
-			sourceTree = "<group>";
-		};
-		9415C16817319BF9003454F7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9415C16917319BF9003454F7 /* BestowTests-Info.plist */,
-				9415C16A17319BF9003454F7 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,9 +154,9 @@
 			productReference = 9415C14D17319BF9003454F7 /* libBestow.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		9415C15D17319BF9003454F7 /* BestowTests */ = {
+		9415C15D17319BF9003454F7 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "BestowTests" */;
+			buildConfigurationList = 9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				9415C15917319BF9003454F7 /* Sources */,
 				9415C15A17319BF9003454F7 /* Frameworks */,
@@ -179,9 +168,9 @@
 			dependencies = (
 				9415C16517319BF9003454F7 /* PBXTargetDependency */,
 			);
-			name = BestowTests;
+			name = Tests;
 			productName = BestowTests;
-			productReference = 9415C15E17319BF9003454F7 /* BestowTests.octest */;
+			productReference = 9415C15E17319BF9003454F7 /* Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +195,7 @@
 			projectRoot = "";
 			targets = (
 				9415C14C17319BF9003454F7 /* Bestow */,
-				9415C15D17319BF9003454F7 /* BestowTests */,
+				9415C15D17319BF9003454F7 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,7 +205,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9415C16C17319BF9003454F7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9415C16F17319BF9003454F7 /* BestowTests.m in Sources */,
+				9415C1A41731E091003454F7 /* BestowTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,17 +252,6 @@
 			targetProxy = 9415C16417319BF9003454F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9415C16A17319BF9003454F7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9415C16B17319BF9003454F7 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9415C17017319BF9003454F7 /* Debug */ = {
@@ -363,7 +340,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
-				INFOPLIST_FILE = "BestowTests/BestowTests-Info.plist";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -378,7 +355,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
-				INFOPLIST_FILE = "BestowTests/BestowTests-Info.plist";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -404,7 +381,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "BestowTests" */ = {
+		9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9415C17617319BF9003454F7 /* Debug */,
