@@ -10,4 +10,6 @@
 
 @protocol BSTDependency <NSObject>
 
+- (id)resolve;
+
 @end
