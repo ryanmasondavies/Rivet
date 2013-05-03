@@ -1,3 +1,9 @@
+existing_format = /\/\/\n\/\/  .*\n\/\/  .*\n\/\/\n\/\/.*\n\/\/.*\n\/\/\n/
+ 
+# the new format to replace the old
+# in my case, I didn't want to include file names or the project name,
+# but by changing this to a regular expression and identify capture groups in the existing format, this would be an easy extension
+new_format = <<EOF
 // The MIT License
 // 
 // Copyright (c) 2013 Ryan Davies
@@ -19,21 +25,19 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-
-#import "BSTDriver.h"
-
-@interface BSTDriver ()
-@property (strong, nonatomic) NSString *name;
-@end
-
-@implementation BSTDriver
-
-- (id)initWithName:(NSString *)name
-{
-    if (self = [self init]) {
-        self.name = name;
-    }
-    return self;
-}
-
-@end
+EOF
+ 
+Dir["**/*.{h,m}"].entries.each do |filename|
+  unless File.directory?(filename)
+    contents = File.read(filename)
+    contents.sub!(existing_format, new_format)
+    if contents
+      File.write(filename, contents)
+      puts "#{filename} processed."
+    else
+      puts "#{filename} contained no matching header."
+    end
+  else
+    puts "#{filename} skipped as is a directory."
+  end
+end
