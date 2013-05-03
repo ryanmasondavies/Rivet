@@ -1,16 +1,19 @@
 PODS:
-  - Inline (0.3.1)
-  - Posit (0.0.2)
-  - Specify (0.1.0):
-    - Inline (~> 0.3.1)
+  - Expecta (0.2.1)
+  - Inline (0.3.2)
+  - OCMock (2.1.1)
+  - Specify (0.1.1):
+    - Inline (~> 0.3.2)
 
 DEPENDENCIES:
-  - Posit
+  - Expecta
+  - OCMock
   - Specify
 
 SPEC CHECKSUMS:
-  Inline: dfb3b0921cd022766e858cd9c85a16c3f78e5c9d
-  Posit: cc326d26411b57634b395cc09a1d897b7578a94c
-  Specify: 06703f96559e471681550dfbdf995108c336edb1
+  Expecta: d46fb1bd78c90a83da0158b9b1e108de106e369f
+  Inline: 6f42acc81b87412642fec6f389e56a68b6abe836
+  OCMock: 79212e5e328378af5cfd6edb5feacfd6c49cd8a3
+  Specify: 0541d8a50435e69c99967002e667a5f67ce47fa5
 
 COCOAPODS: 0.18.1

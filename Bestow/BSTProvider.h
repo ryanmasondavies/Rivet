@@ -23,5 +23,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol BSTProvider <NSObject>
+
 - (id)get;
+
 @end

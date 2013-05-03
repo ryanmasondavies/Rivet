@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		517D5917915C4F6A9ABEDCB8 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */; };
+		940A45A51734100A00EA5788 /* BSTInjectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A45A41734100A00EA5788 /* BSTInjectorSpec.m */; };
 		9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9415C15517319BF9003454F7 /* Bestow.h */; };
 		9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15F17319BF9003454F7 /* SenTestingKit.framework */; };
@@ -22,6 +23,7 @@
 		948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */; };
 		948CCC741733FC84002972A8 /* BSTClassDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC731733FC84002972A8 /* BSTClassDependency.m */; };
 		948CCC7D17340455002972A8 /* BSTProtocolDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC7C17340455002972A8 /* BSTProtocolDependency.m */; };
+		948CCC8017340622002972A8 /* BSTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC7F17340622002972A8 /* BSTInjector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		940A45A41734100A00EA5788 /* BSTInjectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTInjectorSpec.m; sourceTree = "<group>"; };
 		9415C14D17319BF9003454F7 /* libBestow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBestow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 		948CCC731733FC84002972A8 /* BSTClassDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTClassDependency.m; sourceTree = "<group>"; };
 		948CCC7B17340455002972A8 /* BSTProtocolDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTProtocolDependency.h; sourceTree = "<group>"; };
 		948CCC7C17340455002972A8 /* BSTProtocolDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTProtocolDependency.m; sourceTree = "<group>"; };
+		948CCC7E17340622002972A8 /* BSTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTInjector.h; sourceTree = "<group>"; };
+		948CCC7F17340622002972A8 /* BSTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTInjector.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -134,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				9415C15517319BF9003454F7 /* Bestow.h */,
+				948CCC7E17340622002972A8 /* BSTInjector.h */,
+				948CCC7F17340622002972A8 /* BSTInjector.m */,
 				948CCC321733C11C002972A8 /* BSTProvider.h */,
 				948CCC6E1733FADF002972A8 /* BSTDependency.h */,
 				948CCC721733FC84002972A8 /* BSTClassDependency.h */,
@@ -188,6 +195,7 @@
 		948CCC691733FA43002972A8 /* Unit Specs */ = {
 			isa = PBXGroup;
 			children = (
+				940A45A41734100A00EA5788 /* BSTInjectorSpec.m */,
 				948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */,
 				948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */,
 			);
@@ -324,6 +332,7 @@
 			files = (
 				948CCC741733FC84002972A8 /* BSTClassDependency.m in Sources */,
 				948CCC7D17340455002972A8 /* BSTProtocolDependency.m in Sources */,
+				948CCC8017340622002972A8 /* BSTInjector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +346,7 @@
 				948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */,
 				948CCC6B1733FA58002972A8 /* BSTClassDependencySpec.m in Sources */,
 				948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */,
+				940A45A51734100A00EA5788 /* BSTInjectorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

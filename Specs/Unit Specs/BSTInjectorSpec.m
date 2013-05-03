@@ -20,16 +20,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTCar.h"
+SpecBegin(BSTInjector)
 
-SpecBegin(BSTClassDependency)
-
-it(@"creates an instance of its class", ^{
-    id<BSTDependency> dependency = [[BSTClassDependency alloc] initWithClass:[BSTCar class] initializer:@selector(initWithDriver:engine:wheels:) argumentProviders:nil];
-    id product = [dependency resolve];
-    expect(product).to.beKindOf([BSTCar class]);
+it(@"injects instances with a matching dependency", ^{
+    NSMutableArray *dependencies = [[NSMutableArray alloc] init];
+    NSObject *subdependency = [[NSObject alloc] init];
+    for (NSUInteger i = 0; i < 10; i ++) {
+        dependencies[i] = [OCMockObject mockForProtocol:@protocol(BSTDependency)];
+        if (i == 5) {
+            [[[dependencies[i] stub] andReturn:[NSObject class]] class];
+            [(id<BSTDependency>)[[dependencies[i] stub] andReturn:subdependency] resolve];
+        }
+    }
+    
+    BSTInjector *injector = [[BSTInjector alloc] initWithDependencies:dependencies];
+    id result = [injector getInstanceOf:[NSObject class]];
+    
+    expect(result).to.equal(result);
 });
-
-it(@"retrieves arguments from providers", PENDING);
 
 SpecEnd
