@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Bestow : NSObject
-
-@end
+#import "BSTInjector.h"
+#import "BSTAnnotator.h"
+#import "BSTBinder.h"
+#import "BSTProvider.h"

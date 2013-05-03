@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9415C15517319BF9003454F7 /* Bestow.h */; };
-		9415C15817319BF9003454F7 /* Bestow.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415C15717319BF9003454F7 /* Bestow.m */; };
 		9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15F17319BF9003454F7 /* SenTestingKit.framework */; };
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libBestow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libBestow.a */; };
-		9415C1A41731E091003454F7 /* BestowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9415C1A01731E091003454F7 /* BestowTests.m */; };
+		948CCC3F1733D753002972A8 /* BSTConstructorInjectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC3E1733D753002972A8 /* BSTConstructorInjectionTests.m */; };
+		948CCC501733D8F1002972A8 /* BSTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC4B1733D8F1002972A8 /* BSTCar.m */; };
+		948CCC511733D8F1002972A8 /* BSTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC4D1733D8F1002972A8 /* BSTDriver.m */; };
+		948CCC521733D8F1002972A8 /* BSTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC4F1733D8F1002972A8 /* BSTEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,13 +47,18 @@
 		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9415C15417319BF9003454F7 /* Bestow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bestow-Prefix.pch"; sourceTree = "<group>"; };
 		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
-		9415C15717319BF9003454F7 /* Bestow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bestow.m; sourceTree = "<group>"; };
 		9415C15E17319BF9003454F7 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9415C19F1731E091003454F7 /* BestowTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BestowTests.h; sourceTree = "<group>"; };
-		9415C1A01731E091003454F7 /* BestowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BestowTests.m; sourceTree = "<group>"; };
 		9415C1A31731E091003454F7 /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		948CCC321733C11C002972A8 /* BSTProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTProvider.h; sourceTree = "<group>"; };
+		948CCC3E1733D753002972A8 /* BSTConstructorInjectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTConstructorInjectionTests.m; sourceTree = "<group>"; };
+		948CCC4A1733D8F1002972A8 /* BSTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTCar.h; sourceTree = "<group>"; };
+		948CCC4B1733D8F1002972A8 /* BSTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTCar.m; sourceTree = "<group>"; };
+		948CCC4C1733D8F1002972A8 /* BSTDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTDriver.h; sourceTree = "<group>"; };
+		948CCC4D1733D8F1002972A8 /* BSTDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTDriver.m; sourceTree = "<group>"; };
+		948CCC4E1733D8F1002972A8 /* BSTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTEngine.h; sourceTree = "<group>"; };
+		948CCC4F1733D8F1002972A8 /* BSTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9415C15517319BF9003454F7 /* Bestow.h */,
-				9415C15717319BF9003454F7 /* Bestow.m */,
+				948CCC321733C11C002972A8 /* BSTProvider.h */,
 				9415C15317319BF9003454F7 /* Supporting Files */,
 			);
 			path = Bestow;
@@ -127,11 +134,40 @@
 		9415C19E1731E091003454F7 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				9415C19F1731E091003454F7 /* BestowTests.h */,
-				9415C1A01731E091003454F7 /* BestowTests.m */,
-				9415C1A31731E091003454F7 /* Tests-Info.plist */,
+				948CCC491733D8F1002972A8 /* Classes */,
+				948CCC3D1733D753002972A8 /* Functional Tests */,
+				948CCC561733E362002972A8 /* Supporting Files */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		948CCC3D1733D753002972A8 /* Functional Tests */ = {
+			isa = PBXGroup;
+			children = (
+				948CCC3E1733D753002972A8 /* BSTConstructorInjectionTests.m */,
+			);
+			path = "Functional Tests";
+			sourceTree = "<group>";
+		};
+		948CCC491733D8F1002972A8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				948CCC4A1733D8F1002972A8 /* BSTCar.h */,
+				948CCC4B1733D8F1002972A8 /* BSTCar.m */,
+				948CCC4C1733D8F1002972A8 /* BSTDriver.h */,
+				948CCC4D1733D8F1002972A8 /* BSTDriver.m */,
+				948CCC4E1733D8F1002972A8 /* BSTEngine.h */,
+				948CCC4F1733D8F1002972A8 /* BSTEngine.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		948CCC561733E362002972A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9415C1A31731E091003454F7 /* Tests-Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +215,7 @@
 		9415C14517319BF9003454F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BST;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ryan Davies";
 			};
@@ -231,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9415C15817319BF9003454F7 /* Bestow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9415C1A41731E091003454F7 /* BestowTests.m in Sources */,
+				948CCC3F1733D753002972A8 /* BSTConstructorInjectionTests.m in Sources */,
+				948CCC501733D8F1002972A8 /* BSTCar.m in Sources */,
+				948CCC511733D8F1002972A8 /* BSTDriver.m in Sources */,
+				948CCC521733D8F1002972A8 /* BSTEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +419,7 @@
 				9415C17417319BF9003454F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -388,6 +428,7 @@
 				9415C17717319BF9003454F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
