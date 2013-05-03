@@ -21,6 +21,7 @@
 		948CCC6B1733FA58002972A8 /* BSTClassDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */; };
 		948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */; };
 		948CCC741733FC84002972A8 /* BSTClassDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC731733FC84002972A8 /* BSTClassDependency.m */; };
+		948CCC7D17340455002972A8 /* BSTProtocolDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC7C17340455002972A8 /* BSTProtocolDependency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		948CCC6E1733FADF002972A8 /* BSTDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTDependency.h; sourceTree = "<group>"; };
 		948CCC721733FC84002972A8 /* BSTClassDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTClassDependency.h; sourceTree = "<group>"; };
 		948CCC731733FC84002972A8 /* BSTClassDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTClassDependency.m; sourceTree = "<group>"; };
+		948CCC7B17340455002972A8 /* BSTProtocolDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTProtocolDependency.h; sourceTree = "<group>"; };
+		948CCC7C17340455002972A8 /* BSTProtocolDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTProtocolDependency.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -135,6 +138,8 @@
 				948CCC6E1733FADF002972A8 /* BSTDependency.h */,
 				948CCC721733FC84002972A8 /* BSTClassDependency.h */,
 				948CCC731733FC84002972A8 /* BSTClassDependency.m */,
+				948CCC7B17340455002972A8 /* BSTProtocolDependency.h */,
+				948CCC7C17340455002972A8 /* BSTProtocolDependency.m */,
 			);
 			path = Bestow;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				948CCC741733FC84002972A8 /* BSTClassDependency.m in Sources */,
+				948CCC7D17340455002972A8 /* BSTProtocolDependency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,8 +408,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/Bestow.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -414,8 +418,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/Bestow.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
