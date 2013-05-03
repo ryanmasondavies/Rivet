@@ -49,7 +49,6 @@
 /* Begin PBXFileReference section */
 		9415C14D17319BF9003454F7 /* libBestow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBestow.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9415C15417319BF9003454F7 /* Bestow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bestow-Prefix.pch"; sourceTree = "<group>"; };
 		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
 		9415C15E17319BF9003454F7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -136,17 +135,8 @@
 				948CCC6E1733FADF002972A8 /* BSTDependency.h */,
 				948CCC721733FC84002972A8 /* BSTClassDependency.h */,
 				948CCC731733FC84002972A8 /* BSTClassDependency.m */,
-				9415C15317319BF9003454F7 /* Supporting Files */,
 			);
 			path = Bestow;
-			sourceTree = "<group>";
-		};
-		9415C15317319BF9003454F7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9415C15417319BF9003454F7 /* Bestow-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		948CCC571733F901002972A8 /* Specs */ = {
