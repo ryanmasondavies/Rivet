@@ -18,6 +18,8 @@
 		948CCC631733F901002972A8 /* BSTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5C1733F901002972A8 /* BSTDriver.m */; };
 		948CCC641733F901002972A8 /* BSTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5E1733F901002972A8 /* BSTEngine.m */; };
 		948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */; };
+		948CCC6B1733FA58002972A8 /* BSTClassDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */; };
+		948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTConstructorInjectionSpec.m; sourceTree = "<group>"; };
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
+		948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTClassDependencySpec.m; sourceTree = "<group>"; };
+		948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTProtocolDependencySpec.m; sourceTree = "<group>"; };
+		948CCC6E1733FADF002972A8 /* BSTDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTDependency.h; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -125,6 +130,7 @@
 			children = (
 				9415C15517319BF9003454F7 /* Bestow.h */,
 				948CCC321733C11C002972A8 /* BSTProvider.h */,
+				948CCC6E1733FADF002972A8 /* BSTDependency.h */,
 				9415C15317319BF9003454F7 /* Supporting Files */,
 			);
 			path = Bestow;
@@ -143,6 +149,7 @@
 			children = (
 				948CCC581733F901002972A8 /* Classes */,
 				948CCC5F1733F901002972A8 /* Functional Specs */,
+				948CCC691733FA43002972A8 /* Unit Specs */,
 				948CCC681733F9A7002972A8 /* Supporting Files */,
 			);
 			path = Specs;
@@ -176,6 +183,15 @@
 				948CCC671733F90E002972A8 /* BSTSpecHelper.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		948CCC691733FA43002972A8 /* Unit Specs */ = {
+			isa = PBXGroup;
+			children = (
+				948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */,
+				948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */,
+			);
+			path = "Unit Specs";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +333,8 @@
 				948CCC631733F901002972A8 /* BSTDriver.m in Sources */,
 				948CCC641733F901002972A8 /* BSTEngine.m in Sources */,
 				948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */,
+				948CCC6B1733FA58002972A8 /* BSTClassDependencySpec.m in Sources */,
+				948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
