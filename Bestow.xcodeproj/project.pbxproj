@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		517D5917915C4F6A9ABEDCB8 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */; };
 		9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9415C15517319BF9003454F7 /* Bestow.h */; };
 		9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15F17319BF9003454F7 /* SenTestingKit.framework */; };
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libBestow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libBestow.a */; };
-		948CCC3F1733D753002972A8 /* BSTConstructorInjectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC3E1733D753002972A8 /* BSTConstructorInjectionTests.m */; };
-		948CCC501733D8F1002972A8 /* BSTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC4B1733D8F1002972A8 /* BSTCar.m */; };
-		948CCC511733D8F1002972A8 /* BSTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC4D1733D8F1002972A8 /* BSTDriver.m */; };
-		948CCC521733D8F1002972A8 /* BSTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC4F1733D8F1002972A8 /* BSTEngine.m */; };
+		948CCC621733F901002972A8 /* BSTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5A1733F901002972A8 /* BSTCar.m */; };
+		948CCC631733F901002972A8 /* BSTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5C1733F901002972A8 /* BSTDriver.m */; };
+		948CCC641733F901002972A8 /* BSTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5E1733F901002972A8 /* BSTEngine.m */; };
+		948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,18 +48,21 @@
 		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9415C15417319BF9003454F7 /* Bestow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bestow-Prefix.pch"; sourceTree = "<group>"; };
 		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
-		9415C15E17319BF9003454F7 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9415C15E17319BF9003454F7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		9415C1A31731E091003454F7 /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		948CCC321733C11C002972A8 /* BSTProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTProvider.h; sourceTree = "<group>"; };
-		948CCC3E1733D753002972A8 /* BSTConstructorInjectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTConstructorInjectionTests.m; sourceTree = "<group>"; };
-		948CCC4A1733D8F1002972A8 /* BSTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTCar.h; sourceTree = "<group>"; };
-		948CCC4B1733D8F1002972A8 /* BSTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTCar.m; sourceTree = "<group>"; };
-		948CCC4C1733D8F1002972A8 /* BSTDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTDriver.h; sourceTree = "<group>"; };
-		948CCC4D1733D8F1002972A8 /* BSTDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTDriver.m; sourceTree = "<group>"; };
-		948CCC4E1733D8F1002972A8 /* BSTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTEngine.h; sourceTree = "<group>"; };
-		948CCC4F1733D8F1002972A8 /* BSTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTEngine.m; sourceTree = "<group>"; };
+		948CCC591733F901002972A8 /* BSTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTCar.h; sourceTree = "<group>"; };
+		948CCC5A1733F901002972A8 /* BSTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTCar.m; sourceTree = "<group>"; };
+		948CCC5B1733F901002972A8 /* BSTDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTDriver.h; sourceTree = "<group>"; };
+		948CCC5C1733F901002972A8 /* BSTDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTDriver.m; sourceTree = "<group>"; };
+		948CCC5D1733F901002972A8 /* BSTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTEngine.h; sourceTree = "<group>"; };
+		948CCC5E1733F901002972A8 /* BSTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTEngine.m; sourceTree = "<group>"; };
+		948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTConstructorInjectionSpec.m; sourceTree = "<group>"; };
+		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
+		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
+		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 				9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */,
 				9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */,
 				9415C16617319BF9003454F7 /* libBestow.a in Frameworks */,
+				517D5917915C4F6A9ABEDCB8 /* libPods-Specs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +93,10 @@
 			isa = PBXGroup;
 			children = (
 				9415C15217319BF9003454F7 /* Bestow */,
-				9415C19E1731E091003454F7 /* Tests */,
+				948CCC571733F901002972A8 /* Specs */,
 				9415C14F17319BF9003454F7 /* Frameworks */,
 				9415C14E17319BF9003454F7 /* Products */,
+				D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9415C14D17319BF9003454F7 /* libBestow.a */,
-				9415C15E17319BF9003454F7 /* Tests.octest */,
+				9415C15E17319BF9003454F7 /* Specs.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,6 +115,7 @@
 				9415C15017319BF9003454F7 /* Foundation.framework */,
 				9415C15F17319BF9003454F7 /* SenTestingKit.framework */,
 				9415C16117319BF9003454F7 /* UIKit.framework */,
+				A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,41 +138,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9415C19E1731E091003454F7 /* Tests */ = {
+		948CCC571733F901002972A8 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				948CCC491733D8F1002972A8 /* Classes */,
-				948CCC3D1733D753002972A8 /* Functional Tests */,
-				948CCC561733E362002972A8 /* Supporting Files */,
+				948CCC581733F901002972A8 /* Classes */,
+				948CCC5F1733F901002972A8 /* Functional Specs */,
+				948CCC681733F9A7002972A8 /* Supporting Files */,
 			);
-			path = Tests;
+			path = Specs;
 			sourceTree = "<group>";
 		};
-		948CCC3D1733D753002972A8 /* Functional Tests */ = {
+		948CCC581733F901002972A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				948CCC3E1733D753002972A8 /* BSTConstructorInjectionTests.m */,
-			);
-			path = "Functional Tests";
-			sourceTree = "<group>";
-		};
-		948CCC491733D8F1002972A8 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				948CCC4A1733D8F1002972A8 /* BSTCar.h */,
-				948CCC4B1733D8F1002972A8 /* BSTCar.m */,
-				948CCC4C1733D8F1002972A8 /* BSTDriver.h */,
-				948CCC4D1733D8F1002972A8 /* BSTDriver.m */,
-				948CCC4E1733D8F1002972A8 /* BSTEngine.h */,
-				948CCC4F1733D8F1002972A8 /* BSTEngine.m */,
+				948CCC591733F901002972A8 /* BSTCar.h */,
+				948CCC5A1733F901002972A8 /* BSTCar.m */,
+				948CCC5B1733F901002972A8 /* BSTDriver.h */,
+				948CCC5C1733F901002972A8 /* BSTDriver.m */,
+				948CCC5D1733F901002972A8 /* BSTEngine.h */,
+				948CCC5E1733F901002972A8 /* BSTEngine.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		948CCC561733E362002972A8 /* Supporting Files */ = {
+		948CCC5F1733F901002972A8 /* Functional Specs */ = {
 			isa = PBXGroup;
 			children = (
-				9415C1A31731E091003454F7 /* Tests-Info.plist */,
+				948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */,
+			);
+			path = "Functional Specs";
+			sourceTree = "<group>";
+		};
+		948CCC681733F9A7002972A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				948CCC611733F901002972A8 /* Specs-Info.plist */,
+				948CCC671733F90E002972A8 /* BSTSpecHelper.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -190,23 +198,25 @@
 			productReference = 9415C14D17319BF9003454F7 /* libBestow.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		9415C15D17319BF9003454F7 /* Tests */ = {
+		9415C15D17319BF9003454F7 /* Specs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = 9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Specs" */;
 			buildPhases = (
+				0016DC3DBFE542FE9695FA75 /* Check Pods Manifest.lock */,
 				9415C15917319BF9003454F7 /* Sources */,
 				9415C15A17319BF9003454F7 /* Frameworks */,
 				9415C15B17319BF9003454F7 /* Resources */,
 				9415C15C17319BF9003454F7 /* ShellScript */,
+				0D9532705CCA4326B6BE5CA3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				9415C16517319BF9003454F7 /* PBXTargetDependency */,
 			);
-			name = Tests;
+			name = Specs;
 			productName = BestowTests;
-			productReference = 9415C15E17319BF9003454F7 /* Tests.octest */;
+			productReference = 9415C15E17319BF9003454F7 /* Specs.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -232,7 +242,7 @@
 			projectRoot = "";
 			targets = (
 				9415C14C17319BF9003454F7 /* Bestow */,
-				9415C15D17319BF9003454F7 /* Tests */,
+				9415C15D17319BF9003454F7 /* Specs */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +258,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0016DC3DBFE542FE9695FA75 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sanbox is not in sync with the Podfile.lock. Run 'pod install'.\nEOM\n    exit 1\nfi\n";
+		};
+		0D9532705CCA4326B6BE5CA3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Specs-resources.sh\"\n";
+		};
 		9415C15C17319BF9003454F7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,10 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948CCC3F1733D753002972A8 /* BSTConstructorInjectionTests.m in Sources */,
-				948CCC501733D8F1002972A8 /* BSTCar.m in Sources */,
-				948CCC511733D8F1002972A8 /* BSTDriver.m in Sources */,
-				948CCC521733D8F1002972A8 /* BSTEngine.m in Sources */,
+				948CCC621733F901002972A8 /* BSTCar.m in Sources */,
+				948CCC631733F901002972A8 /* BSTDriver.m in Sources */,
+				948CCC641733F901002972A8 /* BSTEngine.m in Sources */,
+				948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,14 +410,11 @@
 		};
 		9415C17617319BF9003454F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				GCC_PREFIX_HEADER = Specs/BSTSpecHelper.pch;
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -387,14 +422,11 @@
 		};
 		9415C17717319BF9003454F7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bestow/Bestow-Prefix.pch";
-				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				GCC_PREFIX_HEADER = Specs/BSTSpecHelper.pch;
+				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -421,7 +453,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		9415C17517319BF9003454F7 /* Build configuration list for PBXNativeTarget "Specs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9415C17617319BF9003454F7 /* Debug */,
