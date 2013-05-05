@@ -29,8 +29,8 @@
 
 - (id)initWithDriver:(RVTDriver *)driver engine:(RVTEngine *)engine wheels:(NSArray *)wheels;
 
-@property (readonly) RVTDriver *driver;
-@property (readonly) RVTEngine *engine;
-@property (readonly) NSArray *wheels;
+@property (strong, nonatomic) RVTDriver *driver;
+@property (strong, nonatomic) RVTEngine *engine;
+@property (strong, nonatomic) NSArray *wheels;
 
 @end

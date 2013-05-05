@@ -20,28 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTProtocolDependency.h"
+#import <Foundation/Foundation.h>
+#import "RVTProvider.h"
 
-NSString * const RVTDependencyResolutionException = @"RVTDependencyResolutionException";
+@interface RVTSequentialProvider : NSObject <RVTProvider>
 
-@interface RVTProtocolDependency ()
-@property (strong, nonatomic) Protocol *protocol;
-@end
-
-@implementation RVTProtocolDependency
-
-- (id)initWithProtocol:(Protocol *)protocol
-{
-    if (self = [self init]) {
-        self.protocol = protocol;
-    }
-    return self;
-}
-
-- (id)resolve
-{
-    [NSException raise:RVTDependencyResolutionException format:@"Cannot resolve a dependency on a protocol."];
-    return nil;
-}
+- (id)initWithObjects:(NSArray *)objects;
 
 @end

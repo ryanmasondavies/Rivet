@@ -1,17 +1,17 @@
 // The MIT License
-//
+// 
 // Copyright (c) 2013 Ryan Davies
-//
+// 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-//
+// 
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-//
+// 
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,11 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-SpecBegin(RVTProtocolDependency)
+#import "RVTNewInstanceProvider.h"
 
-it(@"raises an RVTDependencyResolutionException exception", ^{
-    RVTProtocolDependency *dependency = [[RVTProtocolDependency alloc] initWithProtocol:@protocol(NSCoding)];
-    expect(^{ [dependency resolve]; }).to.raise(RVTDependencyResolutionException);
-});
+@interface RVTNewInstanceProvider ()
+@property (strong, nonatomic) Class klass;
+@property (assign, nonatomic) NSArray *methods;
+@end
 
-SpecEnd
+@implementation RVTNewInstanceProvider
+
+- (id)initWithClass:(Class)klass methods:(NSArray *)methods
+{
+    if (self = [self init]) {
+        self.klass   = klass;
+        self.methods = methods;
+    }
+    return self;
+}
+
+- (id)get
+{
+    id instance = [[self klass] alloc];
+    [[self methods] makeObjectsPerformSelector:@selector(appyToObject:) withObject:instance];
+    return instance;
+}
+
+@end

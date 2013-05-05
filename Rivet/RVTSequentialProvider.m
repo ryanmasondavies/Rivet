@@ -20,13 +20,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "RVTDependency.h"
+#import "RVTSequentialProvider.h"
 
-extern NSString * const RVTDependencyResolutionException;
+@interface RVTSequentialProvider ()
+@property (strong, nonatomic) NSArray *objects;
+@property (assign, nonatomic) NSUInteger index;
+@end
 
-@interface RVTProtocolDependency : NSObject <RVTDependency>
+@implementation RVTSequentialProvider
 
-- (id)initWithProtocol:(Protocol *)protocol;
+- (id)initWithObjects:(NSArray *)objects
+{
+    if (self = [self init]) {
+        self.objects = objects;
+    }
+    return self;
+}
+
+- (id)get
+{
+    id result = [[self objects] objectAtIndex:[self index]];
+    self.index += 1;
+    return result;
+}
 
 @end

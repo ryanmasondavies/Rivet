@@ -20,16 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCar.h"
+#import <Foundation/Foundation.h>
 
-SpecBegin(RVTClassDependency)
+@interface RVTMethod : NSObject
 
-it(@"creates an instance of its class", ^{
-    id<RVTDependency> dependency = [[RVTClassDependency alloc] initWithClass:[RVTCar class] initializer:@selector(initWithDriver:engine:wheels:) argumentProviders:nil];
-    id product = [dependency resolve];
-    expect(product).to.beKindOf([RVTCar class]);
-});
+- (id)initWithClass:(Class)klass selector:(SEL)selector argumentProviders:(NSArray *)argumentProviders;
+- (void)applyToObject:(id)object;
 
-it(@"retrieves arguments from providers", PENDING);
-
-SpecEnd
+@end

@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 #import "RVTInjector.h"
-#import "RVTDependency.h"
 
 @interface RVTInjector ()
 @property (strong, nonatomic) NSArray *dependencies;
@@ -37,16 +36,16 @@
     return self;
 }
 
-- (id)getInstanceOf:(Class)klass
-{
-    __block id<RVTDependency> match = nil;
-    [[self dependencies] enumerateObjectsUsingBlock:^(id<RVTDependency> dependency, NSUInteger idx, BOOL *stop) {
-        if ([dependency class] == klass) {
-            match = dependency;
-            *stop = YES;
-        }
-    }];
-    return [match resolve];
-}
+//- (id)getInstanceOf:(Class)klass
+//{
+//    __block id<RVTDependency> match = nil;
+//    [[self dependencies] enumerateObjectsUsingBlock:^(id<RVTDependency> dependency, NSUInteger idx, BOOL *stop) {
+//        if ([dependency class] == klass) {
+//            match = dependency;
+//            *stop = YES;
+//        }
+//    }];
+//    return [match resolve];
+//}
 
 @end

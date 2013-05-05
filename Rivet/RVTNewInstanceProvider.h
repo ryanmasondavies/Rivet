@@ -21,9 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "RVTProvider.h"
 
-@protocol RVTDependency <NSObject>
+@interface RVTNewInstanceProvider : NSObject <RVTProvider>
 
-- (id)resolve;
+- (id)initWithClass:(Class)klass methods:(NSArray *)methods;
 
 @end
