@@ -24,4 +24,4 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
-#import "Bestow.h"
+#import "Rivet.h"

@@ -20,6 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTInjector.h"
-#import "BSTClassDependency.h"
-#import "BSTProtocolDependency.h"
+#import <Foundation/Foundation.h>
+
+@interface RVTDriver : NSObject
+
+- (id)initWithName:(NSString *)name;
+
+@property (readonly) NSString *name;
+
+@end

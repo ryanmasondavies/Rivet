@@ -20,20 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTCar.h"
-#import "BSTDriver.h"
-#import "BSTEngine.h"
+#import "RVTCar.h"
+#import "RVTDriver.h"
+#import "RVTEngine.h"
 
-@interface BSTConstructorInjectionTests : NSObject
+@interface RVTConstructorInjectionTests : NSObject
 @end
 
-@implementation BSTConstructorInjectionTests
+@implementation RVTConstructorInjectionTests
 
 - (void)test
 {
-//    id<BSTAnnotation> wheelsAnnotation = [[BSTArgumentAnnotation alloc] initWithName:@"Wheels" selector:@selector(initWithDriver:engine:wheels:) argument:2];
-//    id<BSTDefinition> carDefinition = [[BSTClassDefinition alloc] initWithClass:[BSTCar class] initializer:@selector(initWithDriver:engine:wheels:) arguments:@[[BSTDriver class], [BSTEngine class], [NSString class]]];
-//    id<BSTBinding> driverBinding = [[BSTClassBinding alloc] initWithInterfaceClass:[BSTEngine class] implementationClass:[BSTV6Engine class]];
+//    id<RVTAnnotation> wheelsAnnotation = [[RVTArgumentAnnotation alloc] initWithName:@"Wheels" selector:@selector(initWithDriver:engine:wheels:) argument:2];
+//    id<RVTDefinition> carDefinition = [[RVTClassDefinition alloc] initWithClass:[RVTCar class] initializer:@selector(initWithDriver:engine:wheels:) arguments:@[[RVTDriver class], [RVTEngine class], [NSString class]]];
+//    id<RVTBinding> driverBinding = [[RVTClassBinding alloc] initWithInterfaceClass:[RVTEngine class] implementationClass:[RVTV6Engine class]];
 //    
 //    // argument annotations, used to inject specific values
 //    NSArray *annotations = @[wheelsAnnotation];
@@ -44,7 +44,7 @@
 //    // dependency list for classes
 //    NSArray *definitions = @[carDefinition];
 //    
-//    BSTInjector *injector = [[BSTInjector alloc] initWithAnnotations:annotations bindings:bindings definitions:definitions];
+//    RVTInjector *injector = [[RVTInjector alloc] initWithAnnotations:annotations bindings:bindings definitions:definitions];
 //    NSLog(@"Created car %@", [injector getInstanceOf:[Car class]]);
 }
 

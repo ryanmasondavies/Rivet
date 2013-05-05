@@ -20,13 +20,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTProtocolDependency.h"
+#import "RVTProtocolDependency.h"
 
-@interface BSTProtocolDependency ()
+NSString * const RVTDependencyResolutionException = @"RVTDependencyResolutionException";
+
+@interface RVTProtocolDependency ()
 @property (strong, nonatomic) Protocol *protocol;
 @end
 
-@implementation BSTProtocolDependency
+@implementation RVTProtocolDependency
 
 - (id)initWithProtocol:(Protocol *)protocol
 {
@@ -38,7 +40,7 @@
 
 - (id)resolve
 {
-    [NSException raise:NSInternalInconsistencyException format:@"Cannot resolve a dependency on a protocol."];
+    [NSException raise:RVTDependencyResolutionException format:@"Cannot resolve a dependency on a protocol."];
     return nil;
 }
 

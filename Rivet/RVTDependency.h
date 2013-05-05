@@ -22,8 +22,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol BSTProvider <NSObject>
+@protocol RVTDependency <NSObject>
 
-- (id)get;
+- (id)resolve;
 
 @end

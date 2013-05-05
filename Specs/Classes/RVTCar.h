@@ -20,20 +20,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTDriver.h"
+#import <Foundation/Foundation.h>
 
-@interface BSTDriver ()
-@property (strong, nonatomic) NSString *name;
-@end
+@class RVTDriver;
+@class RVTEngine;
 
-@implementation BSTDriver
+@interface RVTCar : NSObject
 
-- (id)initWithName:(NSString *)name
-{
-    if (self = [self init]) {
-        self.name = name;
-    }
-    return self;
-}
+- (id)initWithDriver:(RVTDriver *)driver engine:(RVTEngine *)engine wheels:(NSArray *)wheels;
+
+@property (readonly) RVTDriver *driver;
+@property (readonly) RVTEngine *engine;
+@property (readonly) NSArray *wheels;
 
 @end

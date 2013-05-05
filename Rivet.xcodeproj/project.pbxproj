@@ -8,22 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		517D5917915C4F6A9ABEDCB8 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */; };
-		940A45A51734100A00EA5788 /* BSTInjectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A45A41734100A00EA5788 /* BSTInjectorSpec.m */; };
+		940A45A51734100A00EA5788 /* RVTInjectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A45A41734100A00EA5788 /* RVTInjectorSpec.m */; };
 		9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
-		9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9415C15517319BF9003454F7 /* Bestow.h */; };
 		9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15F17319BF9003454F7 /* SenTestingKit.framework */; };
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
-		9415C16617319BF9003454F7 /* libBestow.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libBestow.a */; };
-		948CCC621733F901002972A8 /* BSTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5A1733F901002972A8 /* BSTCar.m */; };
-		948CCC631733F901002972A8 /* BSTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5C1733F901002972A8 /* BSTDriver.m */; };
-		948CCC641733F901002972A8 /* BSTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5E1733F901002972A8 /* BSTEngine.m */; };
-		948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */; };
-		948CCC6B1733FA58002972A8 /* BSTClassDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */; };
-		948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */; };
-		948CCC741733FC84002972A8 /* BSTClassDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC731733FC84002972A8 /* BSTClassDependency.m */; };
-		948CCC7D17340455002972A8 /* BSTProtocolDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC7C17340455002972A8 /* BSTProtocolDependency.m */; };
-		948CCC8017340622002972A8 /* BSTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC7F17340622002972A8 /* BSTInjector.m */; };
+		9415C16617319BF9003454F7 /* libRivet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libRivet.a */; };
+		948CCC621733F901002972A8 /* RVTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5A1733F901002972A8 /* RVTCar.m */; };
+		948CCC631733F901002972A8 /* RVTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5C1733F901002972A8 /* RVTDriver.m */; };
+		948CCC641733F901002972A8 /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5E1733F901002972A8 /* RVTEngine.m */; };
+		948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */; };
+		948CCC6B1733FA58002972A8 /* RVTClassDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6A1733FA58002972A8 /* RVTClassDependencySpec.m */; };
+		948CCC6D1733FAC0002972A8 /* RVTProtocolDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6C1733FAC0002972A8 /* RVTProtocolDependencySpec.m */; };
+		94B5009B1736596000570893 /* RVTClassDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500941736596000570893 /* RVTClassDependency.m */; };
+		94B5009C1736596000570893 /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500971736596000570893 /* RVTInjector.m */; };
+		94B5009D1736596000570893 /* RVTProtocolDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500991736596000570893 /* RVTProtocolDependency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,39 +42,38 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				9415C15617319BF9003454F7 /* Bestow.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		940A45A41734100A00EA5788 /* BSTInjectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTInjectorSpec.m; sourceTree = "<group>"; };
-		9415C14D17319BF9003454F7 /* libBestow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBestow.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		940A45A41734100A00EA5788 /* RVTInjectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjectorSpec.m; sourceTree = "<group>"; };
+		9415C14D17319BF9003454F7 /* libRivet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRivet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9415C15517319BF9003454F7 /* Bestow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bestow.h; sourceTree = "<group>"; };
 		9415C15E17319BF9003454F7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		948CCC321733C11C002972A8 /* BSTProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTProvider.h; sourceTree = "<group>"; };
-		948CCC591733F901002972A8 /* BSTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTCar.h; sourceTree = "<group>"; };
-		948CCC5A1733F901002972A8 /* BSTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTCar.m; sourceTree = "<group>"; };
-		948CCC5B1733F901002972A8 /* BSTDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTDriver.h; sourceTree = "<group>"; };
-		948CCC5C1733F901002972A8 /* BSTDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTDriver.m; sourceTree = "<group>"; };
-		948CCC5D1733F901002972A8 /* BSTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTEngine.h; sourceTree = "<group>"; };
-		948CCC5E1733F901002972A8 /* BSTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTEngine.m; sourceTree = "<group>"; };
-		948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTConstructorInjectionSpec.m; sourceTree = "<group>"; };
+		948CCC591733F901002972A8 /* RVTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCar.h; sourceTree = "<group>"; };
+		948CCC5A1733F901002972A8 /* RVTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCar.m; sourceTree = "<group>"; };
+		948CCC5B1733F901002972A8 /* RVTDriver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDriver.h; sourceTree = "<group>"; };
+		948CCC5C1733F901002972A8 /* RVTDriver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDriver.m; sourceTree = "<group>"; };
+		948CCC5D1733F901002972A8 /* RVTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEngine.h; sourceTree = "<group>"; };
+		948CCC5E1733F901002972A8 /* RVTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTEngine.m; sourceTree = "<group>"; };
+		948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConstructorInjectionSpec.m; sourceTree = "<group>"; };
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
-		948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTClassDependencySpec.m; sourceTree = "<group>"; };
-		948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTProtocolDependencySpec.m; sourceTree = "<group>"; };
-		948CCC6E1733FADF002972A8 /* BSTDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTDependency.h; sourceTree = "<group>"; };
-		948CCC721733FC84002972A8 /* BSTClassDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTClassDependency.h; sourceTree = "<group>"; };
-		948CCC731733FC84002972A8 /* BSTClassDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTClassDependency.m; sourceTree = "<group>"; };
-		948CCC7B17340455002972A8 /* BSTProtocolDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTProtocolDependency.h; sourceTree = "<group>"; };
-		948CCC7C17340455002972A8 /* BSTProtocolDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTProtocolDependency.m; sourceTree = "<group>"; };
-		948CCC7E17340622002972A8 /* BSTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTInjector.h; sourceTree = "<group>"; };
-		948CCC7F17340622002972A8 /* BSTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTInjector.m; sourceTree = "<group>"; };
+		948CCC6A1733FA58002972A8 /* RVTClassDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTClassDependencySpec.m; sourceTree = "<group>"; };
+		948CCC6C1733FAC0002972A8 /* RVTProtocolDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTProtocolDependencySpec.m; sourceTree = "<group>"; };
+		94B500921736596000570893 /* Rivet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rivet.h; sourceTree = "<group>"; };
+		94B500931736596000570893 /* RVTClassDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTClassDependency.h; sourceTree = "<group>"; };
+		94B500941736596000570893 /* RVTClassDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTClassDependency.m; sourceTree = "<group>"; };
+		94B500951736596000570893 /* RVTDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependency.h; sourceTree = "<group>"; };
+		94B500961736596000570893 /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInjector.h; sourceTree = "<group>"; };
+		94B500971736596000570893 /* RVTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjector.m; sourceTree = "<group>"; };
+		94B500981736596000570893 /* RVTProtocolDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProtocolDependency.h; sourceTree = "<group>"; };
+		94B500991736596000570893 /* RVTProtocolDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTProtocolDependency.m; sourceTree = "<group>"; };
+		94B5009A1736596000570893 /* RVTProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProvider.h; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -96,7 +94,7 @@
 				9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */,
 				9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */,
 				9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */,
-				9415C16617319BF9003454F7 /* libBestow.a in Frameworks */,
+				9415C16617319BF9003454F7 /* libRivet.a in Frameworks */,
 				517D5917915C4F6A9ABEDCB8 /* libPods-Specs.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,7 +105,7 @@
 		9415C14417319BF9003454F7 = {
 			isa = PBXGroup;
 			children = (
-				9415C15217319BF9003454F7 /* Bestow */,
+				94B500911736596000570893 /* Rivet */,
 				948CCC571733F901002972A8 /* Specs */,
 				9415C14F17319BF9003454F7 /* Frameworks */,
 				9415C14E17319BF9003454F7 /* Products */,
@@ -118,7 +116,7 @@
 		9415C14E17319BF9003454F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9415C14D17319BF9003454F7 /* libBestow.a */,
+				9415C14D17319BF9003454F7 /* libRivet.a */,
 				9415C15E17319BF9003454F7 /* Specs.octest */,
 			);
 			name = Products;
@@ -135,22 +133,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9415C15217319BF9003454F7 /* Bestow */ = {
-			isa = PBXGroup;
-			children = (
-				9415C15517319BF9003454F7 /* Bestow.h */,
-				948CCC7E17340622002972A8 /* BSTInjector.h */,
-				948CCC7F17340622002972A8 /* BSTInjector.m */,
-				948CCC321733C11C002972A8 /* BSTProvider.h */,
-				948CCC6E1733FADF002972A8 /* BSTDependency.h */,
-				948CCC721733FC84002972A8 /* BSTClassDependency.h */,
-				948CCC731733FC84002972A8 /* BSTClassDependency.m */,
-				948CCC7B17340455002972A8 /* BSTProtocolDependency.h */,
-				948CCC7C17340455002972A8 /* BSTProtocolDependency.m */,
-			);
-			path = Bestow;
-			sourceTree = "<group>";
-		};
 		948CCC571733F901002972A8 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,12 +147,12 @@
 		948CCC581733F901002972A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				948CCC591733F901002972A8 /* BSTCar.h */,
-				948CCC5A1733F901002972A8 /* BSTCar.m */,
-				948CCC5B1733F901002972A8 /* BSTDriver.h */,
-				948CCC5C1733F901002972A8 /* BSTDriver.m */,
-				948CCC5D1733F901002972A8 /* BSTEngine.h */,
-				948CCC5E1733F901002972A8 /* BSTEngine.m */,
+				948CCC591733F901002972A8 /* RVTCar.h */,
+				948CCC5A1733F901002972A8 /* RVTCar.m */,
+				948CCC5B1733F901002972A8 /* RVTDriver.h */,
+				948CCC5C1733F901002972A8 /* RVTDriver.m */,
+				948CCC5D1733F901002972A8 /* RVTEngine.h */,
+				948CCC5E1733F901002972A8 /* RVTEngine.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -178,7 +160,7 @@
 		948CCC5F1733F901002972A8 /* Functional Specs */ = {
 			isa = PBXGroup;
 			children = (
-				948CCC601733F901002972A8 /* BSTConstructorInjectionSpec.m */,
+				948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */,
 			);
 			path = "Functional Specs";
 			sourceTree = "<group>";
@@ -195,19 +177,35 @@
 		948CCC691733FA43002972A8 /* Unit Specs */ = {
 			isa = PBXGroup;
 			children = (
-				940A45A41734100A00EA5788 /* BSTInjectorSpec.m */,
-				948CCC6A1733FA58002972A8 /* BSTClassDependencySpec.m */,
-				948CCC6C1733FAC0002972A8 /* BSTProtocolDependencySpec.m */,
+				940A45A41734100A00EA5788 /* RVTInjectorSpec.m */,
+				948CCC6A1733FA58002972A8 /* RVTClassDependencySpec.m */,
+				948CCC6C1733FAC0002972A8 /* RVTProtocolDependencySpec.m */,
 			);
 			path = "Unit Specs";
+			sourceTree = "<group>";
+		};
+		94B500911736596000570893 /* Rivet */ = {
+			isa = PBXGroup;
+			children = (
+				94B500921736596000570893 /* Rivet.h */,
+				94B500961736596000570893 /* RVTInjector.h */,
+				94B500971736596000570893 /* RVTInjector.m */,
+				94B500951736596000570893 /* RVTDependency.h */,
+				94B500931736596000570893 /* RVTClassDependency.h */,
+				94B500941736596000570893 /* RVTClassDependency.m */,
+				94B500981736596000570893 /* RVTProtocolDependency.h */,
+				94B500991736596000570893 /* RVTProtocolDependency.m */,
+				94B5009A1736596000570893 /* RVTProvider.h */,
+			);
+			path = Rivet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9415C14C17319BF9003454F7 /* Bestow */ = {
+		9415C14C17319BF9003454F7 /* Rivet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9415C17217319BF9003454F7 /* Build configuration list for PBXNativeTarget "Bestow" */;
+			buildConfigurationList = 9415C17217319BF9003454F7 /* Build configuration list for PBXNativeTarget "Rivet" */;
 			buildPhases = (
 				9415C14917319BF9003454F7 /* Sources */,
 				9415C14A17319BF9003454F7 /* Frameworks */,
@@ -217,9 +215,9 @@
 			);
 			dependencies = (
 			);
-			name = Bestow;
+			name = Rivet;
 			productName = Bestow;
-			productReference = 9415C14D17319BF9003454F7 /* libBestow.a */;
+			productReference = 9415C14D17319BF9003454F7 /* libRivet.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		9415C15D17319BF9003454F7 /* Specs */ = {
@@ -249,11 +247,11 @@
 		9415C14517319BF9003454F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BST;
+				CLASSPREFIX = RVT;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ryan Davies";
 			};
-			buildConfigurationList = 9415C14817319BF9003454F7 /* Build configuration list for PBXProject "Bestow" */;
+			buildConfigurationList = 9415C14817319BF9003454F7 /* Build configuration list for PBXProject "Rivet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -265,7 +263,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9415C14C17319BF9003454F7 /* Bestow */,
+				9415C14C17319BF9003454F7 /* Rivet */,
 				9415C15D17319BF9003454F7 /* Specs */,
 			);
 		};
@@ -330,9 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948CCC741733FC84002972A8 /* BSTClassDependency.m in Sources */,
-				948CCC7D17340455002972A8 /* BSTProtocolDependency.m in Sources */,
-				948CCC8017340622002972A8 /* BSTInjector.m in Sources */,
+				94B5009B1736596000570893 /* RVTClassDependency.m in Sources */,
+				94B5009C1736596000570893 /* RVTInjector.m in Sources */,
+				94B5009D1736596000570893 /* RVTProtocolDependency.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,13 +338,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				948CCC621733F901002972A8 /* BSTCar.m in Sources */,
-				948CCC631733F901002972A8 /* BSTDriver.m in Sources */,
-				948CCC641733F901002972A8 /* BSTEngine.m in Sources */,
-				948CCC651733F901002972A8 /* BSTConstructorInjectionSpec.m in Sources */,
-				948CCC6B1733FA58002972A8 /* BSTClassDependencySpec.m in Sources */,
-				948CCC6D1733FAC0002972A8 /* BSTProtocolDependencySpec.m in Sources */,
-				940A45A51734100A00EA5788 /* BSTInjectorSpec.m in Sources */,
+				948CCC621733F901002972A8 /* RVTCar.m in Sources */,
+				948CCC631733F901002972A8 /* RVTDriver.m in Sources */,
+				948CCC641733F901002972A8 /* RVTEngine.m in Sources */,
+				948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */,
+				948CCC6B1733FA58002972A8 /* RVTClassDependencySpec.m in Sources */,
+				948CCC6D1733FAC0002972A8 /* RVTProtocolDependencySpec.m in Sources */,
+				940A45A51734100A00EA5788 /* RVTInjectorSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +353,7 @@
 /* Begin PBXTargetDependency section */
 		9415C16517319BF9003454F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9415C14C17319BF9003454F7 /* Bestow */;
+			target = 9415C14C17319BF9003454F7 /* Rivet */;
 			targetProxy = 9415C16417319BF9003454F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -419,7 +417,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/Bestow.dst;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rivet;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -429,7 +427,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/Bestow.dst;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rivet;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -461,7 +459,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9415C14817319BF9003454F7 /* Build configuration list for PBXProject "Bestow" */ = {
+		9415C14817319BF9003454F7 /* Build configuration list for PBXProject "Rivet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9415C17017319BF9003454F7 /* Debug */,
@@ -470,7 +468,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9415C17217319BF9003454F7 /* Build configuration list for PBXNativeTarget "Bestow" */ = {
+		9415C17217319BF9003454F7 /* Build configuration list for PBXNativeTarget "Rivet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9415C17317319BF9003454F7 /* Debug */,

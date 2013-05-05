@@ -20,16 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTClassDependency.h"
-#import "BSTProvider.h"
+#import "RVTClassDependency.h"
+#import "RVTProvider.h"
 
-@interface BSTClassDependency ()
+@interface RVTClassDependency ()
 @property (strong, nonatomic) Class klass;
 @property (assign, nonatomic) SEL initializer;
 @property (strong, nonatomic) NSArray *argumentProviders;
 @end
 
-@implementation BSTClassDependency
+@implementation RVTClassDependency
 
 - (id)initWithClass:(Class)klass initializer:(SEL)initializer argumentProviders:(NSArray *)argumentProviders
 {
@@ -44,7 +44,7 @@
 - (id)resolve
 {
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
-    for (id<BSTProvider> provider in [self argumentProviders]) {
+    for (id<RVTProvider> provider in [self argumentProviders]) {
         [arguments addObject:[provider get]];
     }
     

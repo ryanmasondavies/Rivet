@@ -20,8 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "BSTEngine.h"
+#import <Foundation/Foundation.h>
 
-@implementation BSTEngine
+@protocol RVTProvider <NSObject>
+
+- (id)get;
 
 @end
