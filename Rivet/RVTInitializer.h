@@ -26,6 +26,6 @@
 @interface RVTInitializer : NSObject
 @property (strong, nonatomic) Class klass;
 @property (assign, nonatomic) SEL selector;
-@property (strong, nonatomic) NSArray *argumentClasses;
-- (id)initializeInstance:(id)object injector:(RVTInjector *)injector;
+@property (strong, nonatomic) NSArray *providers;
+- (id)initializedInstance;
 @end

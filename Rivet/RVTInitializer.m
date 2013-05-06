@@ -21,15 +21,17 @@
 // THE SOFTWARE.
 
 #import "RVTInitializer.h"
-#import "RVTInjector.h"
+#import "RVTProvider.h"
 
 @implementation RVTInitializer
 
-- (id)initializeInstance:(id)object injector:(RVTInjector *)injector
+- (id)initializedInstance
 {
+    id object = [[self klass] alloc];
+    
     NSMutableArray *arguments = [[NSMutableArray alloc] init];
-    for (Class argumentClass in [self argumentClasses]) {
-        [arguments addObject:[injector getInstanceOf:argumentClass]];
+    for (id<RVTProvider> provider in [self providers]) {
+        [arguments addObject:[provider get]];
     }
     
     NSMethodSignature *methodSignature = [[self klass] instanceMethodSignatureForSelector:[self selector]];
