@@ -38,7 +38,7 @@
     return self;
 }
 
-- (id)getInstanceOf:(Class)klass
+- (id)instanceOf:(Class)klass
 {
     RVTDependency *dependency = [[self module] dependencyForInstanceOf:klass];
     if (dependency == nil) {

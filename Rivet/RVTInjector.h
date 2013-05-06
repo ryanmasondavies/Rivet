@@ -25,5 +25,5 @@
 
 @interface RVTInjector : NSObject
 - (id)initWithModule:(RVTModule *)module;
-- (id)getInstanceOf:(Class)klass;
+- (id)instanceOf:(Class)klass;
 @end
