@@ -20,11 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "RVTProvider.h"
+#import "RVTWheelsProvider.h"
 
-@interface RVTInitializer : NSObject <RVTProvider>
+@interface RVTWheelsProvider ()
+@property (strong, nonatomic) id<RVTProvider> wheelProvider;
+@end
 
-- (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers;
+@implementation RVTWheelsProvider
+
+- (id)initWithWheelProvider:(id<RVTProvider>)wheelProvider
+{
+    if (self = [self init]) {
+        self.wheelProvider = wheelProvider;
+    }
+    return self;
+}
+
+- (id)get
+{
+    return @[[[self wheelProvider] get], [[self wheelProvider] get], [[self wheelProvider] get], [[self wheelProvider] get]];
+}
 
 @end

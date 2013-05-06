@@ -24,22 +24,7 @@
 #import "RVTDriver.h"
 #import "RVTEngine.h"
 #import "RVTWheel.h"
-
-#define RVTInject(klass) [[RVTInjectionProvider alloc] initWithClass:klass injector:injector]
-#define RVTValue(val) [[RVTValueProvider alloc] initWithValue:val]
-
-@interface RVTWheelsProvider : NSObject <RVTProvider>
-
-@end
-
-@implementation RVTWheelsProvider
-
-- (id)get
-{
-    return @[[RVTWheel new], [RVTWheel new], [RVTWheel new], [RVTWheel new]];
-}
-
-@end
+#import "RVTWheelsProvider.h"
 
 @interface RVTConstructorInjectionTests : SenTestCase
 @end
@@ -48,28 +33,35 @@
 
 - (id<RVTProvider>)carWithInjector:(RVTInjector *)injector
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] init];
-    [initializer setKlass:[RVTCar class]];
-    [initializer setSelector:@selector(initWithDriver:engine:wheels:)];
-    [initializer setProviders:@[RVTInject([RVTDriver class]), RVTInject([RVTEngine class]), [RVTWheelsProvider new]]];
-    return initializer;
+    NSMutableArray *providers = [[NSMutableArray alloc] init];
+    providers[0] = [[RVTInjectionProvider alloc] initWithClass:[RVTDriver class] injector:injector];
+    providers[1] = [[RVTInjectionProvider alloc] initWithClass:[RVTEngine class] injector:injector];
+    providers[2] = [[RVTRecursiveProvider alloc] initWithProvider:[[RVTInjectionProvider alloc] initWithClass:[RVTWheelsProvider class] injector:injector] recursions:2];
+    return [[RVTInitializer alloc] initWithClass:[RVTCar class] selector:@selector(initWithDriver:engine:wheels:) providers:providers];
 }
 
 - (id<RVTProvider>)driverWithInjector:(RVTInjector *)injector
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] init];
-    [initializer setKlass:[RVTDriver class]];
-    [initializer setSelector:@selector(initWithName:)];
-    [initializer setProviders:@[RVTValue(@"John Smith")]];
-    return initializer;
+    NSMutableArray *providers = [[NSMutableArray alloc] init];
+    providers[0] = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
+    return [[RVTInitializer alloc] initWithClass:[RVTDriver class] selector:@selector(initWithName:) providers:providers];
 }
 
 - (id<RVTProvider>)engineWithInjector:(RVTInjector *)injector
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] init];
-    [initializer setKlass:[RVTEngine class]];
-    [initializer setSelector:@selector(init)];
-    return initializer;
+    return [[RVTInitializer alloc] initWithClass:[RVTEngine class] selector:@selector(init) providers:nil];
+}
+
+- (id<RVTProvider>)wheelsProviderWithInjector:(RVTInjector *)injector
+{
+    NSMutableArray *providers = [[NSMutableArray alloc] init];
+    providers[0] = [[RVTValueProvider alloc] initWithValue:[[RVTInjectionProvider alloc] initWithClass:[RVTWheel class] injector:injector]];
+    return [[RVTInitializer alloc] initWithClass:[RVTWheelsProvider class] selector:@selector(initWithWheelProvider:) providers:providers];
+}
+
+- (id<RVTProvider>)wheelWithInjector:(RVTInjector *)injector
+{
+    return [[RVTInitializer alloc] initWithClass:[RVTWheel class] selector:@selector(init) providers:nil];
 }
 
 - (void)test
@@ -78,13 +70,16 @@
     RVTModule *module = [[RVTModule alloc] initWithProviders:providers];
     RVTInjector *injector = [[RVTInjector alloc] initWithModule:module];
     
-    module[[RVTCar    class]] = [self    carWithInjector:injector];
+    module[[RVTCar    class]] = [self carWithInjector:injector];
     module[[RVTDriver class]] = [self driverWithInjector:injector];
     module[[RVTEngine class]] = [self engineWithInjector:injector];
+    module[[RVTWheel  class]] = [self wheelWithInjector:injector];
+    module[[RVTWheelsProvider class]] = [self wheelsProviderWithInjector:injector];
     
-    NSLog(@"Injected car: %@",    [injector instanceOf:[RVTCar    class]]);
+    NSLog(@"Injected car:    %@", [injector instanceOf:[RVTCar    class]]);
     NSLog(@"Injected driver: %@", [injector instanceOf:[RVTDriver class]]);
     NSLog(@"Injected engine: %@", [injector instanceOf:[RVTEngine class]]);
+    NSLog(@"Injected wheel:  %@", [injector instanceOf:[RVTWheel  class]]);
 }
 
 @end

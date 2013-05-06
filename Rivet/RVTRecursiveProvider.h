@@ -23,8 +23,7 @@
 #import <Foundation/Foundation.h>
 #import "RVTProvider.h"
 
-@interface RVTInitializer : NSObject <RVTProvider>
-
-- (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers;
-
+/** Used to retrieve a value from a provider recursively, useful when a provider returns another provider. */
+@interface RVTRecursiveProvider : NSObject <RVTProvider>
+- (id)initWithProvider:(id<RVTProvider>)provider recursions:(NSUInteger)recursions;
 @end

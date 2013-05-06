@@ -30,6 +30,8 @@
 		94C72B5C1737D70400CCEFD3 /* RVTValueProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B5B1737D70300CCEFD3 /* RVTValueProviderSpec.m */; };
 		94C72B5F1737D7FF00CCEFD3 /* RVTInjectionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B5E1737D7FF00CCEFD3 /* RVTInjectionProvider.m */; };
 		94C72B621737DB1C00CCEFD3 /* RVTWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B611737DB1C00CCEFD3 /* RVTWheel.m */; };
+		94C72B651737EB0C00CCEFD3 /* RVTWheelsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B641737EB0C00CCEFD3 /* RVTWheelsProvider.m */; };
+		94C72B681737F1DA00CCEFD3 /* RVTRecursiveProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B671737F1DA00CCEFD3 /* RVTRecursiveProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,10 @@
 		94C72B5E1737D7FF00CCEFD3 /* RVTInjectionProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjectionProvider.m; sourceTree = "<group>"; };
 		94C72B601737DB1C00CCEFD3 /* RVTWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTWheel.h; sourceTree = "<group>"; };
 		94C72B611737DB1C00CCEFD3 /* RVTWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTWheel.m; sourceTree = "<group>"; };
+		94C72B631737EB0C00CCEFD3 /* RVTWheelsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTWheelsProvider.h; sourceTree = "<group>"; };
+		94C72B641737EB0C00CCEFD3 /* RVTWheelsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTWheelsProvider.m; sourceTree = "<group>"; };
+		94C72B661737F1DA00CCEFD3 /* RVTRecursiveProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTRecursiveProvider.h; sourceTree = "<group>"; };
+		94C72B671737F1DA00CCEFD3 /* RVTRecursiveProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRecursiveProvider.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -172,6 +178,8 @@
 				948CCC5E1733F901002972A8 /* RVTEngine.m */,
 				94C72B601737DB1C00CCEFD3 /* RVTWheel.h */,
 				94C72B611737DB1C00CCEFD3 /* RVTWheel.m */,
+				94C72B631737EB0C00CCEFD3 /* RVTWheelsProvider.h */,
+				94C72B641737EB0C00CCEFD3 /* RVTWheelsProvider.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -219,6 +227,8 @@
 				94B5009A1736596000570893 /* RVTProvider.h */,
 				94C72B5D1737D7FF00CCEFD3 /* RVTInjectionProvider.h */,
 				94C72B5E1737D7FF00CCEFD3 /* RVTInjectionProvider.m */,
+				94C72B661737F1DA00CCEFD3 /* RVTRecursiveProvider.h */,
+				94C72B671737F1DA00CCEFD3 /* RVTRecursiveProvider.m */,
 				94B500A61736811500570893 /* RVTSequentialProvider.h */,
 				94B500A71736811500570893 /* RVTSequentialProvider.m */,
 				94C72B581737D6C400CCEFD3 /* RVTValueProvider.h */,
@@ -361,6 +371,7 @@
 				94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */,
 				94C72B5A1737D6C400CCEFD3 /* RVTValueProvider.m in Sources */,
 				94C72B5F1737D7FF00CCEFD3 /* RVTInjectionProvider.m in Sources */,
+				94C72B681737F1DA00CCEFD3 /* RVTRecursiveProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +390,7 @@
 				94C72B571737C88500CCEFD3 /* RVTInitializer.m in Sources */,
 				94C72B5C1737D70400CCEFD3 /* RVTValueProviderSpec.m in Sources */,
 				94C72B621737DB1C00CCEFD3 /* RVTWheel.m in Sources */,
+				94C72B651737EB0C00CCEFD3 /* RVTWheelsProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

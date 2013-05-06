@@ -22,7 +22,23 @@
 
 #import "RVTInitializer.h"
 
+@interface RVTInitializer ()
+@property (strong, nonatomic) Class klass;
+@property (assign, nonatomic) SEL selector;
+@property (strong, nonatomic) NSArray *providers;
+@end
+
 @implementation RVTInitializer
+
+- (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers
+{
+    if (self = [self init]) {
+        self.klass = klass;
+        self.selector = selector;
+        self.providers = providers;
+    }
+    return self;
+}
 
 - (id)get
 {

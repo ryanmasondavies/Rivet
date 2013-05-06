@@ -23,8 +23,8 @@
 #import <Foundation/Foundation.h>
 #import "RVTProvider.h"
 
-@interface RVTInitializer : NSObject <RVTProvider>
+@interface RVTWheelsProvider : NSObject <RVTProvider>
 
-- (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers;
+- (id)initWithWheelProvider:(id<RVTProvider>)wheelProvider;
 
 @end

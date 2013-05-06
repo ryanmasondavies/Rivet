@@ -24,5 +24,6 @@
 #import "RVTModule.h"
 #import "RVTInitializer.h"
 #import "RVTInjectionProvider.h"
+#import "RVTRecursiveProvider.h"
 #import "RVTSequentialProvider.h"
 #import "RVTValueProvider.h"

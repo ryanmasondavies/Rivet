@@ -41,7 +41,9 @@
 - (id)instanceOf:(Class)klass
 {
     id<RVTProvider> provider = [self module][klass];
-    return [provider get];
+    id injectee = [provider get];
+    NSLog(@"Injecting %@", injectee);
+    return injectee;
 }
 
 @end

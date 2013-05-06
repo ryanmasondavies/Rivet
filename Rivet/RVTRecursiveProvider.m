@@ -20,11 +20,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "RVTProvider.h"
+#import "RVTRecursiveProvider.h"
 
-@interface RVTInitializer : NSObject <RVTProvider>
+@interface RVTRecursiveProvider ()
+@property (strong, nonatomic) id<RVTProvider> provider;
+@property (assign, nonatomic) NSUInteger recursions;
+@end
 
-- (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers;
+@implementation RVTRecursiveProvider
+
+- (id)initWithProvider:(id<RVTProvider>)provider recursions:(NSUInteger)recursions
+{
+    if (self = [self init]) {
+        self.provider = provider;
+        self.recursions = recursions;
+    }
+    return self;
+}
+
+- (id)get
+{
+    NSUInteger remaining = [self recursions];
+    id result = [self provider];
+    while (remaining-- > 0) {
+        result = [result get];
+    }
+    return result;
+}
 
 @end
