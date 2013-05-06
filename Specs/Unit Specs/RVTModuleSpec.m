@@ -22,4 +22,6 @@
 
 SpecBegin(RVTModuleSpec)
 
+PENDING;
+
 SpecEnd

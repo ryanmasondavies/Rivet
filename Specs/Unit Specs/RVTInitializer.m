@@ -22,4 +22,6 @@
 
 SpecBegin(RVTInitializer)
 
+PENDING;
+
 SpecEnd
