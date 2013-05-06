@@ -1,3 +1,11 @@
+Rivet
+=====
+
+Bolt your application together with dependency injection for iOS.
+
+License
+=======
+
 Copyright (c) 2013 Ryan Davies
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
