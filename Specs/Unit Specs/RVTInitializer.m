@@ -20,26 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCar.h"
-
-SpecBegin(RVTInstanceProvider)
-
-it(@"creates an instance of its class", ^{
-    id<RVTProvider> provider = [[RVTNewInstanceProvider alloc] initWithClass:[RVTCar class] methods:nil];
-    expect([provider get]).to.beKindOf([RVTCar class]);
-});
-
-it(@"applies methods to the instance", ^{
-    NSMutableArray *methods = [[NSMutableArray alloc] init];
-    for (NSUInteger i = 0; i < 10; i ++) {
-        methods[i] = [OCMockObject mockForClass:[RVTMethod class]];
-        [[methods[i] expect] applyToObject:OCMOCK_ANY];
-    }
-    
-    id<RVTProvider> provider = [[RVTNewInstanceProvider alloc] initWithClass:[RVTCar class] methods:methods];
-    (void)[provider get];
-    
-    [methods makeObjectsPerformSelector:@selector(verify)];
-});
+SpecBegin(RVTInitializer)
 
 SpecEnd

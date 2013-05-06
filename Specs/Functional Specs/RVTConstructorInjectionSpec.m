@@ -24,28 +24,70 @@
 #import "RVTDriver.h"
 #import "RVTEngine.h"
 
-@interface RVTConstructorInjectionTests : NSObject
+@interface RVTConstructorInjectionTests : SenTestCase
 @end
 
 @implementation RVTConstructorInjectionTests
 
+- (RVTDependency *)car
+{
+    RVTInitializer *initializer = [[RVTInitializer alloc] init];
+    [initializer setKlass:[RVTCar class]];
+    [initializer setSelector:@selector(initWithDriver:engine:wheels:)];
+    [initializer setArgumentClasses:@[[RVTDriver class], [RVTEngine class], [NSArray class]]];
+    
+    RVTDependency *dependency = [[RVTDependency alloc] init];
+    [dependency setKlass:[RVTCar class]];
+    [dependency setInitializer:initializer];
+    
+    return dependency;
+}
+
+- (RVTDependency *)driver
+{
+    RVTInitializer *initializer = [[RVTInitializer alloc] init];
+    [initializer setKlass:[RVTDriver class]];
+    [initializer setSelector:@selector(init)];
+    
+    RVTDependency *dependency = [[RVTDependency alloc] init];
+    [dependency setKlass:[RVTDriver class]];
+    [dependency setInitializer:initializer];
+    
+    return dependency;
+}
+
+- (RVTDependency *)engine
+{
+    RVTInitializer *initializer = [[RVTInitializer alloc] init];
+    [initializer setKlass:[RVTEngine class]];
+    [initializer setSelector:@selector(init)];
+    
+    RVTDependency *dependency = [[RVTDependency alloc] init];
+    [dependency setKlass:[RVTEngine class]];
+    [dependency setInitializer:initializer];
+    
+    return dependency;
+}
+
+- (RVTDependency *)wheels
+{
+    RVTInitializer *initializer = [[RVTInitializer alloc] init];
+    [initializer setKlass:[NSArray class]];
+    [initializer setSelector:@selector(init)];
+    
+    RVTDependency *dependency = [[RVTDependency alloc] init];
+    [dependency setKlass:[NSArray class]];
+    [dependency setInitializer:initializer];
+    
+    return dependency;
+}
+
 - (void)test
 {
-//    id<RVTAnnotation> wheelsAnnotation = [[RVTArgumentAnnotation alloc] initWithName:@"Wheels" selector:@selector(initWithDriver:engine:wheels:) argument:2];
-//    id<RVTDefinition> carDefinition = [[RVTClassDefinition alloc] initWithClass:[RVTCar class] initializer:@selector(initWithDriver:engine:wheels:) arguments:@[[RVTDriver class], [RVTEngine class], [NSString class]]];
-//    id<RVTBinding> driverBinding = [[RVTClassBinding alloc] initWithInterfaceClass:[RVTEngine class] implementationClass:[RVTV6Engine class]];
-//    
-//    // argument annotations, used to inject specific values
-//    NSArray *annotations = @[wheelsAnnotation];
-//    
-//    // which implementation classes to construct for interfaces
-//    NSArray *bindings = @[driverBinding];
-//    
-//    // dependency list for classes
-//    NSArray *definitions = @[carDefinition];
-//    
-//    RVTInjector *injector = [[RVTInjector alloc] initWithAnnotations:annotations bindings:bindings definitions:definitions];
-//    NSLog(@"Created car %@", [injector getInstanceOf:[Car class]]);
+    RVTModule *module = [[RVTModule alloc] initWithDependencies:@[[self car], [self driver], [self engine], [self wheels]]];
+    RVTInjector *injector = [[RVTInjector alloc] initWithModule:module];
+    
+    NSLog(@"Injected car: %@", [injector getInstanceOf:[RVTCar class]]);
 }
 
 @end

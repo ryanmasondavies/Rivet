@@ -22,21 +22,4 @@
 
 SpecBegin(RVTInjector)
 
-it(@"injects instances with a matching dependency", ^{
-    NSMutableArray *dependencies = [[NSMutableArray alloc] init];
-    NSObject *subdependency = [[NSObject alloc] init];
-    for (NSUInteger i = 0; i < 10; i ++) {
-        dependencies[i] = [OCMockObject mockForProtocol:@protocol(RVTDependency)];
-        if (i == 5) {
-            [[[dependencies[i] stub] andReturn:[NSObject class]] class];
-            [(id<RVTDependency>)[[dependencies[i] stub] andReturn:subdependency] resolve];
-        }
-    }
-    
-    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:dependencies];
-    id result = [injector getInstanceOf:[NSObject class]];
-    
-    expect(result).to.equal(result);
-});
-
 SpecEnd

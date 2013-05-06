@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "RVTInjector.h"
-#import "RVTNewInstanceProvider.h"
+#import "RVTModule.h"
+#import "RVTDependency.h"
+#import "RVTInitializer.h"
 #import "RVTSequentialProvider.h"
-#import "RVTMethod.h"

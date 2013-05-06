@@ -20,20 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCar.h"
-#import "RVTDriver.h"
+#import "RVTModule.h"
+#import "RVTDependency.h"
 
-SpecBegin(RVTMethod)
+@interface RVTModule ()
+@property (strong, nonatomic) NSArray *dependencies;
+@end
 
-it(@"applies itself to objects", ^{
-    RVTDriver *driver = [[RVTDriver alloc] init];
-    id<RVTProvider> driverProvider = [[RVTSequentialProvider alloc] initWithObjects:@[driver]];
-    RVTMethod *method = [[RVTMethod alloc] initWithClass:[RVTCar class] selector:@selector(setDriver:) argumentProviders:@[driverProvider]];
-    
-    RVTCar *car = [[RVTCar alloc] init];
-    [method applyToObject:car];
-    
-    expect([car driver]).to.equal(driver);
-});
+@implementation RVTModule
 
-SpecEnd
+- (id)initWithDependencies:(NSArray *)dependencies
+{
+    if (self = [self init]) {
+        self.dependencies = dependencies;
+    }
+    return self;
+}
+
+- (RVTDependency *)dependencyForInstanceOf:(Class)klass
+{
+    for (RVTDependency *dependency in [self dependencies]) {
+        if ([dependency klass] == klass) {
+            return dependency;
+        }
+    }
+    return nil;
+}
+
+@end

@@ -20,31 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "RVTInitializer.h"
 #import "RVTInjector.h"
-#import "RVTModule.h"
-#import "RVTDependency.h"
 
-@interface RVTInjector ()
-@property (strong, nonatomic) RVTModule *module;
-@end
+@implementation RVTInitializer
 
-@implementation RVTInjector
-
-- (id)initWithModule:(RVTModule *)module
+- (id)initializeInstance:(id)object injector:(RVTInjector *)injector
 {
-    if (self = [self init]) {
-        self.module = module;
+    NSMutableArray *arguments = [[NSMutableArray alloc] init];
+    for (Class argumentClass in [self argumentClasses]) {
+        [arguments addObject:[injector getInstanceOf:argumentClass]];
     }
-    return self;
-}
-
-- (id)getInstanceOf:(Class)klass
-{
-    RVTDependency *dependency = [[self module] dependencyForInstanceOf:klass];
-    if (dependency == nil) {
-        [NSException raise:NSInternalInconsistencyException format:@"Injector does not know how to resolve dependency on %@", klass];
+    
+    NSMethodSignature *methodSignature = [[self klass] instanceMethodSignatureForSelector:[self selector]];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    [invocation setSelector:[self selector]];
+    for (NSUInteger index = 0; index < [arguments count]; index ++) {
+        id argument = arguments[index];
+        [invocation setArgument:&argument atIndex:index + 2];
     }
-    return [dependency resolveWithInjector:self];
+    
+    [invocation retainArguments];
+    [invocation invokeWithTarget:object];
+    
+    __unsafe_unretained id initialized;
+    [invocation getReturnValue:&initialized];
+    
+    return initialized;
 }
 
 @end

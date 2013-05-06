@@ -36,4 +36,9 @@
     return self;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"[Car driver: %@\n\tengine: %@\n\twheels:%@]", [self driver], [self engine], [self wheels]];
+}
+
 @end

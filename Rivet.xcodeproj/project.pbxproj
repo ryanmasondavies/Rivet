@@ -18,13 +18,15 @@
 		948CCC631733F901002972A8 /* RVTDriver.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5C1733F901002972A8 /* RVTDriver.m */; };
 		948CCC641733F901002972A8 /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC5E1733F901002972A8 /* RVTEngine.m */; };
 		948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */; };
-		948CCC6B1733FA58002972A8 /* RVTNewInstanceProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC6A1733FA58002972A8 /* RVTNewInstanceProviderSpec.m */; };
-		94B5009B1736596000570893 /* RVTNewInstanceProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500941736596000570893 /* RVTNewInstanceProvider.m */; };
-		94B5009C1736596000570893 /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500971736596000570893 /* RVTInjector.m */; };
-		94B500A117367B7500570893 /* RVTMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A017367B7500570893 /* RVTMethod.m */; };
-		94B500A317367D2F00570893 /* RVTMethodSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A217367D2F00570893 /* RVTMethodSpec.m */; };
 		94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */; };
 		94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A71736811500570893 /* RVTSequentialProvider.m */; };
+		94C72B481737C65200CCEFD3 /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B471737C65200CCEFD3 /* RVTInitializer.m */; };
+		94C72B4B1737C65800CCEFD3 /* RVTDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B4A1737C65800CCEFD3 /* RVTDependency.m */; };
+		94C72B4E1737C66200CCEFD3 /* RVTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B4D1737C66200CCEFD3 /* RVTModule.m */; };
+		94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B501737C66C00CCEFD3 /* RVTInjector.m */; };
+		94C72B531737C87000CCEFD3 /* RVTModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */; };
+		94C72B551737C87800CCEFD3 /* RVTDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B541737C87800CCEFD3 /* RVTDependencySpec.m */; };
+		94C72B571737C88500CCEFD3 /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B561737C88500CCEFD3 /* RVTInitializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,19 +67,22 @@
 		948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConstructorInjectionSpec.m; sourceTree = "<group>"; };
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
-		948CCC6A1733FA58002972A8 /* RVTNewInstanceProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTNewInstanceProviderSpec.m; sourceTree = "<group>"; };
 		94B500921736596000570893 /* Rivet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rivet.h; sourceTree = "<group>"; };
-		94B500931736596000570893 /* RVTNewInstanceProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTNewInstanceProvider.h; sourceTree = "<group>"; };
-		94B500941736596000570893 /* RVTNewInstanceProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTNewInstanceProvider.m; sourceTree = "<group>"; };
-		94B500961736596000570893 /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInjector.h; sourceTree = "<group>"; };
-		94B500971736596000570893 /* RVTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjector.m; sourceTree = "<group>"; };
 		94B5009A1736596000570893 /* RVTProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProvider.h; sourceTree = "<group>"; };
-		94B5009F17367B7500570893 /* RVTMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTMethod.h; sourceTree = "<group>"; };
-		94B500A017367B7500570893 /* RVTMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTMethod.m; sourceTree = "<group>"; };
-		94B500A217367D2F00570893 /* RVTMethodSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTMethodSpec.m; sourceTree = "<group>"; };
 		94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProviderSpec.m; sourceTree = "<group>"; };
 		94B500A61736811500570893 /* RVTSequentialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTSequentialProvider.h; sourceTree = "<group>"; };
 		94B500A71736811500570893 /* RVTSequentialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProvider.m; sourceTree = "<group>"; };
+		94C72B461737C65200CCEFD3 /* RVTInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInitializer.h; sourceTree = "<group>"; };
+		94C72B471737C65200CCEFD3 /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
+		94C72B491737C65800CCEFD3 /* RVTDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependency.h; sourceTree = "<group>"; };
+		94C72B4A1737C65800CCEFD3 /* RVTDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependency.m; sourceTree = "<group>"; };
+		94C72B4C1737C66200CCEFD3 /* RVTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTModule.h; sourceTree = "<group>"; };
+		94C72B4D1737C66200CCEFD3 /* RVTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModule.m; sourceTree = "<group>"; };
+		94C72B4F1737C66C00CCEFD3 /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInjector.h; sourceTree = "<group>"; };
+		94C72B501737C66C00CCEFD3 /* RVTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjector.m; sourceTree = "<group>"; };
+		94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModuleSpec.m; sourceTree = "<group>"; };
+		94C72B541737C87800CCEFD3 /* RVTDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencySpec.m; sourceTree = "<group>"; };
+		94C72B561737C88500CCEFD3 /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -182,9 +187,10 @@
 			isa = PBXGroup;
 			children = (
 				940A45A41734100A00EA5788 /* RVTInjectorSpec.m */,
-				948CCC6A1733FA58002972A8 /* RVTNewInstanceProviderSpec.m */,
+				94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */,
+				94C72B541737C87800CCEFD3 /* RVTDependencySpec.m */,
+				94C72B561737C88500CCEFD3 /* RVTInitializer.m */,
 				94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */,
-				94B500A217367D2F00570893 /* RVTMethodSpec.m */,
 			);
 			path = "Unit Specs";
 			sourceTree = "<group>";
@@ -193,15 +199,17 @@
 			isa = PBXGroup;
 			children = (
 				94B500921736596000570893 /* Rivet.h */,
-				94B500961736596000570893 /* RVTInjector.h */,
-				94B500971736596000570893 /* RVTInjector.m */,
+				94C72B4F1737C66C00CCEFD3 /* RVTInjector.h */,
+				94C72B501737C66C00CCEFD3 /* RVTInjector.m */,
+				94C72B4C1737C66200CCEFD3 /* RVTModule.h */,
+				94C72B4D1737C66200CCEFD3 /* RVTModule.m */,
+				94C72B491737C65800CCEFD3 /* RVTDependency.h */,
+				94C72B4A1737C65800CCEFD3 /* RVTDependency.m */,
+				94C72B461737C65200CCEFD3 /* RVTInitializer.h */,
+				94C72B471737C65200CCEFD3 /* RVTInitializer.m */,
 				94B5009A1736596000570893 /* RVTProvider.h */,
-				94B500931736596000570893 /* RVTNewInstanceProvider.h */,
-				94B500941736596000570893 /* RVTNewInstanceProvider.m */,
 				94B500A61736811500570893 /* RVTSequentialProvider.h */,
 				94B500A71736811500570893 /* RVTSequentialProvider.m */,
-				94B5009F17367B7500570893 /* RVTMethod.h */,
-				94B500A017367B7500570893 /* RVTMethod.m */,
 			);
 			path = Rivet;
 			sourceTree = "<group>";
@@ -334,10 +342,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B5009B1736596000570893 /* RVTNewInstanceProvider.m in Sources */,
-				94B5009C1736596000570893 /* RVTInjector.m in Sources */,
-				94B500A117367B7500570893 /* RVTMethod.m in Sources */,
 				94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */,
+				94C72B481737C65200CCEFD3 /* RVTInitializer.m in Sources */,
+				94C72B4B1737C65800CCEFD3 /* RVTDependency.m in Sources */,
+				94C72B4E1737C66200CCEFD3 /* RVTModule.m in Sources */,
+				94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +358,11 @@
 				948CCC631733F901002972A8 /* RVTDriver.m in Sources */,
 				948CCC641733F901002972A8 /* RVTEngine.m in Sources */,
 				948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */,
-				948CCC6B1733FA58002972A8 /* RVTNewInstanceProviderSpec.m in Sources */,
 				940A45A51734100A00EA5788 /* RVTInjectorSpec.m in Sources */,
-				94B500A317367D2F00570893 /* RVTMethodSpec.m in Sources */,
 				94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */,
+				94C72B531737C87000CCEFD3 /* RVTModuleSpec.m in Sources */,
+				94C72B551737C87800CCEFD3 /* RVTDependencySpec.m in Sources */,
+				94C72B571737C88500CCEFD3 /* RVTInitializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

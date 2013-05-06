@@ -21,11 +21,9 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+@class RVTModule;
 
 @interface RVTInjector : NSObject
-
-- (id)initWithDependencies:(NSArray *)dependencies;
-
+- (id)initWithModule:(RVTModule *)module;
 - (id)getInstanceOf:(Class)klass;
-
 @end

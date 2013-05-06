@@ -74,7 +74,7 @@ when(@"initialized with two objects", ^{
         });
         
         it(@"raises an exception", ^{
-            expect([provider get]).to.raise(NSRangeException);
+            expect(^{ [provider get]; }).to.raise(NSRangeException);
         });
     });
 });

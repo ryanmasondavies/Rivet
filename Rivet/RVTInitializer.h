@@ -20,44 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTMethod.h"
-#import "RVTProvider.h"
+#import <Foundation/Foundation.h>
+@class RVTInjector;
 
-@interface RVTMethod ()
+@interface RVTInitializer : NSObject
 @property (strong, nonatomic) Class klass;
 @property (assign, nonatomic) SEL selector;
-@property (strong, nonatomic) NSArray *argumentProviders;
-@end
-
-@implementation RVTMethod
-
-- (id)initWithClass:(Class)klass selector:(SEL)selector argumentProviders:(NSArray *)argumentProviders
-{
-    if (self = [self init]) {
-        self.klass = klass;
-        self.selector = selector;
-        self.argumentProviders = argumentProviders;
-    }
-    return self;
-}
-
-- (void)applyToObject:(id)object
-{
-    NSMutableArray *arguments = [[NSMutableArray alloc] init];
-    for (id<RVTProvider> provider in [self argumentProviders]) {
-        [arguments addObject:[provider get]];
-    }
-    
-    NSMethodSignature *methodSignature = [[self klass] instanceMethodSignatureForSelector:[self selector]];
-    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [invocation setSelector:[self selector]];
-    for (NSUInteger index = 0; index < [arguments count]; index ++) {
-        id argument = arguments[index];
-        [invocation setArgument:&argument atIndex:index + 2];
-    }
-    
-    [invocation retainArguments];
-    [invocation invokeWithTarget:object];
-}
-
+@property (strong, nonatomic) NSArray *argumentClasses;
+- (id)initializeInstance:(id)object injector:(RVTInjector *)injector;
 @end

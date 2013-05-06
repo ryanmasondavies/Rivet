@@ -20,31 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTInjector.h"
-#import "RVTModule.h"
-#import "RVTDependency.h"
+#import <Foundation/Foundation.h>
+@class RVTInitializer;
+@class RVTInjector;
 
-@interface RVTInjector ()
-@property (strong, nonatomic) RVTModule *module;
-@end
-
-@implementation RVTInjector
-
-- (id)initWithModule:(RVTModule *)module
-{
-    if (self = [self init]) {
-        self.module = module;
-    }
-    return self;
-}
-
-- (id)getInstanceOf:(Class)klass
-{
-    RVTDependency *dependency = [[self module] dependencyForInstanceOf:klass];
-    if (dependency == nil) {
-        [NSException raise:NSInternalInconsistencyException format:@"Injector does not know how to resolve dependency on %@", klass];
-    }
-    return [dependency resolveWithInjector:self];
-}
-
+@interface RVTDependency : NSObject
+@property (strong, nonatomic) Class klass;
+@property (strong, nonatomic) RVTInitializer *initializer;
+- (id)resolveWithInjector:(RVTInjector *)injector;
 @end

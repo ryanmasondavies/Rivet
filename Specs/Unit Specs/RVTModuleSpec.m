@@ -20,11 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+SpecBegin(RVTModuleSpec)
 
-@interface RVTMethod : NSObject
-
-- (id)initWithClass:(Class)klass selector:(SEL)selector argumentProviders:(NSArray *)argumentProviders;
-- (void)applyToObject:(id)object;
-
-@end
+SpecEnd
