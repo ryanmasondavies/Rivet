@@ -21,11 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTInjector;
+#import "RVTProvider.h"
 
-@interface RVTInitializer : NSObject
+@interface RVTInitializer : NSObject <RVTProvider>
 @property (strong, nonatomic) Class klass;
 @property (assign, nonatomic) SEL selector;
 @property (strong, nonatomic) NSArray *providers;
-- (id)initializedInstance;
 @end

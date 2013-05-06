@@ -21,9 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTDependency;
+@protocol RVTProvider;
 
 @interface RVTModule : NSObject
-- (id)initWithDependencies:(NSArray *)dependencies;
-- (RVTDependency *)dependencyForInstanceOf:(Class)klass;
+- (id)initWithProviders:(NSMutableDictionary *)providers;
+- (id)objectForKeyedSubscript:(Class)klass;
+- (void)setObject:(id<RVTProvider>)provider forKeyedSubscript:(Class)klass;
 @end

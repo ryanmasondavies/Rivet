@@ -21,11 +21,10 @@
 // THE SOFTWARE.
 
 #import "RVTInitializer.h"
-#import "RVTProvider.h"
 
 @implementation RVTInitializer
 
-- (id)initializedInstance
+- (id)get
 {
     id object = [[self klass] alloc];
     

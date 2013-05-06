@@ -46,58 +46,43 @@
 
 @implementation RVTConstructorInjectionTests
 
-- (RVTDependency *)carWithInjector:(RVTInjector *)injector
+- (id<RVTProvider>)carWithInjector:(RVTInjector *)injector
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] init];
     [initializer setKlass:[RVTCar class]];
     [initializer setSelector:@selector(initWithDriver:engine:wheels:)];
     [initializer setProviders:@[RVTInject([RVTDriver class]), RVTInject([RVTEngine class]), [RVTWheelsProvider new]]];
-    
-    RVTDependency *dependency = [[RVTDependency alloc] init];
-    [dependency setKlass:[RVTCar class]];
-    [dependency setInitializer:initializer];
-    
-    return dependency;
+    return initializer;
 }
 
-- (RVTDependency *)driverWithInjector:(RVTInjector *)injector
+- (id<RVTProvider>)driverWithInjector:(RVTInjector *)injector
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] init];
     [initializer setKlass:[RVTDriver class]];
     [initializer setSelector:@selector(initWithName:)];
     [initializer setProviders:@[RVTValue(@"John Smith")]];
-    
-    RVTDependency *dependency = [[RVTDependency alloc] init];
-    [dependency setKlass:[RVTDriver class]];
-    [dependency setInitializer:initializer];
-    
-    return dependency;
+    return initializer;
 }
 
-- (RVTDependency *)engineWithInjector:(RVTInjector *)injector
+- (id<RVTProvider>)engineWithInjector:(RVTInjector *)injector
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] init];
     [initializer setKlass:[RVTEngine class]];
     [initializer setSelector:@selector(init)];
-    
-    RVTDependency *dependency = [[RVTDependency alloc] init];
-    [dependency setKlass:[RVTEngine class]];
-    [dependency setInitializer:initializer];
-    
-    return dependency;
+    return initializer;
 }
 
 - (void)test
 {
-    NSMutableArray *dependencies = [[NSMutableArray alloc] init];
-    RVTModule *module = [[RVTModule alloc] initWithDependencies:dependencies];
+    NSMutableDictionary *providers = [[NSMutableDictionary alloc] init];
+    RVTModule *module = [[RVTModule alloc] initWithProviders:providers];
     RVTInjector *injector = [[RVTInjector alloc] initWithModule:module];
     
-    dependencies[0] = [self carWithInjector:injector];
-    dependencies[1] = [self driverWithInjector:injector];
-    dependencies[2] = [self engineWithInjector:injector];
+    module[[RVTCar    class]] = [self    carWithInjector:injector];
+    module[[RVTDriver class]] = [self driverWithInjector:injector];
+    module[[RVTEngine class]] = [self engineWithInjector:injector];
     
-    NSLog(@"Injected car: %@", [injector instanceOf:[RVTCar class]]);
+    NSLog(@"Injected car: %@",    [injector instanceOf:[RVTCar    class]]);
     NSLog(@"Injected driver: %@", [injector instanceOf:[RVTDriver class]]);
     NSLog(@"Injected engine: %@", [injector instanceOf:[RVTEngine class]]);
 }

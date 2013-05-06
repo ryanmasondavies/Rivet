@@ -21,30 +21,32 @@
 // THE SOFTWARE.
 
 #import "RVTModule.h"
-#import "RVTDependency.h"
+#import "RVTProvider.h"
 
 @interface RVTModule ()
-@property (strong, nonatomic) NSArray *dependencies;
+@property (strong, nonatomic) NSMutableDictionary *providers;
 @end
 
 @implementation RVTModule
 
-- (id)initWithDependencies:(NSArray *)dependencies
+- (id)initWithProviders:(NSMutableDictionary *)providers
 {
     if (self = [self init]) {
-        self.dependencies = dependencies;
+        self.providers = providers;
     }
     return self;
 }
 
-- (RVTDependency *)dependencyForInstanceOf:(Class)klass
+- (id)objectForKeyedSubscript:(Class)klass
 {
-    for (RVTDependency *dependency in [self dependencies]) {
-        if ([dependency klass] == klass) {
-            return dependency;
-        }
-    }
-    return nil;
+    NSString *key = NSStringFromClass(klass);
+    return [self providers][key];
+}
+
+- (void)setObject:(id<RVTProvider>)provider forKeyedSubscript:(Class)klass
+{
+    NSString *key = NSStringFromClass(klass);
+    [self providers][key] = provider;
 }
 
 @end

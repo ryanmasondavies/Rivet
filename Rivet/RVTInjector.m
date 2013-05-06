@@ -22,7 +22,7 @@
 
 #import "RVTInjector.h"
 #import "RVTModule.h"
-#import "RVTDependency.h"
+#import "RVTProvider.h"
 
 @interface RVTInjector ()
 @property (strong, nonatomic) RVTModule *module;
@@ -40,11 +40,8 @@
 
 - (id)instanceOf:(Class)klass
 {
-    RVTDependency *dependency = [[self module] dependencyForInstanceOf:klass];
-    if (dependency == nil) {
-        [NSException raise:NSInternalInconsistencyException format:@"Injector does not know how to resolve dependency on %@", klass];
-    }
-    return [dependency resolveWithInjector:self];
+    id<RVTProvider> provider = [self module][klass];
+    return [provider get];
 }
 
 @end

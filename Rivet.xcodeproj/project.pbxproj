@@ -21,7 +21,6 @@
 		94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */; };
 		94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A71736811500570893 /* RVTSequentialProvider.m */; };
 		94C72B481737C65200CCEFD3 /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B471737C65200CCEFD3 /* RVTInitializer.m */; };
-		94C72B4B1737C65800CCEFD3 /* RVTDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B4A1737C65800CCEFD3 /* RVTDependency.m */; };
 		94C72B4E1737C66200CCEFD3 /* RVTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B4D1737C66200CCEFD3 /* RVTModule.m */; };
 		94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B501737C66C00CCEFD3 /* RVTInjector.m */; };
 		94C72B531737C87000CCEFD3 /* RVTModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */; };
@@ -78,8 +77,6 @@
 		94B500A71736811500570893 /* RVTSequentialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProvider.m; sourceTree = "<group>"; };
 		94C72B461737C65200CCEFD3 /* RVTInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInitializer.h; sourceTree = "<group>"; };
 		94C72B471737C65200CCEFD3 /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
-		94C72B491737C65800CCEFD3 /* RVTDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependency.h; sourceTree = "<group>"; };
-		94C72B4A1737C65800CCEFD3 /* RVTDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependency.m; sourceTree = "<group>"; };
 		94C72B4C1737C66200CCEFD3 /* RVTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTModule.h; sourceTree = "<group>"; };
 		94C72B4D1737C66200CCEFD3 /* RVTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModule.m; sourceTree = "<group>"; };
 		94C72B4F1737C66C00CCEFD3 /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInjector.h; sourceTree = "<group>"; };
@@ -217,8 +214,6 @@
 				94C72B501737C66C00CCEFD3 /* RVTInjector.m */,
 				94C72B4C1737C66200CCEFD3 /* RVTModule.h */,
 				94C72B4D1737C66200CCEFD3 /* RVTModule.m */,
-				94C72B491737C65800CCEFD3 /* RVTDependency.h */,
-				94C72B4A1737C65800CCEFD3 /* RVTDependency.m */,
 				94C72B461737C65200CCEFD3 /* RVTInitializer.h */,
 				94C72B471737C65200CCEFD3 /* RVTInitializer.m */,
 				94B5009A1736596000570893 /* RVTProvider.h */,
@@ -362,7 +357,6 @@
 			files = (
 				94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */,
 				94C72B481737C65200CCEFD3 /* RVTInitializer.m in Sources */,
-				94C72B4B1737C65800CCEFD3 /* RVTDependency.m in Sources */,
 				94C72B4E1737C66200CCEFD3 /* RVTModule.m in Sources */,
 				94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */,
 				94C72B5A1737D6C400CCEFD3 /* RVTValueProvider.m in Sources */,
