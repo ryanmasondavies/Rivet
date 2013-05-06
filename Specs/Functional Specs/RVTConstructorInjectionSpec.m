@@ -23,18 +23,35 @@
 #import "RVTCar.h"
 #import "RVTDriver.h"
 #import "RVTEngine.h"
+#import "RVTWheel.h"
+
+#define RVTInject(klass) [[RVTInjectionProvider alloc] initWithClass:klass injector:injector]
+#define RVTValue(val) [[RVTValueProvider alloc] initWithValue:val]
+
+@interface RVTWheelsProvider : NSObject <RVTProvider>
+
+@end
+
+@implementation RVTWheelsProvider
+
+- (id)get
+{
+    return @[[RVTWheel new], [RVTWheel new], [RVTWheel new], [RVTWheel new]];
+}
+
+@end
 
 @interface RVTConstructorInjectionTests : SenTestCase
 @end
 
 @implementation RVTConstructorInjectionTests
 
-- (RVTDependency *)car
+- (RVTDependency *)carWithInjector:(RVTInjector *)injector
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] init];
     [initializer setKlass:[RVTCar class]];
     [initializer setSelector:@selector(initWithDriver:engine:wheels:)];
-    [initializer setArgumentClasses:@[[RVTDriver class], [RVTEngine class], [NSArray class]]];
+    [initializer setProviders:@[RVTInject([RVTDriver class]), RVTInject([RVTEngine class]), [RVTWheelsProvider new]]];
     
     RVTDependency *dependency = [[RVTDependency alloc] init];
     [dependency setKlass:[RVTCar class]];
@@ -43,11 +60,12 @@
     return dependency;
 }
 
-- (RVTDependency *)driver
+- (RVTDependency *)driverWithInjector:(RVTInjector *)injector
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] init];
     [initializer setKlass:[RVTDriver class]];
-    [initializer setSelector:@selector(init)];
+    [initializer setSelector:@selector(initWithName:)];
+    [initializer setProviders:@[RVTValue(@"John Smith")]];
     
     RVTDependency *dependency = [[RVTDependency alloc] init];
     [dependency setKlass:[RVTDriver class]];
@@ -56,7 +74,7 @@
     return dependency;
 }
 
-- (RVTDependency *)engine
+- (RVTDependency *)engineWithInjector:(RVTInjector *)injector
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] init];
     [initializer setKlass:[RVTEngine class]];
@@ -69,27 +87,19 @@
     return dependency;
 }
 
-- (RVTDependency *)wheels
-{
-    RVTInitializer *initializer = [[RVTInitializer alloc] init];
-    [initializer setKlass:[NSArray class]];
-    [initializer setSelector:@selector(init)];
-    
-    RVTDependency *dependency = [[RVTDependency alloc] init];
-    [dependency setKlass:[NSArray class]];
-    [dependency setInitializer:initializer];
-    
-    return dependency;
-}
-
 - (void)test
 {
-    RVTModule *module = [[RVTModule alloc] initWithDependencies:@[[self car], [self driver], [self engine], [self wheels]]];
+    NSMutableArray *dependencies = [[NSMutableArray alloc] init];
+    RVTModule *module = [[RVTModule alloc] initWithDependencies:dependencies];
     RVTInjector *injector = [[RVTInjector alloc] initWithModule:module];
     
-    NSLog(@"Injected car: %@", [injector getInstanceOf:[RVTCar class]]);
-    NSLog(@"Injected driver: %@", [injector getInstanceOf:[RVTDriver class]]);
-    NSLog(@"Injected engine: %@", [injector getInstanceOf:[RVTEngine class]]);
+    dependencies[0] = [self carWithInjector:injector];
+    dependencies[1] = [self driverWithInjector:injector];
+    dependencies[2] = [self engineWithInjector:injector];
+    
+    NSLog(@"Injected car: %@", [injector instanceOf:[RVTCar class]]);
+    NSLog(@"Injected driver: %@", [injector instanceOf:[RVTDriver class]]);
+    NSLog(@"Injected engine: %@", [injector instanceOf:[RVTEngine class]]);
 }
 
 @end
