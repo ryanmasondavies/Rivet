@@ -37,31 +37,31 @@
     providers[0] = [[RVTInjectionProvider alloc] initWithClass:[RVTDriver class] injector:injector];
     providers[1] = [[RVTInjectionProvider alloc] initWithClass:[RVTEngine class] injector:injector];
     providers[2] = [[RVTRecursiveProvider alloc] initWithProvider:[[RVTInjectionProvider alloc] initWithClass:[RVTWheelsProvider class] injector:injector] recursions:2];
-    return [[RVTInitializer alloc] initWithClass:[RVTCar class] selector:@selector(initWithDriver:engine:wheels:) providers:providers];
+    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTCar class] selector:@selector(initWithDriver:engine:wheels:) providers:providers];
 }
 
 - (id<RVTProvider>)driverWithInjector:(RVTInjector *)injector
 {
     NSMutableArray *providers = [[NSMutableArray alloc] init];
     providers[0] = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
-    return [[RVTInitializer alloc] initWithClass:[RVTDriver class] selector:@selector(initWithName:) providers:providers];
+    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTDriver class] selector:@selector(initWithName:) providers:providers];
 }
 
 - (id<RVTProvider>)engineWithInjector:(RVTInjector *)injector
 {
-    return [[RVTInitializer alloc] initWithClass:[RVTEngine class] selector:@selector(init) providers:nil];
+    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTEngine class] selector:@selector(init) providers:nil];
 }
 
 - (id<RVTProvider>)wheelsProviderWithInjector:(RVTInjector *)injector
 {
     NSMutableArray *providers = [[NSMutableArray alloc] init];
     providers[0] = [[RVTValueProvider alloc] initWithValue:[[RVTInjectionProvider alloc] initWithClass:[RVTWheel class] injector:injector]];
-    return [[RVTInitializer alloc] initWithClass:[RVTWheelsProvider class] selector:@selector(initWithWheelProvider:) providers:providers];
+    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTWheelsProvider class] selector:@selector(initWithWheelProvider:) providers:providers];
 }
 
 - (id<RVTProvider>)wheelWithInjector:(RVTInjector *)injector
 {
-    return [[RVTInitializer alloc] initWithClass:[RVTWheel class] selector:@selector(init) providers:nil];
+    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTWheel class] selector:@selector(init) providers:nil];
 }
 
 - (void)test

@@ -20,15 +20,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTInitializer.h"
+#import "RVTInitializedObjectProvider.h"
 
-@interface RVTInitializer ()
+@interface RVTInitializedObjectProvider ()
 @property (strong, nonatomic) Class klass;
 @property (assign, nonatomic) SEL selector;
 @property (strong, nonatomic) NSArray *providers;
 @end
 
-@implementation RVTInitializer
+@implementation RVTInitializedObjectProvider
 
 - (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers
 {

@@ -20,11 +20,11 @@
 		948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */; };
 		94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */; };
 		94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A71736811500570893 /* RVTSequentialProvider.m */; };
-		94C72B481737C65200CCEFD3 /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B471737C65200CCEFD3 /* RVTInitializer.m */; };
+		94C72B481737C65200CCEFD3 /* RVTInitializedObjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B471737C65200CCEFD3 /* RVTInitializedObjectProvider.m */; };
 		94C72B4E1737C66200CCEFD3 /* RVTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B4D1737C66200CCEFD3 /* RVTModule.m */; };
 		94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B501737C66C00CCEFD3 /* RVTInjector.m */; };
 		94C72B531737C87000CCEFD3 /* RVTModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */; };
-		94C72B571737C88500CCEFD3 /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B561737C88500CCEFD3 /* RVTInitializer.m */; };
+		94C72B571737C88500CCEFD3 /* RVTInitializedObjectProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B561737C88500CCEFD3 /* RVTInitializedObjectProviderSpec.m */; };
 		94C72B5A1737D6C400CCEFD3 /* RVTValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B591737D6C400CCEFD3 /* RVTValueProvider.m */; };
 		94C72B5C1737D70400CCEFD3 /* RVTValueProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B5B1737D70300CCEFD3 /* RVTValueProviderSpec.m */; };
 		94C72B5F1737D7FF00CCEFD3 /* RVTInjectionProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B5E1737D7FF00CCEFD3 /* RVTInjectionProvider.m */; };
@@ -78,14 +78,14 @@
 		94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProviderSpec.m; sourceTree = "<group>"; };
 		94B500A61736811500570893 /* RVTSequentialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTSequentialProvider.h; sourceTree = "<group>"; };
 		94B500A71736811500570893 /* RVTSequentialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProvider.m; sourceTree = "<group>"; };
-		94C72B461737C65200CCEFD3 /* RVTInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInitializer.h; sourceTree = "<group>"; };
-		94C72B471737C65200CCEFD3 /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
+		94C72B461737C65200CCEFD3 /* RVTInitializedObjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInitializedObjectProvider.h; sourceTree = "<group>"; };
+		94C72B471737C65200CCEFD3 /* RVTInitializedObjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializedObjectProvider.m; sourceTree = "<group>"; };
 		94C72B4C1737C66200CCEFD3 /* RVTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTModule.h; sourceTree = "<group>"; };
 		94C72B4D1737C66200CCEFD3 /* RVTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModule.m; sourceTree = "<group>"; };
 		94C72B4F1737C66C00CCEFD3 /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInjector.h; sourceTree = "<group>"; };
 		94C72B501737C66C00CCEFD3 /* RVTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjector.m; sourceTree = "<group>"; };
 		94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModuleSpec.m; sourceTree = "<group>"; };
-		94C72B561737C88500CCEFD3 /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
+		94C72B561737C88500CCEFD3 /* RVTInitializedObjectProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializedObjectProviderSpec.m; sourceTree = "<group>"; };
 		94C72B581737D6C400CCEFD3 /* RVTValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTValueProvider.h; sourceTree = "<group>"; };
 		94C72B591737D6C400CCEFD3 /* RVTValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTValueProvider.m; sourceTree = "<group>"; };
 		94C72B5B1737D70300CCEFD3 /* RVTValueProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTValueProviderSpec.m; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 			children = (
 				940A45A41734100A00EA5788 /* RVTInjectorSpec.m */,
 				94C72B521737C87000CCEFD3 /* RVTModuleSpec.m */,
-				94C72B561737C88500CCEFD3 /* RVTInitializer.m */,
+				94C72B561737C88500CCEFD3 /* RVTInitializedObjectProviderSpec.m */,
 				94C72B691737F2D200CCEFD3 /* RVTInjectionProviderSpec.m */,
 				94C72B6B1737F2E600CCEFD3 /* RVTRecursiveProviderSpec.m */,
 				94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */,
@@ -225,9 +225,9 @@
 				94C72B501737C66C00CCEFD3 /* RVTInjector.m */,
 				94C72B4C1737C66200CCEFD3 /* RVTModule.h */,
 				94C72B4D1737C66200CCEFD3 /* RVTModule.m */,
-				94C72B461737C65200CCEFD3 /* RVTInitializer.h */,
-				94C72B471737C65200CCEFD3 /* RVTInitializer.m */,
 				94B5009A1736596000570893 /* RVTProvider.h */,
+				94C72B461737C65200CCEFD3 /* RVTInitializedObjectProvider.h */,
+				94C72B471737C65200CCEFD3 /* RVTInitializedObjectProvider.m */,
 				94C72B5D1737D7FF00CCEFD3 /* RVTInjectionProvider.h */,
 				94C72B5E1737D7FF00CCEFD3 /* RVTInjectionProvider.m */,
 				94C72B661737F1DA00CCEFD3 /* RVTRecursiveProvider.h */,
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */,
-				94C72B481737C65200CCEFD3 /* RVTInitializer.m in Sources */,
+				94C72B481737C65200CCEFD3 /* RVTInitializedObjectProvider.m in Sources */,
 				94C72B4E1737C66200CCEFD3 /* RVTModule.m in Sources */,
 				94C72B511737C66C00CCEFD3 /* RVTInjector.m in Sources */,
 				94C72B5A1737D6C400CCEFD3 /* RVTValueProvider.m in Sources */,
@@ -389,7 +389,7 @@
 				940A45A51734100A00EA5788 /* RVTInjectorSpec.m in Sources */,
 				94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */,
 				94C72B531737C87000CCEFD3 /* RVTModuleSpec.m in Sources */,
-				94C72B571737C88500CCEFD3 /* RVTInitializer.m in Sources */,
+				94C72B571737C88500CCEFD3 /* RVTInitializedObjectProviderSpec.m in Sources */,
 				94C72B5C1737D70400CCEFD3 /* RVTValueProviderSpec.m in Sources */,
 				94C72B621737DB1C00CCEFD3 /* RVTWheel.m in Sources */,
 				94C72B651737EB0C00CCEFD3 /* RVTWheelsProvider.m in Sources */,

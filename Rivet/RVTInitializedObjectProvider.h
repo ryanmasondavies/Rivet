@@ -20,8 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-SpecBegin(RVTInitializer)
+#import <Foundation/Foundation.h>
+#import "RVTProvider.h"
 
-PENDING;
+@interface RVTInitializedObjectProvider : NSObject <RVTProvider>
 
-SpecEnd
+- (id)initWithClass:(Class)klass selector:(SEL)selector providers:(NSArray *)providers;
+
+@end

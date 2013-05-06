@@ -22,7 +22,7 @@
 
 #import "RVTInjector.h"
 #import "RVTModule.h"
-#import "RVTInitializer.h"
+#import "RVTInitializedObjectProvider.h"
 #import "RVTInjectionProvider.h"
 #import "RVTRecursiveProvider.h"
 #import "RVTSequentialProvider.h"
