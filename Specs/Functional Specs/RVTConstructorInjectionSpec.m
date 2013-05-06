@@ -88,6 +88,8 @@
     RVTInjector *injector = [[RVTInjector alloc] initWithModule:module];
     
     NSLog(@"Injected car: %@", [injector getInstanceOf:[RVTCar class]]);
+    NSLog(@"Injected driver: %@", [injector getInstanceOf:[RVTDriver class]]);
+    NSLog(@"Injected engine: %@", [injector getInstanceOf:[RVTEngine class]]);
 }
 
 @end
