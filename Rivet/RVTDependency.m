@@ -27,9 +27,7 @@
 
 - (id)resolveWithInjector:(RVTInjector *)injector
 {
-    id object = [[self klass] alloc];
-    object = [[self initializer] initializeInstance:object injector:injector];
-    return object;
+    return [[self initializer] initializedInstance];
 }
 
 @end
