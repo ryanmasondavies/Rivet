@@ -20,10 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTDependencyMap.h"
-#import "RVTDependency.h"
-#import "RVTInitializer.h"
-#import "RVTProperty.h"
-#import "RVTInjector.h"
-#import "RVTSequentialProvider.h"
-#import "RVTValueProvider.h"
+#ifndef _RIVET_
+#   import "RVTDependencyMap.h"
+#   import "RVTDependency.h"
+#   import "RVTInitializer.h"
+#   import "RVTProperty.h"
+#   import "RVTInjector.h"
+#   import "RVTSequentialProvider.h"
+#   import "RVTValueProvider.h"
+#endif
