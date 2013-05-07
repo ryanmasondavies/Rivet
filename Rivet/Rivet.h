@@ -20,10 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTRVTInjector.h"
-#import "RVTModule.h"
-#import "RVTInitializedObjectProvider.h"
-#import "RVTInjectionProvider.h"
-#import "RVTRecursiveProvider.h"
+#import "RVTDependencyMap.h"
+#import "RVTDependency.h"
+#import "RVTInitializer.h"
+#import "RVTProperty.h"
+#import "RVTInjector.h"
 #import "RVTSequentialProvider.h"
 #import "RVTValueProvider.h"
