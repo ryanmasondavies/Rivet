@@ -20,60 +20,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import "RVTCar.h"
+#import "RVTEngine.h"
+#import "RVTFirefighter.h"
+#import "RVTPerson.h"
+
 @interface RVTConstructorInjectionTests : SenTestCase
 @end
 
 @implementation RVTConstructorInjectionTests
 
-//- (id<RVTProvider>)carWithRVTInjector:(RVTRVTInjector *)injector
-//{
-//    NSMutableArray *providers = [[NSMutableArray alloc] init];
-//    providers[0] = [[RVTInjectionProvider alloc] initWithClass:[RVTDriver class] injector:injector];
-//    providers[1] = [[RVTInjectionProvider alloc] initWithClass:[RVTEngine class] injector:injector];
-//    providers[2] = [[RVTRecursiveProvider alloc] initWithProvider:[[RVTInjectionProvider alloc] initWithClass:[RVTWheelsProvider class] injector:injector] recursions:2];
-//    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTCar class] selector:@selector(initWithDriver:engine:wheels:) providers:providers];
-//}
-//
-//- (id<RVTProvider>)driverWithRVTInjector:(RVTRVTInjector *)injector
-//{
-//    NSMutableArray *providers = [[NSMutableArray alloc] init];
-//    providers[0] = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
-//    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTDriver class] selector:@selector(initWithName:) providers:providers];
-//}
-//
-//- (id<RVTProvider>)engineWithRVTInjector:(RVTRVTInjector *)injector
-//{
-//    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTEngine class] selector:@selector(init) providers:nil];
-//}
-//
-//- (id<RVTProvider>)wheelsProviderWithRVTInjector:(RVTRVTInjector *)injector
-//{
-//    NSMutableArray *providers = [[NSMutableArray alloc] init];
-//    providers[0] = [[RVTValueProvider alloc] initWithValue:[[RVTInjectionProvider alloc] initWithClass:[RVTWheel class] injector:injector]];
-//    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTWheelsProvider class] selector:@selector(initWithWheelProvider:) providers:providers];
-//}
-//
-//- (id<RVTProvider>)wheelWithRVTInjector:(RVTRVTInjector *)injector
-//{
-//    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTWheel class] selector:@selector(init) providers:nil];
-//}
-//
-//- (void)test
-//{
-//    NSMutableDictionary *providers = [[NSMutableDictionary alloc] init];
-//    RVTModule *module = [[RVTModule alloc] initWithProviders:providers];
-//    RVTRVTInjector *injector = [[RVTRVTInjector alloc] initWithModule:module];
-//    
-//    module[[RVTCar    class]] = [self carWithRVTInjector:injector];
-//    module[[RVTDriver class]] = [self driverWithRVTInjector:injector];
-//    module[[RVTEngine class]] = [self engineWithRVTInjector:injector];
-//    module[[RVTWheel  class]] = [self wheelWithRVTInjector:injector];
-//    module[[RVTWheelsProvider class]] = [self wheelsProviderWithRVTInjector:injector];
-//    
-//    NSLog(@"Injected car:    %@", [injector instanceOf:[RVTCar    class]]);
-//    NSLog(@"Injected driver: %@", [injector instanceOf:[RVTDriver class]]);
-//    NSLog(@"Injected engine: %@", [injector instanceOf:[RVTEngine class]]);
-//    NSLog(@"Injected wheel:  %@", [injector instanceOf:[RVTWheel  class]]);
-//}
+- (void)test
+{
+    // how to make use of Provider objects to resolve dependencies, in only some cases?
+    
+    RVTDependencyMap *dependencies = [[RVTDependencyMap alloc] initWithDependencies:[[NSMutableDictionary alloc] init]];
+    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:dependencies];
+    
+    RVTInitializer *defaultInitializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
+    
+    dependencies[[RVTEngine class]] = [[RVTDependency alloc] initWithClass:[RVTEngine class] initializer:defaultInitializer properties:nil];
+    dependencies[[NSString class]] = [[RVTDependency alloc] initWithClass:[NSString class] initializer:defaultInitializer properties:nil];
+    dependencies[[RVTFirefighter class]] = [[RVTDependency alloc] initWithClass:[RVTFirefighter class] initializer:defaultInitializer properties:nil];
+    
+    RVTInitializer *driverInitializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithName:occupation:) dependencies:@[dependencies[[NSString class]], dependencies[[RVTFirefighter class]]]];
+    dependencies[[RVTPerson class]] = [[RVTDependency alloc] initWithClass:[RVTPerson class] initializer:driverInitializer properties:nil];
+    
+    RVTInitializer *carInitializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithEngine:driver:) dependencies:@[dependencies[[RVTEngine class]], dependencies[[RVTPerson class]]]];
+    dependencies[[RVTCar class]] = [[RVTDependency alloc] initWithClass:[RVTCar class] initializer:carInitializer properties:nil];
+    
+    [injector injectInstanceOf:[RVTCar class]];
+}
 
 @end
