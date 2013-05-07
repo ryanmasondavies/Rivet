@@ -31,7 +31,7 @@
 
 @implementation RVTConstructorInjectionTests
 
-//- (id<RVTProvider>)carWithInjector:(RVTInjector *)injector
+//- (id<RVTProvider>)carWithRVTInjector:(RVTRVTInjector *)injector
 //{
 //    NSMutableArray *providers = [[NSMutableArray alloc] init];
 //    providers[0] = [[RVTInjectionProvider alloc] initWithClass:[RVTDriver class] injector:injector];
@@ -40,26 +40,26 @@
 //    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTCar class] selector:@selector(initWithDriver:engine:wheels:) providers:providers];
 //}
 //
-//- (id<RVTProvider>)driverWithInjector:(RVTInjector *)injector
+//- (id<RVTProvider>)driverWithRVTInjector:(RVTRVTInjector *)injector
 //{
 //    NSMutableArray *providers = [[NSMutableArray alloc] init];
 //    providers[0] = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
 //    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTDriver class] selector:@selector(initWithName:) providers:providers];
 //}
 //
-//- (id<RVTProvider>)engineWithInjector:(RVTInjector *)injector
+//- (id<RVTProvider>)engineWithRVTInjector:(RVTRVTInjector *)injector
 //{
 //    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTEngine class] selector:@selector(init) providers:nil];
 //}
 //
-//- (id<RVTProvider>)wheelsProviderWithInjector:(RVTInjector *)injector
+//- (id<RVTProvider>)wheelsProviderWithRVTInjector:(RVTRVTInjector *)injector
 //{
 //    NSMutableArray *providers = [[NSMutableArray alloc] init];
 //    providers[0] = [[RVTValueProvider alloc] initWithValue:[[RVTInjectionProvider alloc] initWithClass:[RVTWheel class] injector:injector]];
 //    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTWheelsProvider class] selector:@selector(initWithWheelProvider:) providers:providers];
 //}
 //
-//- (id<RVTProvider>)wheelWithInjector:(RVTInjector *)injector
+//- (id<RVTProvider>)wheelWithRVTInjector:(RVTRVTInjector *)injector
 //{
 //    return [[RVTInitializedObjectProvider alloc] initWithClass:[RVTWheel class] selector:@selector(init) providers:nil];
 //}
@@ -68,13 +68,13 @@
 //{
 //    NSMutableDictionary *providers = [[NSMutableDictionary alloc] init];
 //    RVTModule *module = [[RVTModule alloc] initWithProviders:providers];
-//    RVTInjector *injector = [[RVTInjector alloc] initWithModule:module];
+//    RVTRVTInjector *injector = [[RVTRVTInjector alloc] initWithModule:module];
 //    
-//    module[[RVTCar    class]] = [self carWithInjector:injector];
-//    module[[RVTDriver class]] = [self driverWithInjector:injector];
-//    module[[RVTEngine class]] = [self engineWithInjector:injector];
-//    module[[RVTWheel  class]] = [self wheelWithInjector:injector];
-//    module[[RVTWheelsProvider class]] = [self wheelsProviderWithInjector:injector];
+//    module[[RVTCar    class]] = [self carWithRVTInjector:injector];
+//    module[[RVTDriver class]] = [self driverWithRVTInjector:injector];
+//    module[[RVTEngine class]] = [self engineWithRVTInjector:injector];
+//    module[[RVTWheel  class]] = [self wheelWithRVTInjector:injector];
+//    module[[RVTWheelsProvider class]] = [self wheelsProviderWithRVTInjector:injector];
 //    
 //    NSLog(@"Injected car:    %@", [injector instanceOf:[RVTCar    class]]);
 //    NSLog(@"Injected driver: %@", [injector instanceOf:[RVTDriver class]]);
