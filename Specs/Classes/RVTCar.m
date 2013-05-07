@@ -24,12 +24,12 @@
 #import "RVTEngine.h"
 #import "RVTPerson.h"
 
-@interface Car ()
+@interface RVTCar ()
 @property (strong, nonatomic) RVTEngine *engine;
 @property (strong, nonatomic) RVTPerson *driver;
 @end
 
-@implementation Car
+@implementation RVTCar
 
 - (id)initWithEngine:(RVTEngine *)engine driver:(RVTPerson *)driver
 {

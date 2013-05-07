@@ -20,12 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCar.h"
-#import "RVTDriver.h"
-#import "RVTEngine.h"
-#import "RVTWheel.h"
-#import "RVTWheelsProvider.h"
-
 @interface RVTConstructorInjectionTests : SenTestCase
 @end
 
