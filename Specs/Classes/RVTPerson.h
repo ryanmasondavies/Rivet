@@ -21,10 +21,11 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import "RVTProvider.h"
 
-@interface RVTWheelsProvider : NSObject <RVTProvider>
+@protocol RVTOccupation;
 
-- (id)initWithWheelProvider:(id<RVTProvider>)wheelProvider;
+@interface RVTPerson : NSObject
+
+- (id)initWithName:(NSString *)name occupation:(id<RVTOccupation>)occupation;
 
 @end

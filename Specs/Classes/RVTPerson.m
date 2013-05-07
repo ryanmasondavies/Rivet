@@ -20,8 +20,22 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "RVTPerson.h"
 
-@interface RVTWheel : NSObject
+@interface RVTPerson ()
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) id<RVTOccupation> occupation;
+@end
+
+@implementation RVTPerson
+
+- (id)initWithName:(NSString *)name occupation:(id<RVTOccupation>)occupation
+{
+    if (self = [self init]) {
+        self.name = name;
+        self.occupation = occupation;
+    }
+    return self;
+}
 
 @end
