@@ -30,8 +30,6 @@
 
 - (void)test
 {
-    // how to make use of Provider objects to resolve dependencies, in only some cases?
-    
     RVTTestModule *module = [[RVTTestModule alloc] init];
     RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
     [injector injectInstanceOf:[RVTCar class]];

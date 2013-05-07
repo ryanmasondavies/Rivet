@@ -64,6 +64,13 @@
 
 - (RVTDependency *)driver
 {
+    // how to make use of Provider objects to resolve dependencies, in only some cases?
+    // e.g having a dependency which resolves to a string value
+    // and how to extend the concept of providers to allow them to also have dependencies?
+    // almost like a two-part construction process:
+    // 1. Initialize provider using subdependencies.
+    // 2. Create actual object of interest by calling -[Provider get].
+    
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithName:occupation:) dependencies:@[[self string], [self firefighter]]];
     return [[RVTDependency alloc] initWithClass:[RVTPerson class] initializer:initializer properties:nil];
 }
