@@ -20,8 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-SpecBegin(RVTScope)
+#import <Foundation/Foundation.h>
+#import "RVTScope.h"
 
-PENDING;
+@interface RVTSingletonScope : NSObject <RVTScope>
 
-SpecEnd
+@end

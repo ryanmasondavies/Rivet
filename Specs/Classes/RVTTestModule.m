@@ -26,7 +26,19 @@
 #import "RVTFirefighter.h"
 #import "RVTPerson.h"
 
+@interface RVTTestModule ()
+@property (strong, nonatomic) id<RVTScope> singletonScope;
+@end
+
 @implementation RVTTestModule
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.singletonScope = [[RVTSingletonScope alloc] init];
+    }
+    return self;
+}
 
 - (RVTDependencyMap *)dependencies
 {
@@ -62,16 +74,11 @@
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTFirefighter class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:[self singletonScope]];
 }
 
 - (RVTDependency *)driver
 {
-    // how to make use of Provider objects to resolve dependencies on other providers?
-    // almost like a two-part construction process:
-    // 1. Initialize provider using subdependencies.
-    // 2. Create actual object of interest by calling -[Provider get].
-    
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithName:occupation:) dependencies:@[[self name], [self firefighter]]];
     RVTObjectProvider *carProvider = [[RVTObjectProvider alloc] initWithClass:[RVTPerson class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:carProvider scope:nil];

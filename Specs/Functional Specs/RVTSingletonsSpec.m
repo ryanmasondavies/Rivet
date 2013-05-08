@@ -20,12 +20,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTDependency;
+#import "RVTTestModule.h"
+#import "RVTCar.h"
+#import "RVTPerson.h"
 
-@protocol RVTScope <NSObject>
+SpecBegin(RVTSingletons)
 
-- (id)objectForDependency:(RVTDependency *)dependency;
-- (void)setObject:(id)object forDependency:(RVTDependency *)dependency;
+it(@"returns the same occupation for multiple drivers", ^{
+    RVTTestModule *module = [[RVTTestModule alloc] init];
+    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
+    
+    RVTCar *firstCar = [injector injectInstanceOf:[RVTCar class]];
+    RVTCar *secondCar = [injector injectInstanceOf:[RVTCar class]];
+    
+    RVTPerson *firstDriver = [firstCar driver];
+    RVTPerson *secondDriver = [secondCar driver];
+    
+    id<RVTOccupation> firstOccupation = [firstDriver occupation];
+    id<RVTOccupation> secondOccupation = [secondDriver occupation];
+    
+    expect(firstOccupation).to.equal(secondOccupation);
+});
 
-@end
+SpecEnd

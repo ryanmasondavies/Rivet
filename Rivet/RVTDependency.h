@@ -22,9 +22,9 @@
 
 #import <Foundation/Foundation.h>
 @protocol RVTProvider;
-@class RVTScope;
+@protocol RVTScope;
 
 @interface RVTDependency : NSObject
-- (id)initWithProvider:(id<RVTProvider>)provider scope:(RVTScope *)scope;
+- (id)initWithProvider:(id<RVTProvider>)provider scope:(id<RVTScope>)scope;
 - (id)resolve;
 @end

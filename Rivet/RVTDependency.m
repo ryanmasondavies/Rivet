@@ -22,15 +22,16 @@
 
 #import "RVTDependency.h"
 #import "RVTProvider.h"
+#import "RVTScope.h"
 
 @interface RVTDependency ()
 @property (strong, nonatomic) id<RVTProvider> provider;
-@property (strong, nonatomic) RVTScope *scope;
+@property (strong, nonatomic) id<RVTScope> scope;
 @end
 
 @implementation RVTDependency
 
-- (id)initWithProvider:(id<RVTProvider>)provider scope:(RVTScope *)scope
+- (id)initWithProvider:(id<RVTProvider>)provider scope:(id<RVTScope>)scope
 {
     if (self = [self init]) {
         self.provider = provider;
@@ -41,8 +42,12 @@
 
 - (id)resolve
 {
-    // cache or retrieve from scope
-    return [[self provider] get];
+    id instance = [[self scope] objectForDependency:self];
+    if (instance == nil) {
+        instance = [[self provider] get];
+        [[self scope] setObject:instance forDependency:self];
+    }
+    return instance;
 }
 
 @end

@@ -20,8 +20,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTScope.h"
+#import "RVTSingletonScope.h"
 
-@implementation RVTScope
+@interface RVTSingletonScope ()
+@property (strong, nonatomic) NSMutableArray *dependencies;
+@property (strong, nonatomic) NSMutableArray *objects;
+@end
+
+@implementation RVTSingletonScope
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.dependencies = [[NSMutableArray alloc] init];
+        self.objects = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
+- (id)objectForDependency:(RVTDependency *)dependency
+{
+    NSUInteger index = [[self dependencies] indexOfObject:dependency];
+    if (index == NSNotFound) return nil;
+    return [self objects][index];
+}
+
+- (void)setObject:(id)object forDependency:(RVTDependency *)dependency
+{
+    [[self dependencies] addObject:dependency];
+    [[self objects] addObject:object];
+}
 
 @end

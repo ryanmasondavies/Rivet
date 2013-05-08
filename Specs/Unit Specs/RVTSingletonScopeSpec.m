@@ -20,12 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTDependency;
+SpecBegin(RVTSingletonScope)
 
-@protocol RVTScope <NSObject>
+__block RVTSingletonScope *singleton;
+__block RVTDependency *dependency;
+__block id object;
 
-- (id)objectForDependency:(RVTDependency *)dependency;
-- (void)setObject:(id)object forDependency:(RVTDependency *)dependency;
+before(^{
+    singleton = [[RVTSingletonScope alloc] init];
+    dependency = [[RVTDependency alloc] initWithProvider:nil scope:nil];
+    object = [[NSObject alloc] init];
+});
 
-@end
+when(@"an object is registered for a dependency", ^{
+    before(^{
+        [singleton setObject:object forDependency:dependency];
+    });
+    
+    it(@"returns the object when requested with the same dependency", ^{
+        expect([singleton objectForDependency:dependency]).to.equal(object);
+    });
+    
+    it(@"returns nil when requested with a different dependency", ^{
+        RVTDependency *another = [[RVTDependency alloc] initWithProvider:nil scope:nil];
+        expect([singleton objectForDependency:another]).to.beNil();
+    });
+});
+
+SpecEnd

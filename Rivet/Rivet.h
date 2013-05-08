@@ -27,6 +27,7 @@
 #   import "RVTInitializer.h"
 #   import "RVTProperty.h"
 #   import "RVTInjector.h"
+#   import "RVTSingletonScope.h"
 #   import "RVTObjectProvider.h"
 #   import "RVTSequentialProvider.h"
 #   import "RVTValueProvider.h"
