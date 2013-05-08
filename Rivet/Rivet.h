@@ -25,7 +25,6 @@
 
 // dependencies
 #   import "RVTDependency.h"
-#   import "RVTDependencyMap.h"
 #   import "RVTInitializer.h"
 #   import "RVTProperty.h"
 

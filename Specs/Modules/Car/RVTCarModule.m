@@ -42,14 +42,14 @@
     return self;
 }
 
-- (RVTDependencyMap *)dependencies
+- (NSDictionary *)dependencies
 {
-    RVTDependencyMap *map = [[RVTDependencyMap alloc] init];
-    map[[RVTCar class]] = [self car];
-    map[[RVTEngine class]] = [self engine];
-    map[[RVTFirefighter class]] = [self firefighter];
-    map[[RVTPerson class]] = [self driver];
-    return map;
+    NSMutableDictionary *dependencies = [[NSMutableDictionary alloc] init];
+    dependencies[NSStringFromClass([RVTCar class])] = [self car];
+    dependencies[NSStringFromClass([RVTEngine class])] = [self engine];
+    dependencies[NSStringFromClass([RVTFirefighter class])] = [self firefighter];
+    dependencies[NSStringFromClass([RVTPerson class])] = [self driver];
+    return dependencies;
 }
 
 - (RVTDependency *)car

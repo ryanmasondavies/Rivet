@@ -24,6 +24,6 @@
 @class RVTDependencyMap;
 
 @interface RVTInjector : NSObject
-- (id)initWithDependencies:(RVTDependencyMap *)dependencies;
+- (id)initWithDependencies:(NSDictionary *)dependencies;
 - (id)injectInstanceOf:(Class)klass;
 @end

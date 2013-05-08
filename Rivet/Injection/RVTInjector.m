@@ -21,16 +21,15 @@
 // THE SOFTWARE.
 
 #import "RVTInjector.h"
-#import "RVTDependencyMap.h"
 #import "RVTDependency.h"
 
 @interface RVTInjector ()
-@property (strong, nonatomic) RVTDependencyMap *dependencies;
+@property (strong, nonatomic) NSDictionary *dependencies;
 @end
 
 @implementation RVTInjector
 
-- (id)initWithDependencies:(RVTDependencyMap *)dependencies
+- (id)initWithDependencies:(NSDictionary *)dependencies
 {
     if (self = [self init]) {
         self.dependencies = dependencies;
@@ -40,7 +39,7 @@
 
 - (id)injectInstanceOf:(Class)klass
 {
-    RVTDependency *dependency = [self dependencies][klass];
+    RVTDependency *dependency = [self dependencies][NSStringFromClass(klass)];
     return [dependency resolve];
 }
 

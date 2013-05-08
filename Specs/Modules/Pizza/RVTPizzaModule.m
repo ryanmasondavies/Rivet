@@ -42,10 +42,10 @@
     return self;
 }
 
-- (RVTDependencyMap *)dependencies
+- (NSDictionary *)dependencies
 {
-    RVTDependencyMap *dependencies = [[RVTDependencyMap alloc] init];
-    dependencies[[RVTPizza class]] = [self pizza];
+    NSMutableDictionary *dependencies = [[NSMutableDictionary alloc] init];
+    dependencies[NSStringFromClass([RVTPizza class])] = [self pizza];
     return dependencies;
 }
 
