@@ -152,6 +152,7 @@
 		94D2F9FD173AC0D60039AFAE /* RVTExtractorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTExtractorSpec.m; sourceTree = "<group>"; };
 		94D2F9FF173AC1650039AFAE /* RVTExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTExtractor.h; sourceTree = "<group>"; };
 		94D2FA00173AC1650039AFAE /* RVTExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTExtractor.m; sourceTree = "<group>"; };
+		94D2FA02173ACE820039AFAE /* RVTVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RVTVersion.h; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -260,6 +261,7 @@
 				94D2F994173A6A510039AFAE /* Providers */,
 				94D2F98F173A6A4B0039AFAE /* Scopes */,
 				94B500921736596000570893 /* Rivet.h */,
+				94D2FA02173ACE820039AFAE /* RVTVersion.h */,
 			);
 			path = Rivet;
 			sourceTree = "<group>";
