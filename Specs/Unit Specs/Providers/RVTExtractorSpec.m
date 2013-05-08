@@ -20,23 +20,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTPizzaModule.h"
-#import "RVTPizza.h"
-#import "RVTAnchovies.h"
-#import "RVTCheese.h"
-#import "RVTPineapple.h"
-#import "RVTPepperoni.h"
+SpecBegin(RVTExtractor)
 
-SpecBegin(RVTUsingProviders)
-
-it(@"injects providers with dependencies", ^{
-    RVTPizzaModule *module = [[RVTPizzaModule alloc] init];
-    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
-    RVTPizza *pizza = [injector injectInstanceOf:[RVTPizza class]];
-    expect([pizza ingredients][0]).to.beKindOf([RVTAnchovies class]);
-    expect([pizza ingredients][1]).to.beKindOf([RVTCheese class]);
-    expect([pizza ingredients][2]).to.beKindOf([RVTPepperoni class]);
-    expect([pizza ingredients][3]).to.beKindOf([RVTPineapple class]);
+it(@"extracts results from the provider returned by its provider, for retrieving the value nested twice", ^{
+    NSObject *object = [[NSObject alloc] init];
+    id<RVTProvider> provider = [[RVTValueProvider alloc] initWithValue:object];
+    provider = [[RVTValueProvider alloc] initWithValue:provider];
+    RVTExtractor *extractor = [[RVTExtractor alloc] initWithProvider:provider];
+    expect([extractor get]).to.equal(object);
 });
 
 SpecEnd

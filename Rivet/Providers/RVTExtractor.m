@@ -20,12 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "RVTProvider.h"
-@class RVTDependency;
+#import "RVTExtractor.h"
 
-@interface RVTResolvedDependencyProvider : NSObject <RVTProvider>
+@interface RVTExtractor ()
+@property (strong, nonatomic) id<RVTProvider> provider;
+@end
 
-- (id)initWithDependency:(RVTDependency *)dependency;
+@implementation RVTExtractor
+
+- (id)initWithProvider:(id<RVTProvider>)provider
+{
+    if (self = [self init]) {
+        self.provider = provider;
+    }
+    return self;
+}
+
+- (id)get
+{
+    return [[[self provider] get] get];
+}
 
 @end

@@ -86,8 +86,9 @@
 
 - (RVTDependency *)ingredients
 {
-    // dependency that resolves a dependency
-    return [[RVTDependency alloc] initWithProvider:nil scope:[self noScope]];
+    id<RVTProvider> provider = [[RVTResolver alloc] initWithDependency:[self ingredientsProvider]];
+    provider = [[RVTExtractor alloc] initWithProvider:provider];
+    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)pizza

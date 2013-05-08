@@ -20,13 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-SpecBegin(RVTResolvedDependencyProvider)
+SpecBegin(RVTResolutionProvider)
 
 it(@"returns the result of resolving the dependency", ^{
     id dependency = [OCMockObject mockForClass:[RVTDependency class]];
     NSObject *resolution = [[NSObject alloc] init];
     [(RVTDependency *)[[dependency stub] andReturn:resolution] resolve];
-    id<RVTProvider> provider = [[RVTResolvedDependencyProvider alloc] initWithDependency:dependency];
+    id<RVTProvider> provider = [[RVTResolver alloc] initWithDependency:dependency];
     expect([provider get]).to.equal(resolution);
 });
 

@@ -33,8 +33,9 @@
 #   import "RVTInjector.h"
 
 // providers
+#   import "RVTExtractor.h"
 #   import "RVTObjectProvider.h"
-#   import "RVTResolvedDependencyProvider.h"
+#   import "RVTResolver.h"
 #   import "RVTSequentialProvider.h"
 #   import "RVTValueProvider.h"
 

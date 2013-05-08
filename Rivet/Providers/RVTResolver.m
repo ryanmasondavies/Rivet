@@ -20,14 +20,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTResolvedDependencyProvider.h"
+#import "RVTResolver.h"
 #import "RVTDependency.h"
 
-@interface RVTResolvedDependencyProvider ()
+@interface RVTResolver ()
 @property (strong, nonatomic) RVTDependency *dependency;
 @end
 
-@implementation RVTResolvedDependencyProvider
+@implementation RVTResolver
 
 - (id)initWithDependency:(RVTDependency *)dependency
 {
