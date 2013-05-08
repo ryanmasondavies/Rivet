@@ -48,6 +48,8 @@
 		94D2F9EF173A9BDF0039AFAE /* RVTPepperoni.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9EE173A9BDF0039AFAE /* RVTPepperoni.m */; };
 		94D2F9F2173A9C040039AFAE /* RVTIngredientsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9F1173A9C040039AFAE /* RVTIngredientsProvider.m */; };
 		94D2F9F5173A9D150039AFAE /* RVTPizzaModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9F4173A9D150039AFAE /* RVTPizzaModule.m */; };
+		94D2F9F8173AA0E90039AFAE /* RVTResolvedDependencyProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9F7173AA0E90039AFAE /* RVTResolvedDependencyProvider.m */; };
+		94D2F9FA173AA1540039AFAE /* RVTResolvedDependencyProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9F9173AA1540039AFAE /* RVTResolvedDependencyProviderSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,9 @@
 		94D2F9F1173A9C040039AFAE /* RVTIngredientsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTIngredientsProvider.m; sourceTree = "<group>"; };
 		94D2F9F3173A9D150039AFAE /* RVTPizzaModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPizzaModule.h; sourceTree = "<group>"; };
 		94D2F9F4173A9D150039AFAE /* RVTPizzaModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPizzaModule.m; sourceTree = "<group>"; };
+		94D2F9F6173AA0E90039AFAE /* RVTResolvedDependencyProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTResolvedDependencyProvider.h; sourceTree = "<group>"; };
+		94D2F9F7173AA0E90039AFAE /* RVTResolvedDependencyProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTResolvedDependencyProvider.m; sourceTree = "<group>"; };
+		94D2F9F9173AA1540039AFAE /* RVTResolvedDependencyProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTResolvedDependencyProviderSpec.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -274,6 +279,8 @@
 				94D2F997173A6A510039AFAE /* RVTProvider.h */,
 				94D2F995173A6A510039AFAE /* RVTObjectProvider.h */,
 				94D2F996173A6A510039AFAE /* RVTObjectProvider.m */,
+				94D2F9F6173AA0E90039AFAE /* RVTResolvedDependencyProvider.h */,
+				94D2F9F7173AA0E90039AFAE /* RVTResolvedDependencyProvider.m */,
 				94D2F998173A6A510039AFAE /* RVTSequentialProvider.h */,
 				94D2F999173A6A510039AFAE /* RVTSequentialProvider.m */,
 				94D2F99A173A6A510039AFAE /* RVTValueProvider.h */,
@@ -329,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				94D2F9B8173A6B130039AFAE /* RVTObjectProviderSpec.m */,
+				94D2F9F9173AA1540039AFAE /* RVTResolvedDependencyProviderSpec.m */,
 				94D2F9B9173A6B130039AFAE /* RVTSequentialProviderSpec.m */,
 				94D2F9BA173A6B130039AFAE /* RVTValueProviderSpec.m */,
 			);
@@ -530,6 +538,7 @@
 				94D2F9AF173A6AD20039AFAE /* RVTInjector.m in Sources */,
 				94D2F9C8173A72CC0039AFAE /* RVTNoScope.m in Sources */,
 				94D2F9CB173A7CA80039AFAE /* RVTScopeCache.m in Sources */,
+				94D2F9F8173AA0E90039AFAE /* RVTResolvedDependencyProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +570,7 @@
 				94D2F9EF173A9BDF0039AFAE /* RVTPepperoni.m in Sources */,
 				94D2F9F2173A9C040039AFAE /* RVTIngredientsProvider.m in Sources */,
 				94D2F9F5173A9D150039AFAE /* RVTPizzaModule.m in Sources */,
+				94D2F9FA173AA1540039AFAE /* RVTResolvedDependencyProviderSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
