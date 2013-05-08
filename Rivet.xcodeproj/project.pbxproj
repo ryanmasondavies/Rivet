@@ -8,35 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		517D5917915C4F6A9ABEDCB8 /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */; };
-		940A45A51734100A00EA5788 /* RVTInjectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 940A45A41734100A00EA5788 /* RVTInjectorSpec.m */; };
 		9415C15117319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16017319BF9003454F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15F17319BF9003454F7 /* SenTestingKit.framework */; };
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libRivet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libRivet.a */; };
 		948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */; };
-		94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */; };
-		94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B500A71736811500570893 /* RVTSequentialProvider.m */; };
-		94C72B5A1737D6C400CCEFD3 /* RVTValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B591737D6C400CCEFD3 /* RVTValueProvider.m */; };
-		94C72B5C1737D70400CCEFD3 /* RVTValueProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C72B5B1737D70300CCEFD3 /* RVTValueProviderSpec.m */; };
-		94D2F980173A59260039AFAE /* RVTObjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F97F173A59260039AFAE /* RVTObjectProvider.m */; };
-		94D2F982173A5A310039AFAE /* RVTObjectProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F981173A5A310039AFAE /* RVTObjectProviderSpec.m */; };
-		94D2F984173A5B980039AFAE /* RVTSingletonScopeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F983173A5B980039AFAE /* RVTSingletonScopeSpec.m */; };
 		94D2F989173A5DD30039AFAE /* RVTSingletonsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F988173A5D700039AFAE /* RVTSingletonsSpec.m */; };
-		94D2F98C173A626F0039AFAE /* RVTSingletonScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F98B173A626E0039AFAE /* RVTSingletonScope.m */; };
-		94EAA4E717399F0C00E52452 /* RVTDependencyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4DE17399F0C00E52452 /* RVTDependencyMap.m */; };
-		94EAA4E817399F0C00E52452 /* RVTDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4E017399F0C00E52452 /* RVTDependency.m */; };
-		94EAA4E917399F0C00E52452 /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4E217399F0C00E52452 /* RVTInitializer.m */; };
-		94EAA4EA17399F0C00E52452 /* RVTProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4E417399F0C00E52452 /* RVTProperty.m */; };
-		94EAA4EB17399F0C00E52452 /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4E617399F0C00E52452 /* RVTInjector.m */; };
+		94D2F993173A6A4B0039AFAE /* RVTSingletonScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F992173A6A4B0039AFAE /* RVTSingletonScope.m */; };
+		94D2F99C173A6A510039AFAE /* RVTObjectProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F996173A6A510039AFAE /* RVTObjectProvider.m */; };
+		94D2F99D173A6A510039AFAE /* RVTSequentialProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F999173A6A510039AFAE /* RVTSequentialProvider.m */; };
+		94D2F99E173A6A510039AFAE /* RVTValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F99B173A6A510039AFAE /* RVTValueProvider.m */; };
+		94D2F9AB173A6AD20039AFAE /* RVTDependency.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9A1173A6AD20039AFAE /* RVTDependency.m */; };
+		94D2F9AC173A6AD20039AFAE /* RVTDependencyMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9A3173A6AD20039AFAE /* RVTDependencyMap.m */; };
+		94D2F9AD173A6AD20039AFAE /* RVTInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9A5173A6AD20039AFAE /* RVTInitializer.m */; };
+		94D2F9AE173A6AD20039AFAE /* RVTProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9A7173A6AD20039AFAE /* RVTProperty.m */; };
+		94D2F9AF173A6AD20039AFAE /* RVTInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9AA173A6AD20039AFAE /* RVTInjector.m */; };
+		94D2F9BD173A6B130039AFAE /* RVTDependencyMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B1173A6B130039AFAE /* RVTDependencyMapSpec.m */; };
+		94D2F9BE173A6B130039AFAE /* RVTDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B2173A6B130039AFAE /* RVTDependencySpec.m */; };
+		94D2F9BF173A6B130039AFAE /* RVTInitializerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B3173A6B130039AFAE /* RVTInitializerSpec.m */; };
+		94D2F9C0173A6B130039AFAE /* RVTPropertySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B4173A6B130039AFAE /* RVTPropertySpec.m */; };
+		94D2F9C1173A6B130039AFAE /* RVTInjectorSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B6173A6B130039AFAE /* RVTInjectorSpec.m */; };
+		94D2F9C2173A6B130039AFAE /* RVTObjectProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B8173A6B130039AFAE /* RVTObjectProviderSpec.m */; };
+		94D2F9C3173A6B130039AFAE /* RVTSequentialProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9B9173A6B130039AFAE /* RVTSequentialProviderSpec.m */; };
+		94D2F9C4173A6B130039AFAE /* RVTValueProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9BA173A6B130039AFAE /* RVTValueProviderSpec.m */; };
+		94D2F9C5173A6B130039AFAE /* RVTSingletonScopeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9BC173A6B130039AFAE /* RVTSingletonScopeSpec.m */; };
 		94EAA4F61739A07400E52452 /* RVTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4EE1739A07400E52452 /* RVTCar.m */; };
 		94EAA4F71739A07400E52452 /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4F01739A07400E52452 /* RVTEngine.m */; };
 		94EAA4F81739A07400E52452 /* RVTFirefighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4F21739A07400E52452 /* RVTFirefighter.m */; };
 		94EAA4F91739A07400E52452 /* RVTPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4F51739A07400E52452 /* RVTPerson.m */; };
-		94EAA4FB1739A1DE00E52452 /* RVTPropertySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4FA1739A1DE00E52452 /* RVTPropertySpec.m */; };
-		94EAA4FD1739A1F900E52452 /* RVTInitializerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4FC1739A1F900E52452 /* RVTInitializerSpec.m */; };
-		94EAA4FF1739A20600E52452 /* RVTDependencySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4FE1739A20600E52452 /* RVTDependencySpec.m */; };
-		94EAA5011739A21500E52452 /* RVTDependencyMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA5001739A21500E52452 /* RVTDependencyMapSpec.m */; };
 		94EAA5041739A7B800E52452 /* RVTTestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA5031739A7B800E52452 /* RVTTestModule.m */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +63,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		940A45A41734100A00EA5788 /* RVTInjectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RVTInjectorSpec.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		9415C14D17319BF9003454F7 /* libRivet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRivet.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15017319BF9003454F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9415C15E17319BF9003454F7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,31 +72,36 @@
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
 		94B500921736596000570893 /* Rivet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Rivet.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		94B5009A1736596000570893 /* RVTProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProvider.h; sourceTree = "<group>"; };
-		94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProviderSpec.m; sourceTree = "<group>"; };
-		94B500A61736811500570893 /* RVTSequentialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTSequentialProvider.h; sourceTree = "<group>"; };
-		94B500A71736811500570893 /* RVTSequentialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProvider.m; sourceTree = "<group>"; };
-		94C72B581737D6C400CCEFD3 /* RVTValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTValueProvider.h; sourceTree = "<group>"; };
-		94C72B591737D6C400CCEFD3 /* RVTValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTValueProvider.m; sourceTree = "<group>"; };
-		94C72B5B1737D70300CCEFD3 /* RVTValueProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTValueProviderSpec.m; sourceTree = "<group>"; };
-		94D2F97E173A59260039AFAE /* RVTObjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectProvider.h; sourceTree = "<group>"; };
-		94D2F97F173A59260039AFAE /* RVTObjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectProvider.m; sourceTree = "<group>"; };
-		94D2F981173A5A310039AFAE /* RVTObjectProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectProviderSpec.m; sourceTree = "<group>"; };
-		94D2F983173A5B980039AFAE /* RVTSingletonScopeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSingletonScopeSpec.m; sourceTree = "<group>"; };
-		94D2F985173A5BBC0039AFAE /* RVTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTScope.h; sourceTree = "<group>"; };
 		94D2F988173A5D700039AFAE /* RVTSingletonsSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RVTSingletonsSpec.m; sourceTree = "<group>"; };
-		94D2F98A173A626E0039AFAE /* RVTSingletonScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTSingletonScope.h; sourceTree = "<group>"; };
-		94D2F98B173A626E0039AFAE /* RVTSingletonScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSingletonScope.m; sourceTree = "<group>"; };
-		94EAA4DD17399F0C00E52452 /* RVTDependencyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependencyMap.h; sourceTree = "<group>"; };
-		94EAA4DE17399F0C00E52452 /* RVTDependencyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencyMap.m; sourceTree = "<group>"; };
-		94EAA4DF17399F0C00E52452 /* RVTDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependency.h; sourceTree = "<group>"; };
-		94EAA4E017399F0C00E52452 /* RVTDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependency.m; sourceTree = "<group>"; };
-		94EAA4E117399F0C00E52452 /* RVTInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInitializer.h; sourceTree = "<group>"; };
-		94EAA4E217399F0C00E52452 /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
-		94EAA4E317399F0C00E52452 /* RVTProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProperty.h; sourceTree = "<group>"; };
-		94EAA4E417399F0C00E52452 /* RVTProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTProperty.m; sourceTree = "<group>"; };
-		94EAA4E517399F0C00E52452 /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RVTInjector.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
-		94EAA4E617399F0C00E52452 /* RVTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RVTInjector.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		94D2F990173A6A4B0039AFAE /* RVTScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTScope.h; sourceTree = "<group>"; };
+		94D2F991173A6A4B0039AFAE /* RVTSingletonScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTSingletonScope.h; sourceTree = "<group>"; };
+		94D2F992173A6A4B0039AFAE /* RVTSingletonScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSingletonScope.m; sourceTree = "<group>"; };
+		94D2F995173A6A510039AFAE /* RVTObjectProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectProvider.h; sourceTree = "<group>"; };
+		94D2F996173A6A510039AFAE /* RVTObjectProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectProvider.m; sourceTree = "<group>"; };
+		94D2F997173A6A510039AFAE /* RVTProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProvider.h; sourceTree = "<group>"; };
+		94D2F998173A6A510039AFAE /* RVTSequentialProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTSequentialProvider.h; sourceTree = "<group>"; };
+		94D2F999173A6A510039AFAE /* RVTSequentialProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProvider.m; sourceTree = "<group>"; };
+		94D2F99A173A6A510039AFAE /* RVTValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTValueProvider.h; sourceTree = "<group>"; };
+		94D2F99B173A6A510039AFAE /* RVTValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTValueProvider.m; sourceTree = "<group>"; };
+		94D2F9A0173A6AD20039AFAE /* RVTDependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependency.h; sourceTree = "<group>"; };
+		94D2F9A1173A6AD20039AFAE /* RVTDependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependency.m; sourceTree = "<group>"; };
+		94D2F9A2173A6AD20039AFAE /* RVTDependencyMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTDependencyMap.h; sourceTree = "<group>"; };
+		94D2F9A3173A6AD20039AFAE /* RVTDependencyMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencyMap.m; sourceTree = "<group>"; };
+		94D2F9A4173A6AD20039AFAE /* RVTInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInitializer.h; sourceTree = "<group>"; };
+		94D2F9A5173A6AD20039AFAE /* RVTInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializer.m; sourceTree = "<group>"; };
+		94D2F9A6173A6AD20039AFAE /* RVTProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProperty.h; sourceTree = "<group>"; };
+		94D2F9A7173A6AD20039AFAE /* RVTProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTProperty.m; sourceTree = "<group>"; };
+		94D2F9A9173A6AD20039AFAE /* RVTInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTInjector.h; sourceTree = "<group>"; };
+		94D2F9AA173A6AD20039AFAE /* RVTInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjector.m; sourceTree = "<group>"; };
+		94D2F9B1173A6B130039AFAE /* RVTDependencyMapSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencyMapSpec.m; sourceTree = "<group>"; };
+		94D2F9B2173A6B130039AFAE /* RVTDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencySpec.m; sourceTree = "<group>"; };
+		94D2F9B3173A6B130039AFAE /* RVTInitializerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializerSpec.m; sourceTree = "<group>"; };
+		94D2F9B4173A6B130039AFAE /* RVTPropertySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPropertySpec.m; sourceTree = "<group>"; };
+		94D2F9B6173A6B130039AFAE /* RVTInjectorSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInjectorSpec.m; sourceTree = "<group>"; };
+		94D2F9B8173A6B130039AFAE /* RVTObjectProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectProviderSpec.m; sourceTree = "<group>"; };
+		94D2F9B9173A6B130039AFAE /* RVTSequentialProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSequentialProviderSpec.m; sourceTree = "<group>"; };
+		94D2F9BA173A6B130039AFAE /* RVTValueProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTValueProviderSpec.m; sourceTree = "<group>"; };
+		94D2F9BC173A6B130039AFAE /* RVTSingletonScopeSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTSingletonScopeSpec.m; sourceTree = "<group>"; };
 		94EAA4ED1739A07400E52452 /* RVTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCar.h; sourceTree = "<group>"; };
 		94EAA4EE1739A07400E52452 /* RVTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCar.m; sourceTree = "<group>"; };
 		94EAA4EF1739A07400E52452 /* RVTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEngine.h; sourceTree = "<group>"; };
@@ -107,10 +111,6 @@
 		94EAA4F31739A07400E52452 /* RVTOccupation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTOccupation.h; sourceTree = "<group>"; };
 		94EAA4F41739A07400E52452 /* RVTPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPerson.h; sourceTree = "<group>"; };
 		94EAA4F51739A07400E52452 /* RVTPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPerson.m; sourceTree = "<group>"; };
-		94EAA4FA1739A1DE00E52452 /* RVTPropertySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPropertySpec.m; sourceTree = "<group>"; };
-		94EAA4FC1739A1F900E52452 /* RVTInitializerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTInitializerSpec.m; sourceTree = "<group>"; };
-		94EAA4FE1739A20600E52452 /* RVTDependencySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencySpec.m; sourceTree = "<group>"; };
-		94EAA5001739A21500E52452 /* RVTDependencyMapSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTDependencyMapSpec.m; sourceTree = "<group>"; };
 		94EAA5021739A7B800E52452 /* RVTTestModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTTestModule.h; sourceTree = "<group>"; };
 		94EAA5031739A7B800E52452 /* RVTTestModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTTestModule.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,15 +204,10 @@
 		948CCC691733FA43002972A8 /* Unit Specs */ = {
 			isa = PBXGroup;
 			children = (
-				94EAA5001739A21500E52452 /* RVTDependencyMapSpec.m */,
-				94EAA4FE1739A20600E52452 /* RVTDependencySpec.m */,
-				94EAA4FC1739A1F900E52452 /* RVTInitializerSpec.m */,
-				94EAA4FA1739A1DE00E52452 /* RVTPropertySpec.m */,
-				940A45A41734100A00EA5788 /* RVTInjectorSpec.m */,
-				94D2F983173A5B980039AFAE /* RVTSingletonScopeSpec.m */,
-				94D2F981173A5A310039AFAE /* RVTObjectProviderSpec.m */,
-				94B500A417367EF700570893 /* RVTSequentialProviderSpec.m */,
-				94C72B5B1737D70300CCEFD3 /* RVTValueProviderSpec.m */,
+				94D2F9B0173A6B130039AFAE /* Dependencies */,
+				94D2F9B5173A6B130039AFAE /* Injection */,
+				94D2F9B7173A6B130039AFAE /* Providers */,
+				94D2F9BB173A6B130039AFAE /* Scopes */,
 			);
 			path = "Unit Specs";
 			sourceTree = "<group>";
@@ -220,29 +215,98 @@
 		94B500911736596000570893 /* Rivet */ = {
 			isa = PBXGroup;
 			children = (
+				94D2F99F173A6AD20039AFAE /* Dependencies */,
+				94D2F9A8173A6AD20039AFAE /* Injection */,
+				94D2F994173A6A510039AFAE /* Providers */,
+				94D2F98F173A6A4B0039AFAE /* Scopes */,
 				94B500921736596000570893 /* Rivet.h */,
-				94EAA4DD17399F0C00E52452 /* RVTDependencyMap.h */,
-				94EAA4DE17399F0C00E52452 /* RVTDependencyMap.m */,
-				94EAA4DF17399F0C00E52452 /* RVTDependency.h */,
-				94EAA4E017399F0C00E52452 /* RVTDependency.m */,
-				94EAA4E117399F0C00E52452 /* RVTInitializer.h */,
-				94EAA4E217399F0C00E52452 /* RVTInitializer.m */,
-				94EAA4E317399F0C00E52452 /* RVTProperty.h */,
-				94EAA4E417399F0C00E52452 /* RVTProperty.m */,
-				94EAA4E517399F0C00E52452 /* RVTInjector.h */,
-				94EAA4E617399F0C00E52452 /* RVTInjector.m */,
-				94D2F985173A5BBC0039AFAE /* RVTScope.h */,
-				94D2F98A173A626E0039AFAE /* RVTSingletonScope.h */,
-				94D2F98B173A626E0039AFAE /* RVTSingletonScope.m */,
-				94B5009A1736596000570893 /* RVTProvider.h */,
-				94D2F97E173A59260039AFAE /* RVTObjectProvider.h */,
-				94D2F97F173A59260039AFAE /* RVTObjectProvider.m */,
-				94B500A61736811500570893 /* RVTSequentialProvider.h */,
-				94B500A71736811500570893 /* RVTSequentialProvider.m */,
-				94C72B581737D6C400CCEFD3 /* RVTValueProvider.h */,
-				94C72B591737D6C400CCEFD3 /* RVTValueProvider.m */,
 			);
 			path = Rivet;
+			sourceTree = "<group>";
+		};
+		94D2F98F173A6A4B0039AFAE /* Scopes */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F990173A6A4B0039AFAE /* RVTScope.h */,
+				94D2F991173A6A4B0039AFAE /* RVTSingletonScope.h */,
+				94D2F992173A6A4B0039AFAE /* RVTSingletonScope.m */,
+			);
+			path = Scopes;
+			sourceTree = "<group>";
+		};
+		94D2F994173A6A510039AFAE /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F997173A6A510039AFAE /* RVTProvider.h */,
+				94D2F995173A6A510039AFAE /* RVTObjectProvider.h */,
+				94D2F996173A6A510039AFAE /* RVTObjectProvider.m */,
+				94D2F998173A6A510039AFAE /* RVTSequentialProvider.h */,
+				94D2F999173A6A510039AFAE /* RVTSequentialProvider.m */,
+				94D2F99A173A6A510039AFAE /* RVTValueProvider.h */,
+				94D2F99B173A6A510039AFAE /* RVTValueProvider.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		94D2F99F173A6AD20039AFAE /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9A0173A6AD20039AFAE /* RVTDependency.h */,
+				94D2F9A1173A6AD20039AFAE /* RVTDependency.m */,
+				94D2F9A2173A6AD20039AFAE /* RVTDependencyMap.h */,
+				94D2F9A3173A6AD20039AFAE /* RVTDependencyMap.m */,
+				94D2F9A4173A6AD20039AFAE /* RVTInitializer.h */,
+				94D2F9A5173A6AD20039AFAE /* RVTInitializer.m */,
+				94D2F9A6173A6AD20039AFAE /* RVTProperty.h */,
+				94D2F9A7173A6AD20039AFAE /* RVTProperty.m */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		94D2F9A8173A6AD20039AFAE /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9A9173A6AD20039AFAE /* RVTInjector.h */,
+				94D2F9AA173A6AD20039AFAE /* RVTInjector.m */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		94D2F9B0173A6B130039AFAE /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9B1173A6B130039AFAE /* RVTDependencyMapSpec.m */,
+				94D2F9B2173A6B130039AFAE /* RVTDependencySpec.m */,
+				94D2F9B3173A6B130039AFAE /* RVTInitializerSpec.m */,
+				94D2F9B4173A6B130039AFAE /* RVTPropertySpec.m */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		94D2F9B5173A6B130039AFAE /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9B6173A6B130039AFAE /* RVTInjectorSpec.m */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		94D2F9B7173A6B130039AFAE /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9B8173A6B130039AFAE /* RVTObjectProviderSpec.m */,
+				94D2F9B9173A6B130039AFAE /* RVTSequentialProviderSpec.m */,
+				94D2F9BA173A6B130039AFAE /* RVTValueProviderSpec.m */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		94D2F9BB173A6B130039AFAE /* Scopes */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9BC173A6B130039AFAE /* RVTSingletonScopeSpec.m */,
+			);
+			path = Scopes;
 			sourceTree = "<group>";
 		};
 		94EAA4EC1739A07400E52452 /* Classes */ = {
@@ -391,15 +455,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94B500A81736811500570893 /* RVTSequentialProvider.m in Sources */,
-				94C72B5A1737D6C400CCEFD3 /* RVTValueProvider.m in Sources */,
-				94EAA4E717399F0C00E52452 /* RVTDependencyMap.m in Sources */,
-				94EAA4E817399F0C00E52452 /* RVTDependency.m in Sources */,
-				94EAA4E917399F0C00E52452 /* RVTInitializer.m in Sources */,
-				94EAA4EA17399F0C00E52452 /* RVTProperty.m in Sources */,
-				94EAA4EB17399F0C00E52452 /* RVTInjector.m in Sources */,
-				94D2F980173A59260039AFAE /* RVTObjectProvider.m in Sources */,
-				94D2F98C173A626F0039AFAE /* RVTSingletonScope.m in Sources */,
+				94D2F993173A6A4B0039AFAE /* RVTSingletonScope.m in Sources */,
+				94D2F99C173A6A510039AFAE /* RVTObjectProvider.m in Sources */,
+				94D2F99D173A6A510039AFAE /* RVTSequentialProvider.m in Sources */,
+				94D2F99E173A6A510039AFAE /* RVTValueProvider.m in Sources */,
+				94D2F9AB173A6AD20039AFAE /* RVTDependency.m in Sources */,
+				94D2F9AC173A6AD20039AFAE /* RVTDependencyMap.m in Sources */,
+				94D2F9AD173A6AD20039AFAE /* RVTInitializer.m in Sources */,
+				94D2F9AE173A6AD20039AFAE /* RVTProperty.m in Sources */,
+				94D2F9AF173A6AD20039AFAE /* RVTInjector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,21 +472,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */,
-				940A45A51734100A00EA5788 /* RVTInjectorSpec.m in Sources */,
-				94B500A517367EF700570893 /* RVTSequentialProviderSpec.m in Sources */,
-				94C72B5C1737D70400CCEFD3 /* RVTValueProviderSpec.m in Sources */,
 				94EAA4F61739A07400E52452 /* RVTCar.m in Sources */,
 				94EAA4F71739A07400E52452 /* RVTEngine.m in Sources */,
 				94EAA4F81739A07400E52452 /* RVTFirefighter.m in Sources */,
 				94EAA4F91739A07400E52452 /* RVTPerson.m in Sources */,
-				94EAA4FB1739A1DE00E52452 /* RVTPropertySpec.m in Sources */,
-				94EAA4FD1739A1F900E52452 /* RVTInitializerSpec.m in Sources */,
-				94EAA4FF1739A20600E52452 /* RVTDependencySpec.m in Sources */,
-				94EAA5011739A21500E52452 /* RVTDependencyMapSpec.m in Sources */,
 				94EAA5041739A7B800E52452 /* RVTTestModule.m in Sources */,
-				94D2F982173A5A310039AFAE /* RVTObjectProviderSpec.m in Sources */,
-				94D2F984173A5B980039AFAE /* RVTSingletonScopeSpec.m in Sources */,
 				94D2F989173A5DD30039AFAE /* RVTSingletonsSpec.m in Sources */,
+				94D2F9BD173A6B130039AFAE /* RVTDependencyMapSpec.m in Sources */,
+				94D2F9BE173A6B130039AFAE /* RVTDependencySpec.m in Sources */,
+				94D2F9BF173A6B130039AFAE /* RVTInitializerSpec.m in Sources */,
+				94D2F9C0173A6B130039AFAE /* RVTPropertySpec.m in Sources */,
+				94D2F9C1173A6B130039AFAE /* RVTInjectorSpec.m in Sources */,
+				94D2F9C2173A6B130039AFAE /* RVTObjectProviderSpec.m in Sources */,
+				94D2F9C3173A6B130039AFAE /* RVTSequentialProviderSpec.m in Sources */,
+				94D2F9C4173A6B130039AFAE /* RVTValueProviderSpec.m in Sources */,
+				94D2F9C5173A6B130039AFAE /* RVTSingletonScopeSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
