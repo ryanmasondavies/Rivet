@@ -38,6 +38,14 @@
     return self;
 }
 
+- (void)enter
+{
+}
+
+- (void)exit
+{
+}
+
 - (id)objectForDependency:(RVTDependency *)dependency
 {
     NSUInteger index = [[self dependencies] indexOfObject:dependency];

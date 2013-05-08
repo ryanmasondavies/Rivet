@@ -25,6 +25,9 @@
 
 @protocol RVTScope <NSObject>
 
+- (void)enter;
+- (void)exit;
+
 - (id)objectForDependency:(RVTDependency *)dependency;
 - (void)setObject:(id)object forDependency:(RVTDependency *)dependency;
 
