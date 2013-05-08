@@ -22,28 +22,33 @@
 
 SpecBegin(RVTSingletonScope)
 
-__block RVTSingletonScope *singleton;
-__block RVTDependency *dependency;
+__block RVTScopeCache *scopeCache;
+__block RVTSingletonScope *scope;
 __block id object;
+__block id<RVTProvider> provider;
 
 before(^{
-    singleton = [[RVTSingletonScope alloc] init];
-    dependency = [[RVTDependency alloc] initWithProvider:nil scope:nil];
+    scopeCache = [[RVTScopeCache alloc] init];
+    scope = [[RVTSingletonScope alloc] initWithCache:scopeCache];
     object = [[NSObject alloc] init];
+    provider = [[RVTSequentialProvider alloc] initWithObjects:@[object]];
 });
 
-when(@"an object is registered for a dependency", ^{
-    before(^{
-        [singleton setObject:object forDependency:dependency];
+describe(@"when the provider's value is not cached", ^{
+    it(@"returns the provider's value", ^{
+        expect([scope instanceFromProvider:provider]).to.equal(object);
     });
     
-    it(@"returns the object when requested with the same dependency", ^{
-        expect([singleton objectForDependency:dependency]).to.equal(object);
+    it(@"stores the value in the cache", ^{
+        [scope instanceFromProvider:provider];
+        expect([scopeCache objectForProvider:provider]).to.equal(object);
     });
-    
-    it(@"returns nil when requested with a different dependency", ^{
-        RVTDependency *another = [[RVTDependency alloc] initWithProvider:nil scope:nil];
-        expect([singleton objectForDependency:another]).to.beNil();
+});
+
+describe(@"when the provider's value is cached", ^{
+    it(@"returns the value in the cache", ^{
+        [scopeCache setObject:object forProvider:provider];
+        expect([scope instanceFromProvider:provider]).to.equal(object);
     });
 });
 

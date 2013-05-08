@@ -21,14 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTDependency;
+@protocol RVTProvider;
 
 @protocol RVTScope <NSObject>
 
-- (void)enter;
-- (void)exit;
-
-- (id)objectForDependency:(RVTDependency *)dependency;
-- (void)setObject:(id)object forDependency:(RVTDependency *)dependency;
+- (id)instanceFromProvider:(id<RVTProvider>)provider;
 
 @end

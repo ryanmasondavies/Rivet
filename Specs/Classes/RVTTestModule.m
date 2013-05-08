@@ -28,6 +28,7 @@
 
 @interface RVTTestModule ()
 @property (strong, nonatomic) id<RVTScope> singletonScope;
+@property (strong, nonatomic) id<RVTScope> noScope;
 @end
 
 @implementation RVTTestModule
@@ -35,7 +36,8 @@
 - (id)init
 {
     if (self = [super init]) {
-        self.singletonScope = [[RVTSingletonScope alloc] init];
+        self.singletonScope = [[RVTSingletonScope alloc] initWithCache:[RVTScopeCache new]];
+        self.noScope = [[RVTNoScope alloc] init];
     }
     return self;
 }
@@ -54,20 +56,20 @@
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithEngine:driver:) dependencies:@[[self engine], [self driver]]];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTCar class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)engine
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTEngine class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)name
 {
     id<RVTProvider> provider = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
-    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)firefighter
@@ -81,7 +83,7 @@
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithName:occupation:) dependencies:@[[self name], [self firefighter]]];
     RVTObjectProvider *carProvider = [[RVTObjectProvider alloc] initWithClass:[RVTPerson class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:carProvider scope:nil];
+    return [[RVTDependency alloc] initWithProvider:carProvider scope:[self noScope]];
 }
 
 @end

@@ -42,12 +42,7 @@
 
 - (id)resolve
 {
-    id instance = [[self scope] objectForDependency:self];
-    if (instance == nil) {
-        instance = [[self provider] get];
-        [[self scope] setObject:instance forDependency:self];
-    }
-    return instance;
+    return [[self scope] instanceFromProvider:[self provider]];
 }
 
 @end

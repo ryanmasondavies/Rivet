@@ -21,42 +21,31 @@
 // THE SOFTWARE.
 
 #import "RVTSingletonScope.h"
+#import "RVTProvider.h"
+#import "RVTScopeCache.h"
 
 @interface RVTSingletonScope ()
-@property (strong, nonatomic) NSMutableArray *dependencies;
-@property (strong, nonatomic) NSMutableArray *objects;
+@property (strong, nonatomic) RVTScopeCache *cache;
 @end
 
 @implementation RVTSingletonScope
 
-- (id)init
+- (id)initWithCache:(RVTScopeCache *)cache
 {
-    if (self = [super init]) {
-        self.dependencies = [[NSMutableArray alloc] init];
-        self.objects = [[NSMutableArray alloc] init];
+    if (self = [self init]) {
+        self.cache = cache;
     }
     return self;
 }
 
-- (void)enter
+- (id)instanceFromProvider:(id<RVTProvider>)provider
 {
-}
-
-- (void)exit
-{
-}
-
-- (id)objectForDependency:(RVTDependency *)dependency
-{
-    NSUInteger index = [[self dependencies] indexOfObject:dependency];
-    if (index == NSNotFound) return nil;
-    return [self objects][index];
-}
-
-- (void)setObject:(id)object forDependency:(RVTDependency *)dependency
-{
-    [[self dependencies] addObject:dependency];
-    [[self objects] addObject:object];
+    id instance = [[self cache] objectForProvider:provider];
+    if (instance == nil) {
+        instance = [provider get];
+        [[self cache] setObject:instance forProvider:provider];
+    }
+    return instance;
 }
 
 @end

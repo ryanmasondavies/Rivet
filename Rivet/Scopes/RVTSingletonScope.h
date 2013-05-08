@@ -22,7 +22,10 @@
 
 #import <Foundation/Foundation.h>
 #import "RVTScope.h"
+@class RVTScopeCache;
 
 @interface RVTSingletonScope : NSObject <RVTScope>
+
+- (id)initWithCache:(RVTScopeCache *)cache;
 
 @end
