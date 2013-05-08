@@ -25,28 +25,23 @@
 #import "RVTEngine.h"
 #import "RVTPerson.h"
 
-@interface RVTConstructorInjectionTests : SenTestCase
-@end
+SpecBegin(RVTConstructorInjection)
 
-@implementation RVTConstructorInjectionTests
-
-- (void)testInjectsCarWithResolvedDependencies
-{
+it(@"injects an instance of RVTCar with dependencies resolved", ^{
     RVTTestModule *module = [[RVTTestModule alloc] init];
     RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
     RVTCar *car = [injector injectInstanceOf:[RVTCar class]];
     expect(car).to.beKindOf([RVTCar class]);
     expect([car engine]).to.beKindOf([RVTEngine class]);
     expect([car driver]).to.beKindOf([RVTPerson class]);
-}
+});
 
-- (void)testInjectsCarWithDriverNamedJohnSmith
-{
+it(@"injects a car with a driver named John Smith", ^{
     RVTTestModule *module = [[RVTTestModule alloc] init];
     RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
     RVTCar *car = [injector injectInstanceOf:[RVTCar class]];
     RVTPerson *driver = [car driver];
     expect([driver name]).to.equal(@"John Smith");
-}
+});
 
-@end
+SpecEnd
