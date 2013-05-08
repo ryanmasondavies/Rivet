@@ -40,7 +40,6 @@
 
 - (id)injectInstanceOf:(Class)klass
 {
-    NSLog(@"Inject an instance of %@", klass);
     RVTDependency *dependency = [self dependencies][klass];
     return [dependency resolve];
 }
