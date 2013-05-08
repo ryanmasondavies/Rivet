@@ -41,38 +41,40 @@
 - (RVTDependency *)car
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithEngine:driver:) dependencies:@[[self engine], [self driver]]];
-    return [[RVTDependency alloc] initWithClass:[RVTCar class] initializer:initializer properties:nil];
+    id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTCar class] initializer:initializer properties:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
 }
 
 - (RVTDependency *)engine
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
-    return [[RVTDependency alloc] initWithClass:[RVTEngine class] initializer:initializer properties:nil];
+    id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTEngine class] initializer:initializer properties:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
 }
 
-- (RVTDependency *)string
+- (RVTDependency *)name
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
-    return [[RVTDependency alloc] initWithClass:[NSString class] initializer:initializer properties:nil];
+    id<RVTProvider> provider = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
+    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
 }
 
 - (RVTDependency *)firefighter
 {
     RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
-    return [[RVTDependency alloc] initWithClass:[RVTFirefighter class] initializer:initializer properties:nil];
+    id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTFirefighter class] initializer:initializer properties:nil];
+    return [[RVTDependency alloc] initWithProvider:provider scope:nil];
 }
 
 - (RVTDependency *)driver
 {
-    // how to make use of Provider objects to resolve dependencies, in only some cases?
-    // e.g having a dependency which resolves to a string value
-    // and how to extend the concept of providers to allow them to also have dependencies?
+    // how to make use of Provider objects to resolve dependencies on other providers?
     // almost like a two-part construction process:
     // 1. Initialize provider using subdependencies.
     // 2. Create actual object of interest by calling -[Provider get].
     
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithName:occupation:) dependencies:@[[self string], [self firefighter]]];
-    return [[RVTDependency alloc] initWithClass:[RVTPerson class] initializer:initializer properties:nil];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithName:occupation:) dependencies:@[[self name], [self firefighter]]];
+    RVTObjectProvider *carProvider = [[RVTObjectProvider alloc] initWithClass:[RVTPerson class] initializer:initializer properties:nil];
+    return [[RVTDependency alloc] initWithProvider:carProvider scope:nil];
 }
 
 @end

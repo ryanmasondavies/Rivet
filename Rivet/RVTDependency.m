@@ -21,38 +21,28 @@
 // THE SOFTWARE.
 
 #import "RVTDependency.h"
-#import "RVTInitializer.h"
-#import "RVTProperty.h"
+#import "RVTProvider.h"
 
 @interface RVTDependency ()
-@property (strong, nonatomic) Class klass;
-@property (strong, nonatomic) RVTInitializer *initializer;
-@property (strong, nonatomic) NSArray *properties;
+@property (strong, nonatomic) id<RVTProvider> provider;
+@property (strong, nonatomic) RVTScope *scope;
 @end
 
 @implementation RVTDependency
 
-- (id)initWithClass:(Class)klass initializer:(RVTInitializer *)initializer properties:(NSArray *)properties
+- (id)initWithProvider:(id<RVTProvider>)provider scope:(RVTScope *)scope
 {
     if (self = [self init]) {
-        self.klass = klass;
-        self.initializer = initializer;
-        self.properties = properties;
+        self.provider = provider;
+        self.scope = scope;
     }
     return self;
 }
 
 - (id)resolve
 {
-    if ([self initializer] == nil) {
-        [NSException raise:NSInternalInconsistencyException format:@"Dependencies must have an initializer."];
-        return nil;
-    }
-    
-    id object = [[self initializer] performOnObject:[[self klass] alloc]];
-    [[self properties] makeObjectsPerformSelector:@selector(applyToObject:) withObject:object];
-    NSLog(@"Resolved %@: %@", [self klass], object);
-    return object;
+    // cache or retrieve from scope
+    return [[self provider] get];
 }
 
 @end

@@ -21,9 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTInitializer;
+@protocol RVTProvider;
+@class RVTScope;
 
 @interface RVTDependency : NSObject
-- (id)initWithClass:(Class)klass initializer:(RVTInitializer *)initializer properties:(NSArray *)properties;
+- (id)initWithProvider:(id<RVTProvider>)provider scope:(RVTScope *)scope;
 - (id)resolve;
 @end

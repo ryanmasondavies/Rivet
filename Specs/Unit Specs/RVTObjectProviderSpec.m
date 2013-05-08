@@ -20,15 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+SpecBegin(RVTObjectProvider)
 
-@protocol RVTOccupation;
+PENDING;
 
-@interface RVTPerson : NSObject
-
-- (id)initWithName:(NSString *)name occupation:(id<RVTOccupation>)occupation;
-
-@property (readonly) NSString *name;
-@property (readonly) id<RVTOccupation> occupation;
-
-@end
+SpecEnd

@@ -21,14 +21,11 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "RVTProvider.h"
+@class RVTInitializer;
 
-@protocol RVTOccupation;
+@interface RVTObjectProvider : NSObject <RVTProvider>
 
-@interface RVTPerson : NSObject
-
-- (id)initWithName:(NSString *)name occupation:(id<RVTOccupation>)occupation;
-
-@property (readonly) NSString *name;
-@property (readonly) id<RVTOccupation> occupation;
+- (id)initWithClass:(Class)klass initializer:(RVTInitializer *)initializer properties:(NSArray *)properties;
 
 @end

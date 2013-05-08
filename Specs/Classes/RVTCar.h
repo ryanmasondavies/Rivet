@@ -29,4 +29,7 @@
 
 - (id)initWithEngine:(RVTEngine *)engine driver:(RVTPerson *)driver;
 
+@property (readonly) RVTEngine *engine;
+@property (readonly) RVTPerson *driver;
+
 @end

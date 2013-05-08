@@ -21,11 +21,13 @@
 // THE SOFTWARE.
 
 #ifndef _RIVET_
+#   define _RIVET_
 #   import "RVTDependencyMap.h"
 #   import "RVTDependency.h"
 #   import "RVTInitializer.h"
 #   import "RVTProperty.h"
 #   import "RVTInjector.h"
+#   import "RVTObjectProvider.h"
 #   import "RVTSequentialProvider.h"
 #   import "RVTValueProvider.h"
 #endif

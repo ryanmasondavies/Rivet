@@ -20,15 +20,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import "RVTObjectProvider.h"
+#import "RVTInitializer.h"
+#import "RVTProperty.h"
 
-@protocol RVTOccupation;
+@interface RVTObjectProvider ()
+@property (strong, nonatomic) Class klass;
+@property (strong, nonatomic) RVTInitializer *initializer;
+@property (strong, nonatomic) NSArray *properties;
+@end
 
-@interface RVTPerson : NSObject
+@implementation RVTObjectProvider
 
-- (id)initWithName:(NSString *)name occupation:(id<RVTOccupation>)occupation;
+- (id)initWithClass:(Class)klass initializer:(RVTInitializer *)initializer properties:(NSArray *)properties
+{
+    if (self = [self init]) {
+        self.klass = klass;
+        self.initializer = initializer;
+        self.properties = properties;
+    }
+    return self;
+}
 
-@property (readonly) NSString *name;
-@property (readonly) id<RVTOccupation> occupation;
+- (id)get
+{
+    if ([self initializer] == nil) {
+        [NSException raise:NSInternalInconsistencyException format:@"%@ is missing an initializer.", self];
+        return nil;
+    }
+    
+    id object = [[self initializer] performOnObject:[[self klass] alloc]];
+    [[self properties] makeObjectsPerformSelector:@selector(applyToObject:) withObject:object];
+    return object;
+}
 
 @end
