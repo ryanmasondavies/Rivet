@@ -44,7 +44,7 @@
 
 - (RVTDependencyMap *)dependencies
 {
-    RVTDependencyMap *map = [[RVTDependencyMap alloc] initWithDependencies:[NSMutableDictionary dictionary]];
+    RVTDependencyMap *map = [[RVTDependencyMap alloc] init];
     map[[RVTCar class]] = [self car];
     map[[RVTEngine class]] = [self engine];
     map[[RVTFirefighter class]] = [self firefighter];

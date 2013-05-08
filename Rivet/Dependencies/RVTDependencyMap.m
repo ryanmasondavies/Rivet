@@ -28,10 +28,10 @@
 
 @implementation RVTDependencyMap
 
-- (id)initWithDependencies:(NSMutableDictionary *)dependencies
+- (id)init
 {
     if (self = [self init]) {
-        self.dependencies = dependencies;
+        self.dependencies = [[NSMutableDictionary alloc] init];
     }
     return self;
 }

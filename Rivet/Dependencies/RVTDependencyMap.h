@@ -24,7 +24,6 @@
 
 @interface RVTDependencyMap : NSObject
 
-- (id)initWithDependencies:(NSMutableDictionary *)dependencies;
 - (id)objectForKeyedSubscript:(Class)klass;
 - (void)setObject:(id)object forKeyedSubscript:(Class)klass;
 
