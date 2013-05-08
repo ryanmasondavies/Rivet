@@ -30,7 +30,7 @@
 
 - (id)init
 {
-    if (self = [self init]) {
+    if (self = [super init]) {
         self.dependencies = [[NSMutableDictionary alloc] init];
     }
     return self;
