@@ -22,8 +22,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RVTTestModule : NSObject
+@interface RVTPizza : NSObject
 
-- (RVTDependencyMap *)dependencies;
+- (id)initWithIngredients:(NSArray *)ingredients;
+
+@property (readonly) NSArray *ingredients;
 
 @end

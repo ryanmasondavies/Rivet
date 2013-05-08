@@ -20,26 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCarModule.h"
-#import "RVTCar.h"
-#import "RVTPerson.h"
+#import <Foundation/Foundation.h>
 
-SpecBegin(RVTSingletons)
+@interface RVTCarModule : NSObject
 
-it(@"returns the same occupation for multiple drivers", ^{
-    RVTCarModule *module = [[RVTCarModule alloc] init];
-    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
-    
-    RVTCar *firstCar = [injector injectInstanceOf:[RVTCar class]];
-    RVTCar *secondCar = [injector injectInstanceOf:[RVTCar class]];
-    
-    RVTPerson *firstDriver = [firstCar driver];
-    RVTPerson *secondDriver = [secondCar driver];
-    
-    id<RVTOccupation> firstOccupation = [firstDriver occupation];
-    id<RVTOccupation> secondOccupation = [secondDriver occupation];
-    
-    expect(firstOccupation).to.equal(secondOccupation);
-});
+- (RVTDependencyMap *)dependencies;
 
-SpecEnd
+@end

@@ -20,18 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTTestModule.h"
+#import "RVTCarModule.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTFirefighter.h"
 #import "RVTPerson.h"
 
-@interface RVTTestModule ()
+@interface RVTCarModule ()
 @property (strong, nonatomic) id<RVTScope> singletonScope;
 @property (strong, nonatomic) id<RVTScope> noScope;
 @end
 
-@implementation RVTTestModule
+@implementation RVTCarModule
 
 - (id)init
 {

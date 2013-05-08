@@ -35,11 +35,19 @@
 		94D2F9C5173A6B130039AFAE /* RVTSingletonScopeSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9BC173A6B130039AFAE /* RVTSingletonScopeSpec.m */; };
 		94D2F9C8173A72CC0039AFAE /* RVTNoScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9C7173A72CC0039AFAE /* RVTNoScope.m */; };
 		94D2F9CB173A7CA80039AFAE /* RVTScopeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9CA173A7CA80039AFAE /* RVTScopeCache.m */; };
-		94EAA4F61739A07400E52452 /* RVTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4EE1739A07400E52452 /* RVTCar.m */; };
-		94EAA4F71739A07400E52452 /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4F01739A07400E52452 /* RVTEngine.m */; };
-		94EAA4F81739A07400E52452 /* RVTFirefighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4F21739A07400E52452 /* RVTFirefighter.m */; };
-		94EAA4F91739A07400E52452 /* RVTPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA4F51739A07400E52452 /* RVTPerson.m */; };
-		94EAA5041739A7B800E52452 /* RVTTestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94EAA5031739A7B800E52452 /* RVTTestModule.m */; };
+		94D2F9CD173A80EB0039AFAE /* RVTUsingProvidersSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9CC173A80EB0039AFAE /* RVTUsingProvidersSpec.m */; };
+		94D2F9DC173A9B690039AFAE /* RVTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9D1173A9B690039AFAE /* RVTCar.m */; };
+		94D2F9DD173A9B690039AFAE /* RVTCarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9D3173A9B690039AFAE /* RVTCarModule.m */; };
+		94D2F9DE173A9B690039AFAE /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9D5173A9B690039AFAE /* RVTEngine.m */; };
+		94D2F9DF173A9B690039AFAE /* RVTFirefighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9D7173A9B690039AFAE /* RVTFirefighter.m */; };
+		94D2F9E0173A9B690039AFAE /* RVTPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9DA173A9B690039AFAE /* RVTPerson.m */; };
+		94D2F9E3173A9B740039AFAE /* RVTPizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9E2173A9B740039AFAE /* RVTPizza.m */; };
+		94D2F9E6173A9B7A0039AFAE /* RVTAnchovies.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9E5173A9B7A0039AFAE /* RVTAnchovies.m */; };
+		94D2F9E9173A9BD30039AFAE /* RVTCheese.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9E8173A9BD30039AFAE /* RVTCheese.m */; };
+		94D2F9EC173A9BDA0039AFAE /* RVTPineapple.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9EB173A9BDA0039AFAE /* RVTPineapple.m */; };
+		94D2F9EF173A9BDF0039AFAE /* RVTPepperoni.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9EE173A9BDF0039AFAE /* RVTPepperoni.m */; };
+		94D2F9F2173A9C040039AFAE /* RVTIngredientsProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9F1173A9C040039AFAE /* RVTIngredientsProvider.m */; };
+		94D2F9F5173A9D150039AFAE /* RVTPizzaModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94D2F9F4173A9D150039AFAE /* RVTPizzaModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,17 +116,32 @@
 		94D2F9C7173A72CC0039AFAE /* RVTNoScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTNoScope.m; sourceTree = "<group>"; };
 		94D2F9C9173A7CA80039AFAE /* RVTScopeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTScopeCache.h; sourceTree = "<group>"; };
 		94D2F9CA173A7CA80039AFAE /* RVTScopeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTScopeCache.m; sourceTree = "<group>"; };
-		94EAA4ED1739A07400E52452 /* RVTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCar.h; sourceTree = "<group>"; };
-		94EAA4EE1739A07400E52452 /* RVTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCar.m; sourceTree = "<group>"; };
-		94EAA4EF1739A07400E52452 /* RVTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEngine.h; sourceTree = "<group>"; };
-		94EAA4F01739A07400E52452 /* RVTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTEngine.m; sourceTree = "<group>"; };
-		94EAA4F11739A07400E52452 /* RVTFirefighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTFirefighter.h; sourceTree = "<group>"; };
-		94EAA4F21739A07400E52452 /* RVTFirefighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTFirefighter.m; sourceTree = "<group>"; };
-		94EAA4F31739A07400E52452 /* RVTOccupation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTOccupation.h; sourceTree = "<group>"; };
-		94EAA4F41739A07400E52452 /* RVTPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPerson.h; sourceTree = "<group>"; };
-		94EAA4F51739A07400E52452 /* RVTPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPerson.m; sourceTree = "<group>"; };
-		94EAA5021739A7B800E52452 /* RVTTestModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTTestModule.h; sourceTree = "<group>"; };
-		94EAA5031739A7B800E52452 /* RVTTestModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTTestModule.m; sourceTree = "<group>"; };
+		94D2F9CC173A80EB0039AFAE /* RVTUsingProvidersSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTUsingProvidersSpec.m; sourceTree = "<group>"; };
+		94D2F9D0173A9B690039AFAE /* RVTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCar.h; sourceTree = "<group>"; };
+		94D2F9D1173A9B690039AFAE /* RVTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCar.m; sourceTree = "<group>"; };
+		94D2F9D2173A9B690039AFAE /* RVTCarModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCarModule.h; sourceTree = "<group>"; };
+		94D2F9D3173A9B690039AFAE /* RVTCarModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCarModule.m; sourceTree = "<group>"; };
+		94D2F9D4173A9B690039AFAE /* RVTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEngine.h; sourceTree = "<group>"; };
+		94D2F9D5173A9B690039AFAE /* RVTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTEngine.m; sourceTree = "<group>"; };
+		94D2F9D6173A9B690039AFAE /* RVTFirefighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTFirefighter.h; sourceTree = "<group>"; };
+		94D2F9D7173A9B690039AFAE /* RVTFirefighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTFirefighter.m; sourceTree = "<group>"; };
+		94D2F9D8173A9B690039AFAE /* RVTOccupation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTOccupation.h; sourceTree = "<group>"; };
+		94D2F9D9173A9B690039AFAE /* RVTPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPerson.h; sourceTree = "<group>"; };
+		94D2F9DA173A9B690039AFAE /* RVTPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPerson.m; sourceTree = "<group>"; };
+		94D2F9E1173A9B740039AFAE /* RVTPizza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPizza.h; sourceTree = "<group>"; };
+		94D2F9E2173A9B740039AFAE /* RVTPizza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPizza.m; sourceTree = "<group>"; };
+		94D2F9E4173A9B7A0039AFAE /* RVTAnchovies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTAnchovies.h; sourceTree = "<group>"; };
+		94D2F9E5173A9B7A0039AFAE /* RVTAnchovies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTAnchovies.m; sourceTree = "<group>"; };
+		94D2F9E7173A9BD30039AFAE /* RVTCheese.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCheese.h; sourceTree = "<group>"; };
+		94D2F9E8173A9BD30039AFAE /* RVTCheese.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCheese.m; sourceTree = "<group>"; };
+		94D2F9EA173A9BDA0039AFAE /* RVTPineapple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPineapple.h; sourceTree = "<group>"; };
+		94D2F9EB173A9BDA0039AFAE /* RVTPineapple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPineapple.m; sourceTree = "<group>"; };
+		94D2F9ED173A9BDF0039AFAE /* RVTPepperoni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPepperoni.h; sourceTree = "<group>"; };
+		94D2F9EE173A9BDF0039AFAE /* RVTPepperoni.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPepperoni.m; sourceTree = "<group>"; };
+		94D2F9F0173A9C040039AFAE /* RVTIngredientsProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTIngredientsProvider.h; sourceTree = "<group>"; };
+		94D2F9F1173A9C040039AFAE /* RVTIngredientsProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTIngredientsProvider.m; sourceTree = "<group>"; };
+		94D2F9F3173A9D150039AFAE /* RVTPizzaModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTPizzaModule.h; sourceTree = "<group>"; };
+		94D2F9F4173A9D150039AFAE /* RVTPizzaModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTPizzaModule.m; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83591CB6D6F45C3928C0136 /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -181,7 +204,7 @@
 		948CCC571733F901002972A8 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				94EAA4EC1739A07400E52452 /* Classes */,
+				94D2F9CE173A9B690039AFAE /* Modules */,
 				948CCC5F1733F901002972A8 /* Functional Specs */,
 				948CCC691733FA43002972A8 /* Unit Specs */,
 				948CCC681733F9A7002972A8 /* Supporting Files */,
@@ -194,6 +217,7 @@
 			children = (
 				948CCC601733F901002972A8 /* RVTConstructorInjectionSpec.m */,
 				94D2F988173A5D700039AFAE /* RVTSingletonsSpec.m */,
+				94D2F9CC173A80EB0039AFAE /* RVTUsingProvidersSpec.m */,
 			);
 			path = "Functional Specs";
 			sourceTree = "<group>";
@@ -319,22 +343,52 @@
 			path = Scopes;
 			sourceTree = "<group>";
 		};
-		94EAA4EC1739A07400E52452 /* Classes */ = {
+		94D2F9CE173A9B690039AFAE /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				94EAA4ED1739A07400E52452 /* RVTCar.h */,
-				94EAA4EE1739A07400E52452 /* RVTCar.m */,
-				94EAA4EF1739A07400E52452 /* RVTEngine.h */,
-				94EAA4F01739A07400E52452 /* RVTEngine.m */,
-				94EAA4F11739A07400E52452 /* RVTFirefighter.h */,
-				94EAA4F21739A07400E52452 /* RVTFirefighter.m */,
-				94EAA4F31739A07400E52452 /* RVTOccupation.h */,
-				94EAA4F41739A07400E52452 /* RVTPerson.h */,
-				94EAA4F51739A07400E52452 /* RVTPerson.m */,
-				94EAA5021739A7B800E52452 /* RVTTestModule.h */,
-				94EAA5031739A7B800E52452 /* RVTTestModule.m */,
+				94D2F9CF173A9B690039AFAE /* Car */,
+				94D2F9DB173A9B690039AFAE /* Pizza */,
 			);
-			path = Classes;
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		94D2F9CF173A9B690039AFAE /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9D0173A9B690039AFAE /* RVTCar.h */,
+				94D2F9D1173A9B690039AFAE /* RVTCar.m */,
+				94D2F9D2173A9B690039AFAE /* RVTCarModule.h */,
+				94D2F9D3173A9B690039AFAE /* RVTCarModule.m */,
+				94D2F9D4173A9B690039AFAE /* RVTEngine.h */,
+				94D2F9D5173A9B690039AFAE /* RVTEngine.m */,
+				94D2F9D6173A9B690039AFAE /* RVTFirefighter.h */,
+				94D2F9D7173A9B690039AFAE /* RVTFirefighter.m */,
+				94D2F9D8173A9B690039AFAE /* RVTOccupation.h */,
+				94D2F9D9173A9B690039AFAE /* RVTPerson.h */,
+				94D2F9DA173A9B690039AFAE /* RVTPerson.m */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		94D2F9DB173A9B690039AFAE /* Pizza */ = {
+			isa = PBXGroup;
+			children = (
+				94D2F9E4173A9B7A0039AFAE /* RVTAnchovies.h */,
+				94D2F9E5173A9B7A0039AFAE /* RVTAnchovies.m */,
+				94D2F9E7173A9BD30039AFAE /* RVTCheese.h */,
+				94D2F9E8173A9BD30039AFAE /* RVTCheese.m */,
+				94D2F9F0173A9C040039AFAE /* RVTIngredientsProvider.h */,
+				94D2F9F1173A9C040039AFAE /* RVTIngredientsProvider.m */,
+				94D2F9ED173A9BDF0039AFAE /* RVTPepperoni.h */,
+				94D2F9EE173A9BDF0039AFAE /* RVTPepperoni.m */,
+				94D2F9EA173A9BDA0039AFAE /* RVTPineapple.h */,
+				94D2F9EB173A9BDA0039AFAE /* RVTPineapple.m */,
+				94D2F9E1173A9B740039AFAE /* RVTPizza.h */,
+				94D2F9E2173A9B740039AFAE /* RVTPizza.m */,
+				94D2F9F3173A9D150039AFAE /* RVTPizzaModule.h */,
+				94D2F9F4173A9D150039AFAE /* RVTPizzaModule.m */,
+			);
+			path = Pizza;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,11 +538,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				948CCC651733F901002972A8 /* RVTConstructorInjectionSpec.m in Sources */,
-				94EAA4F61739A07400E52452 /* RVTCar.m in Sources */,
-				94EAA4F71739A07400E52452 /* RVTEngine.m in Sources */,
-				94EAA4F81739A07400E52452 /* RVTFirefighter.m in Sources */,
-				94EAA4F91739A07400E52452 /* RVTPerson.m in Sources */,
-				94EAA5041739A7B800E52452 /* RVTTestModule.m in Sources */,
 				94D2F989173A5DD30039AFAE /* RVTSingletonsSpec.m in Sources */,
 				94D2F9BD173A6B130039AFAE /* RVTDependencyMapSpec.m in Sources */,
 				94D2F9BE173A6B130039AFAE /* RVTDependencySpec.m in Sources */,
@@ -499,6 +548,19 @@
 				94D2F9C3173A6B130039AFAE /* RVTSequentialProviderSpec.m in Sources */,
 				94D2F9C4173A6B130039AFAE /* RVTValueProviderSpec.m in Sources */,
 				94D2F9C5173A6B130039AFAE /* RVTSingletonScopeSpec.m in Sources */,
+				94D2F9CD173A80EB0039AFAE /* RVTUsingProvidersSpec.m in Sources */,
+				94D2F9DC173A9B690039AFAE /* RVTCar.m in Sources */,
+				94D2F9DD173A9B690039AFAE /* RVTCarModule.m in Sources */,
+				94D2F9DE173A9B690039AFAE /* RVTEngine.m in Sources */,
+				94D2F9DF173A9B690039AFAE /* RVTFirefighter.m in Sources */,
+				94D2F9E0173A9B690039AFAE /* RVTPerson.m in Sources */,
+				94D2F9E3173A9B740039AFAE /* RVTPizza.m in Sources */,
+				94D2F9E6173A9B7A0039AFAE /* RVTAnchovies.m in Sources */,
+				94D2F9E9173A9BD30039AFAE /* RVTCheese.m in Sources */,
+				94D2F9EC173A9BDA0039AFAE /* RVTPineapple.m in Sources */,
+				94D2F9EF173A9BDF0039AFAE /* RVTPepperoni.m in Sources */,
+				94D2F9F2173A9C040039AFAE /* RVTIngredientsProvider.m in Sources */,
+				94D2F9F5173A9D150039AFAE /* RVTPizzaModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

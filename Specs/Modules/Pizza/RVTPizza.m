@@ -20,26 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCarModule.h"
-#import "RVTCar.h"
-#import "RVTPerson.h"
+#import "RVTPizza.h"
 
-SpecBegin(RVTSingletons)
+@interface RVTPizza ()
+@property (strong, nonatomic) NSArray *ingredients;
+@end
 
-it(@"returns the same occupation for multiple drivers", ^{
-    RVTCarModule *module = [[RVTCarModule alloc] init];
-    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
-    
-    RVTCar *firstCar = [injector injectInstanceOf:[RVTCar class]];
-    RVTCar *secondCar = [injector injectInstanceOf:[RVTCar class]];
-    
-    RVTPerson *firstDriver = [firstCar driver];
-    RVTPerson *secondDriver = [secondCar driver];
-    
-    id<RVTOccupation> firstOccupation = [firstDriver occupation];
-    id<RVTOccupation> secondOccupation = [secondDriver occupation];
-    
-    expect(firstOccupation).to.equal(secondOccupation);
-});
+@implementation RVTPizza
 
-SpecEnd
+- (id)initWithIngredients:(NSArray *)ingredients
+{
+    if (self = [self init]) {
+        self.ingredients = ingredients;
+    }
+    return self;
+}
+
+@end

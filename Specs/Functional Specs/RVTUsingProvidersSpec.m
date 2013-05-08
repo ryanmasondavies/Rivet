@@ -20,26 +20,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCarModule.h"
-#import "RVTCar.h"
-#import "RVTPerson.h"
+#import "RVTPizzaModule.h"
+#import "RVTPizza.h"
+#import "RVTAnchovies.h"
+#import "RVTCheese.h"
+#import "RVTPineapple.h"
+#import "RVTPepperoni.h"
 
-SpecBegin(RVTSingletons)
+SpecBegin(RVTUsingProviders)
 
-it(@"returns the same occupation for multiple drivers", ^{
-    RVTCarModule *module = [[RVTCarModule alloc] init];
+it(@"injects providers with dependencies", ^{
+    RVTPizzaModule *module = [[RVTPizzaModule alloc] init];
     RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
-    
-    RVTCar *firstCar = [injector injectInstanceOf:[RVTCar class]];
-    RVTCar *secondCar = [injector injectInstanceOf:[RVTCar class]];
-    
-    RVTPerson *firstDriver = [firstCar driver];
-    RVTPerson *secondDriver = [secondCar driver];
-    
-    id<RVTOccupation> firstOccupation = [firstDriver occupation];
-    id<RVTOccupation> secondOccupation = [secondDriver occupation];
-    
-    expect(firstOccupation).to.equal(secondOccupation);
+    RVTPizza *pizza = [injector injectInstanceOf:[RVTPizza class]];
+    expect([pizza ingredients][0]).to.beKindOf([RVTAnchovies class]);
+    expect([pizza ingredients][1]).to.beKindOf([RVTCheese class]);
+    expect([pizza ingredients][2]).to.beKindOf([RVTPineapple class]);
+    expect([pizza ingredients][3]).to.beKindOf([RVTPepperoni class]);
 });
 
 SpecEnd

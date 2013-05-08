@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTTestModule.h"
+#import "RVTCarModule.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTPerson.h"
@@ -28,7 +28,7 @@
 SpecBegin(RVTConstructorInjection)
 
 it(@"injects an instance of RVTCar with dependencies resolved", ^{
-    RVTTestModule *module = [[RVTTestModule alloc] init];
+    RVTCarModule *module = [[RVTCarModule alloc] init];
     RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
     RVTCar *car = [injector injectInstanceOf:[RVTCar class]];
     expect(car).to.beKindOf([RVTCar class]);
@@ -37,7 +37,7 @@ it(@"injects an instance of RVTCar with dependencies resolved", ^{
 });
 
 it(@"injects a car with a driver named John Smith", ^{
-    RVTTestModule *module = [[RVTTestModule alloc] init];
+    RVTCarModule *module = [[RVTCarModule alloc] init];
     RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
     RVTCar *car = [injector injectInstanceOf:[RVTCar class]];
     RVTPerson *driver = [car driver];

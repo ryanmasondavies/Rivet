@@ -20,26 +20,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTCarModule.h"
-#import "RVTCar.h"
-#import "RVTPerson.h"
+#import "RVTIngredientsProvider.h"
+#import "RVTAnchovies.h"
+#import "RVTCheese.h"
+#import "RVTPepperoni.h"
+#import "RVTPineapple.h"
 
-SpecBegin(RVTSingletons)
+@interface RVTIngredientsProvider ()
+@property (strong, nonatomic) RVTAnchovies *anchovies;
+@property (strong, nonatomic) RVTCheese *cheese;
+@property (strong, nonatomic) RVTPepperoni *pepperoni;
+@property (strong, nonatomic) RVTPineapple *pineapple;
+@end
 
-it(@"returns the same occupation for multiple drivers", ^{
-    RVTCarModule *module = [[RVTCarModule alloc] init];
-    RVTInjector *injector = [[RVTInjector alloc] initWithDependencies:[module dependencies]];
-    
-    RVTCar *firstCar = [injector injectInstanceOf:[RVTCar class]];
-    RVTCar *secondCar = [injector injectInstanceOf:[RVTCar class]];
-    
-    RVTPerson *firstDriver = [firstCar driver];
-    RVTPerson *secondDriver = [secondCar driver];
-    
-    id<RVTOccupation> firstOccupation = [firstDriver occupation];
-    id<RVTOccupation> secondOccupation = [secondDriver occupation];
-    
-    expect(firstOccupation).to.equal(secondOccupation);
-});
+@implementation RVTIngredientsProvider
 
-SpecEnd
+- (id)initWithAnchovies:(RVTAnchovies *)anchovies cheese:(RVTCheese *)cheese pepperoni:(RVTPepperoni *)pepperoni pineapple:(RVTPineapple *)pineapple
+{
+    if (self = [self init]) {
+        self.anchovies = anchovies;
+        self.cheese    = cheese;
+        self.pepperoni = pepperoni;
+        self.pineapple = pineapple;
+    }
+    return self;
+}
+
+- (id)get
+{
+    return @[[self anchovies], [self cheese], [self pepperoni], [self pineapple]];
+}
+
+@end
