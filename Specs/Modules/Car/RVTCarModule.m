@@ -26,64 +26,11 @@
 #import "RVTFirefighter.h"
 #import "RVTPerson.h"
 
-@interface RVTCarModule ()
-@property (strong, nonatomic) id<RVTScope> singletonScope;
-@property (strong, nonatomic) id<RVTScope> noScope;
-@end
-
 @implementation RVTCarModule
 
-- (id)init
+- (void)declare
 {
-    if (self = [super init]) {
-        self.singletonScope = [[RVTSingletonScope alloc] initWithCache:[RVTScopeCache new]];
-        self.noScope = [[RVTNoScope alloc] init];
-    }
-    return self;
-}
-
-- (NSDictionary *)dependencies
-{
-    NSMutableDictionary *dependencies = [[NSMutableDictionary alloc] init];
-    dependencies[NSStringFromClass([RVTCar class])] = [self car];
-    dependencies[NSStringFromClass([RVTEngine class])] = [self engine];
-    dependencies[NSStringFromClass([RVTFirefighter class])] = [self firefighter];
-    dependencies[NSStringFromClass([RVTPerson class])] = [self driver];
-    return dependencies;
-}
-
-- (RVTDependency *)car
-{
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTCar class] selector:@selector(initWithEngine:driver:) dependencies:@[[self engine], [self driver]]];
-    id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTCar class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
-}
-
-- (RVTDependency *)engine
-{
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTEngine class] selector:@selector(init) dependencies:nil];
-    id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTEngine class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
-}
-
-- (RVTDependency *)name
-{
-    id<RVTProvider> provider = [[RVTValueProvider alloc] initWithValue:@"John Smith"];
-    return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
-}
-
-- (RVTDependency *)firefighter
-{
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTFirefighter class] selector:@selector(init) dependencies:nil];
-    id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTFirefighter class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:provider scope:[self singletonScope]];
-}
-
-- (RVTDependency *)driver
-{
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTPerson class] selector:@selector(initWithName:occupation:) dependencies:@[[self name], [self firefighter]]];
-    RVTObjectProvider *carProvider = [[RVTObjectProvider alloc] initWithClass:[RVTPerson class] initializer:initializer properties:nil];
-    return [[RVTDependency alloc] initWithProvider:carProvider scope:[self noScope]];
+    [[self binder] bindClass:[RVTCar class] toInitializer:@selector(initWithEngine:driver:) arguments:@[[RVTEngine class], [RVTPerson class]]];
 }
 
 @end

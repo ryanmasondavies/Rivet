@@ -22,8 +22,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RVTCarModule : NSObject
-
-- (NSDictionary *)dependencies;
+@interface RVTCarModule : RVTModule
 
 @end
