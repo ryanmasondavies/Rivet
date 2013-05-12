@@ -51,35 +51,35 @@
 
 - (RVTDependency *)anchovies
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTAnchovies class] selector:@selector(init) dependencies:nil];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTAnchovies class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)cheese
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTCheese class] selector:@selector(init) dependencies:nil];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTCheese class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)pepperoni
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTPepperoni class] selector:@selector(init) dependencies:nil];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTPepperoni class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)pineapple
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(init) dependencies:nil];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTPineapple class] selector:@selector(init) dependencies:nil];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTPineapple class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
 
 - (RVTDependency *)ingredientsProvider
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithAnchovies:cheese:pepperoni:pineapple:) dependencies:@[[self anchovies], [self cheese], [self pepperoni], [self pineapple]]];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTIngredientsProvider class] selector:@selector(initWithAnchovies:cheese:pepperoni:pineapple:) dependencies:@[[self anchovies], [self cheese], [self pepperoni], [self pineapple]]];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTIngredientsProvider class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }
@@ -93,7 +93,7 @@
 
 - (RVTDependency *)pizza
 {
-    RVTInitializer *initializer = [[RVTInitializer alloc] initWithSelector:@selector(initWithIngredients:) dependencies:@[[self ingredients]]];
+    RVTInitializer *initializer = [[RVTInitializer alloc] initWithClass:[RVTPizza class] selector:@selector(initWithIngredients:) dependencies:@[[self ingredients]]];
     id<RVTProvider> provider = [[RVTObjectProvider alloc] initWithClass:[RVTPizza class] initializer:initializer properties:nil];
     return [[RVTDependency alloc] initWithProvider:provider scope:[self noScope]];
 }

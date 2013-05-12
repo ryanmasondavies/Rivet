@@ -49,7 +49,7 @@
         return nil;
     }
     
-    id object = [[self initializer] performOnObject:[[self klass] alloc]];
+    id object = [[self initializer] perform];
     [[self properties] makeObjectsPerformSelector:@selector(applyToObject:) withObject:object];
     return object;
 }

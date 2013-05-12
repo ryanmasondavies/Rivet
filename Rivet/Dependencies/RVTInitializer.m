@@ -24,24 +24,28 @@
 #import "RVTDependency.h"
 
 @interface RVTInitializer ()
+@property (strong, nonatomic) Class klass;
 @property (assign, nonatomic) SEL selector;
 @property (strong, nonatomic) NSArray *dependencies;
 @end
 
 @implementation RVTInitializer
 
-- (id)initWithSelector:(SEL)selector dependencies:(NSArray *)dependencies
+- (id)initWithClass:(Class)klass selector:(SEL)selector dependencies:(NSArray *)dependencies
 {
     if (self = [self init]) {
+        self.klass = klass;
         self.selector = selector;
         self.dependencies = dependencies;
     }
     return self;
 }
 
-- (id)performOnObject:(id)object
+- (id)perform
 {
-    NSMethodSignature *methodSignature = [[object class] instanceMethodSignatureForSelector:[self selector]];
+    id object = [[self klass] alloc];
+    
+    NSMethodSignature *methodSignature = [[self klass] instanceMethodSignatureForSelector:[self selector]];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
     [invocation setSelector:[self selector]];
     for (NSUInteger index = 0; index < [[self dependencies] count]; index ++) {

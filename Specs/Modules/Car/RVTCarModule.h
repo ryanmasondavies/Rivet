@@ -24,6 +24,6 @@
 
 @interface RVTCarModule : NSObject
 
-- (RVTDependencyMap *)dependencies;
+- (NSDictionary *)dependencies;
 
 @end

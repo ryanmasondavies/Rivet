@@ -23,6 +23,6 @@
 #import <Foundation/Foundation.h>
 
 @interface RVTInitializer : NSObject
-- (id)initWithSelector:(SEL)selector dependencies:(NSArray *)dependencies;
-- (id)performOnObject:(id)object;
+- (id)initWithClass:(Class)klass selector:(SEL)selector dependencies:(NSArray *)dependencies;
+- (id)perform;
 @end

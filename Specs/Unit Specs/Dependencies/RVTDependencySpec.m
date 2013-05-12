@@ -22,6 +22,14 @@
 
 SpecBegin(RVTDependency)
 
-PENDING;
+when(@"resolved", ^{
+    it(@"returns the result of passing to the provider to the scope", ^{
+        NSObject *object = [[NSObject alloc] init];
+        RVTValueProvider *provider = [[RVTValueProvider alloc] initWithValue:object];
+        RVTNoScope *scope = [[RVTNoScope alloc] init];
+        RVTDependency *dependency = [[RVTDependency alloc] initWithProvider:provider scope:scope];
+        expect([dependency resolve]).to.equal(object);
+    });
+});
 
 SpecEnd
