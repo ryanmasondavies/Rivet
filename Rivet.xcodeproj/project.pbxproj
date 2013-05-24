@@ -13,6 +13,21 @@
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libRivet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libRivet.a */; };
+		94B321F3174EDC4D00578851 /* RVTFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B321EC174EDC4D00578851 /* RVTFactory.m */; };
+		94B321F4174EDC4D00578851 /* RVTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B321EE174EDC4D00578851 /* RVTModule.m */; };
+		94B321F5174EDC4D00578851 /* RVTProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B321F0174EDC4D00578851 /* RVTProduct.m */; };
+		94B32214174EDC5700578851 /* RVTCarFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B321FD174EDC5700578851 /* RVTCarFactory.m */; };
+		94B32215174EDC5700578851 /* RVTEngineFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B321FF174EDC5700578851 /* RVTEngineFactory.m */; };
+		94B32216174EDC5700578851 /* RVTFrequencyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32201174EDC5700578851 /* RVTFrequencyFactory.m */; };
+		94B32217174EDC5700578851 /* RVTRadioFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32203174EDC5700578851 /* RVTRadioFactory.m */; };
+		94B32218174EDC5700578851 /* RVTWheelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32205174EDC5700578851 /* RVTWheelFactory.m */; };
+		94B32219174EDC5700578851 /* RVTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32208174EDC5700578851 /* RVTCar.m */; };
+		94B3221A174EDC5700578851 /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B3220A174EDC5700578851 /* RVTEngine.m */; };
+		94B3221B174EDC5700578851 /* RVTRadio.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B3220C174EDC5700578851 /* RVTRadio.m */; };
+		94B3221C174EDC5700578851 /* RVTWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B3220E174EDC5700578851 /* RVTWheel.m */; };
+		94B3221D174EDC5700578851 /* RVTCarModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32211174EDC5700578851 /* RVTCarModule.m */; };
+		94B3221E174EDC5700578851 /* RVTRadioModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32213174EDC5700578851 /* RVTRadioModule.m */; };
+		94B32220174EEBD100578851 /* RVTCarManufacturingSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B3221F174EEBD100578851 /* RVTCarManufacturingSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +60,35 @@
 		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
+		94B321EB174EDC4D00578851 /* RVTFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTFactory.h; sourceTree = "<group>"; };
+		94B321EC174EDC4D00578851 /* RVTFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTFactory.m; sourceTree = "<group>"; };
+		94B321ED174EDC4D00578851 /* RVTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTModule.h; sourceTree = "<group>"; };
+		94B321EE174EDC4D00578851 /* RVTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModule.m; sourceTree = "<group>"; };
+		94B321EF174EDC4D00578851 /* RVTProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTProduct.h; sourceTree = "<group>"; };
+		94B321F0174EDC4D00578851 /* RVTProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTProduct.m; sourceTree = "<group>"; };
+		94B321FC174EDC5700578851 /* RVTCarFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCarFactory.h; sourceTree = "<group>"; };
+		94B321FD174EDC5700578851 /* RVTCarFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCarFactory.m; sourceTree = "<group>"; };
+		94B321FE174EDC5700578851 /* RVTEngineFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEngineFactory.h; sourceTree = "<group>"; };
+		94B321FF174EDC5700578851 /* RVTEngineFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTEngineFactory.m; sourceTree = "<group>"; };
+		94B32200174EDC5700578851 /* RVTFrequencyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTFrequencyFactory.h; sourceTree = "<group>"; };
+		94B32201174EDC5700578851 /* RVTFrequencyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTFrequencyFactory.m; sourceTree = "<group>"; };
+		94B32202174EDC5700578851 /* RVTRadioFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTRadioFactory.h; sourceTree = "<group>"; };
+		94B32203174EDC5700578851 /* RVTRadioFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRadioFactory.m; sourceTree = "<group>"; };
+		94B32204174EDC5700578851 /* RVTWheelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTWheelFactory.h; sourceTree = "<group>"; };
+		94B32205174EDC5700578851 /* RVTWheelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTWheelFactory.m; sourceTree = "<group>"; };
+		94B32207174EDC5700578851 /* RVTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCar.h; sourceTree = "<group>"; };
+		94B32208174EDC5700578851 /* RVTCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCar.m; sourceTree = "<group>"; };
+		94B32209174EDC5700578851 /* RVTEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEngine.h; sourceTree = "<group>"; };
+		94B3220A174EDC5700578851 /* RVTEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTEngine.m; sourceTree = "<group>"; };
+		94B3220B174EDC5700578851 /* RVTRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTRadio.h; sourceTree = "<group>"; };
+		94B3220C174EDC5700578851 /* RVTRadio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRadio.m; sourceTree = "<group>"; };
+		94B3220D174EDC5700578851 /* RVTWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTWheel.h; sourceTree = "<group>"; };
+		94B3220E174EDC5700578851 /* RVTWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTWheel.m; sourceTree = "<group>"; };
+		94B32210174EDC5700578851 /* RVTCarModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCarModule.h; sourceTree = "<group>"; };
+		94B32211174EDC5700578851 /* RVTCarModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCarModule.m; sourceTree = "<group>"; };
+		94B32212174EDC5700578851 /* RVTRadioModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTRadioModule.h; sourceTree = "<group>"; };
+		94B32213174EDC5700578851 /* RVTRadioModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRadioModule.m; sourceTree = "<group>"; };
+		94B3221F174EEBD100578851 /* RVTCarManufacturingSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTCarManufacturingSpec.m; sourceTree = "<group>"; };
 		94B500921736596000570893 /* Rivet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Rivet.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		94D2FA02173ACE820039AFAE /* RVTVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RVTVersion.h; sourceTree = "<group>"; };
 		A17E5AC52FFB4D70AA00E3B1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,19 +153,12 @@
 		948CCC571733F901002972A8 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				94D2F9CE173A9B690039AFAE /* Modules */,
-				948CCC5F1733F901002972A8 /* Functional Specs */,
-				948CCC691733FA43002972A8 /* Unit Specs */,
+				94B321F9174EDC5700578851 /* Use Cases */,
+				94B321F7174EDC5700578851 /* Functional Specs */,
+				94B321F8174EDC5700578851 /* Unit Specs */,
 				948CCC681733F9A7002972A8 /* Supporting Files */,
 			);
 			path = Specs;
-			sourceTree = "<group>";
-		};
-		948CCC5F1733F901002972A8 /* Functional Specs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Functional Specs";
 			sourceTree = "<group>";
 		};
 		948CCC681733F9A7002972A8 /* Supporting Files */ = {
@@ -133,11 +170,80 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		948CCC691733FA43002972A8 /* Unit Specs */ = {
+		94B321F7174EDC5700578851 /* Functional Specs */ = {
+			isa = PBXGroup;
+			children = (
+				94B3221F174EEBD100578851 /* RVTCarManufacturingSpec.m */,
+			);
+			path = "Functional Specs";
+			sourceTree = "<group>";
+		};
+		94B321F8174EDC5700578851 /* Unit Specs */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = "Unit Specs";
+			sourceTree = "<group>";
+		};
+		94B321F9174EDC5700578851 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+				94B321FA174EDC5700578851 /* Car Manufacturing */,
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		94B321FA174EDC5700578851 /* Car Manufacturing */ = {
+			isa = PBXGroup;
+			children = (
+				94B321FB174EDC5700578851 /* Factories */,
+				94B32206174EDC5700578851 /* Model */,
+				94B3220F174EDC5700578851 /* Modules */,
+			);
+			path = "Car Manufacturing";
+			sourceTree = "<group>";
+		};
+		94B321FB174EDC5700578851 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				94B321FC174EDC5700578851 /* RVTCarFactory.h */,
+				94B321FD174EDC5700578851 /* RVTCarFactory.m */,
+				94B321FE174EDC5700578851 /* RVTEngineFactory.h */,
+				94B321FF174EDC5700578851 /* RVTEngineFactory.m */,
+				94B32200174EDC5700578851 /* RVTFrequencyFactory.h */,
+				94B32201174EDC5700578851 /* RVTFrequencyFactory.m */,
+				94B32202174EDC5700578851 /* RVTRadioFactory.h */,
+				94B32203174EDC5700578851 /* RVTRadioFactory.m */,
+				94B32204174EDC5700578851 /* RVTWheelFactory.h */,
+				94B32205174EDC5700578851 /* RVTWheelFactory.m */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		94B32206174EDC5700578851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				94B32207174EDC5700578851 /* RVTCar.h */,
+				94B32208174EDC5700578851 /* RVTCar.m */,
+				94B32209174EDC5700578851 /* RVTEngine.h */,
+				94B3220A174EDC5700578851 /* RVTEngine.m */,
+				94B3220B174EDC5700578851 /* RVTRadio.h */,
+				94B3220C174EDC5700578851 /* RVTRadio.m */,
+				94B3220D174EDC5700578851 /* RVTWheel.h */,
+				94B3220E174EDC5700578851 /* RVTWheel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		94B3220F174EDC5700578851 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				94B32210174EDC5700578851 /* RVTCarModule.h */,
+				94B32211174EDC5700578851 /* RVTCarModule.m */,
+				94B32212174EDC5700578851 /* RVTRadioModule.h */,
+				94B32213174EDC5700578851 /* RVTRadioModule.m */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		94B500911736596000570893 /* Rivet */ = {
@@ -145,15 +251,14 @@
 			children = (
 				94B500921736596000570893 /* Rivet.h */,
 				94D2FA02173ACE820039AFAE /* RVTVersion.h */,
+				94B321EB174EDC4D00578851 /* RVTFactory.h */,
+				94B321EC174EDC4D00578851 /* RVTFactory.m */,
+				94B321ED174EDC4D00578851 /* RVTModule.h */,
+				94B321EE174EDC4D00578851 /* RVTModule.m */,
+				94B321EF174EDC4D00578851 /* RVTProduct.h */,
+				94B321F0174EDC4D00578851 /* RVTProduct.m */,
 			);
 			path = Rivet;
-			sourceTree = "<group>";
-		};
-		94D2F9CE173A9B690039AFAE /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +389,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B321F3174EDC4D00578851 /* RVTFactory.m in Sources */,
+				94B321F4174EDC4D00578851 /* RVTModule.m in Sources */,
+				94B321F5174EDC4D00578851 /* RVTProduct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +399,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B32214174EDC5700578851 /* RVTCarFactory.m in Sources */,
+				94B32215174EDC5700578851 /* RVTEngineFactory.m in Sources */,
+				94B32216174EDC5700578851 /* RVTFrequencyFactory.m in Sources */,
+				94B32217174EDC5700578851 /* RVTRadioFactory.m in Sources */,
+				94B32218174EDC5700578851 /* RVTWheelFactory.m in Sources */,
+				94B32219174EDC5700578851 /* RVTCar.m in Sources */,
+				94B3221A174EDC5700578851 /* RVTEngine.m in Sources */,
+				94B3221B174EDC5700578851 /* RVTRadio.m in Sources */,
+				94B3221C174EDC5700578851 /* RVTWheel.m in Sources */,
+				94B3221D174EDC5700578851 /* RVTCarModule.m in Sources */,
+				94B3221E174EDC5700578851 /* RVTRadioModule.m in Sources */,
+				94B32220174EEBD100578851 /* RVTCarManufacturingSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
