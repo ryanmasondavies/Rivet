@@ -21,13 +21,14 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTEngine;
+@class RVTEngine, RVTRadio;
 
 @interface RVTCar : NSObject
 
-- (id)initWithRVTEngine:(RVTEngine *)engine wheels:(NSArray *)wheels;
+- (id)initWithRVTEngine:(RVTEngine *)engine radio:(RVTRadio *)radio wheels:(NSArray *)wheels;
 
 @property (strong, nonatomic, readonly) RVTEngine *engine;
+@property (strong, nonatomic, readonly) RVTRadio *radio;
 @property (strong, nonatomic, readonly) NSArray *wheels;
 
 @end

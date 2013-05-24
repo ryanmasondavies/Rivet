@@ -24,15 +24,17 @@
 
 @interface RVTCar ()
 @property (strong, nonatomic, readwrite) RVTEngine *engine;
+@property (strong, nonatomic, readwrite) RVTRadio *radio;
 @property (strong, nonatomic, readwrite) NSArray *wheels;
 @end
 
 @implementation RVTCar
 
-- (id)initWithRVTEngine:(RVTEngine *)engine wheels:(NSArray *)wheels
+- (id)initWithRVTEngine:(RVTEngine *)engine radio:(RVTRadio *)radio wheels:(NSArray *)wheels
 {
     if (self = [self init]) {
         self.engine = engine;
+        self.radio = radio;
         self.wheels = wheels;
     }
     return self;
