@@ -25,7 +25,7 @@
 
 @implementation RVTWheelFactory
 
-- (id)supplyProduct:(RVTProduct *)product inModule:(RVTModule *)module
+- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
 {
     return [[RVTWheel alloc] init];
 }

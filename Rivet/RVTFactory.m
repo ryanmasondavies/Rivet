@@ -21,12 +21,12 @@
 // THE SOFTWARE.
 
 #import "RVTFactory.h"
-#import "RVTProduct.h"
+#import "RVTDependency.h"
 #import "RVTModule.h"
 
 @implementation RVTFactory
 
-- (id)supplyProduct:(RVTProduct *)product inModule:(RVTModule *)module
+- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
 {
     @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Method must be overridden by subclass." userInfo:nil];
 }

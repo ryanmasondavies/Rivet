@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 // library
-#import "RVTProduct.h"
+#import "RVTDependency.h"
 #import "RVTFactory.h"
 #import "RVTModule.h"
 
@@ -51,7 +51,7 @@ before(^{
 
 describe(@"an independent radio", ^{
     it(@"has a frequency of 102.8", ^{
-        RVTProduct *radioProduct = [[RVTProduct alloc] initWithClass:[RVTRadio class] name:nil];
+        RVTDependency *radioProduct = [[RVTDependency alloc] initWithClass:[RVTRadio class] name:nil];
         RVTRadio *radio = [module supplyProduct:radioProduct];
         expect([radio frequency]).to.equal(@102.8);
     });
@@ -61,8 +61,8 @@ describe(@"a car", ^{
     __block RVTCar *car;
     
     before(^{
-        RVTProduct *product = [[RVTProduct alloc] initWithClass:[RVTCar class] name:nil];
-        car = [module supplyProduct:product];
+        RVTDependency *dependency = [[RVTDependency alloc] initWithClass:[RVTCar class] name:nil];
+        car = [module supplyProduct:dependency];
     });
     
     it(@"has an engine", ^{

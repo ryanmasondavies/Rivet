@@ -21,15 +21,15 @@
 // THE SOFTWARE.
 
 #import "RVTRadioFactory.h"
-#import "RVTProduct.h"
+#import "RVTDependency.h"
 #import "RVTModule.h"
 #import "RVTRadio.h"
 
 @implementation RVTRadioFactory
 
-- (id)supplyProduct:(RVTProduct *)product inModule:(RVTModule *)module
+- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
 {
-    RVTProduct *frequencyProduct = [[RVTProduct alloc] initWithClass:[NSNumber class] name:@"Frequency"];
+    RVTDependency *frequencyProduct = [[RVTDependency alloc] initWithClass:[NSNumber class] name:@"Frequency"];
     NSNumber *frequency = [module supplyProduct:frequencyProduct];
     return [[RVTRadio alloc] initWithFrequency:frequency];
 }

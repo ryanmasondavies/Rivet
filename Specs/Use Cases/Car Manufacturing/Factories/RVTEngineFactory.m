@@ -25,7 +25,7 @@
 
 @implementation RVTEngineFactory
 
-- (id)supplyProduct:(RVTProduct *)product inModule:(RVTModule *)module
+- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
 {
     return [[RVTEngine alloc] init];
 }

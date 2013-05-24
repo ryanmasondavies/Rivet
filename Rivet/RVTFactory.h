@@ -21,10 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTProduct, RVTModule;
+@class RVTDependency, RVTModule;
 
 @interface RVTFactory : NSObject
 
-- (id)supplyProduct:(RVTProduct *)product inModule:(RVTModule *)module;
+- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module;
 
 @end

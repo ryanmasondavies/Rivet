@@ -21,26 +21,29 @@
 // THE SOFTWARE.
 
 #import "RVTCarFactory.h"
-#import "RVTProduct.h"
+#import "RVTDependency.h"
 #import "RVTModule.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
+#import "RVTRadio.h"
 #import "RVTWheel.h"
 
 @implementation RVTCarFactory
 
-- (id)supplyProduct:(RVTProduct *)product inModule:(RVTModule *)module
+- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
 {
-    RVTProduct *engineProduct = [[RVTProduct alloc] initWithClass:[RVTEngine class] name:nil];
-    RVTProduct *wheelProduct = [[RVTProduct alloc] initWithClass:[RVTWheel class] name:nil];
+    RVTDependency *engineProduct = [[RVTDependency alloc] initWithClass:[RVTEngine class] name:nil];
+    RVTDependency *radioProduct = [[RVTDependency alloc] initWithClass:[RVTRadio class] name:nil];
+    RVTDependency *wheelProduct = [[RVTDependency alloc] initWithClass:[RVTWheel class] name:nil];
     
     RVTEngine *engine = [module supplyProduct:engineProduct];
+    RVTRadio *radio = [module supplyProduct:radioProduct];
     RVTWheel *frontLeftRVTWheel = [module supplyProduct:wheelProduct];
     RVTWheel *frontRightRVTWheel = [module supplyProduct:wheelProduct];
     RVTWheel *rearLeftRVTWheel = [module supplyProduct:wheelProduct];
     RVTWheel *rearRightRVTWheel = [module supplyProduct:wheelProduct];
     
-    return [[RVTCar alloc] initWithRVTEngine:engine wheels:@[frontLeftRVTWheel, frontRightRVTWheel, rearLeftRVTWheel, rearRightRVTWheel]];
+    return [[RVTCar alloc] initWithRVTEngine:engine radio:radio wheels:@[frontLeftRVTWheel, frontRightRVTWheel, rearLeftRVTWheel, rearRightRVTWheel]];
 }
 
 @end

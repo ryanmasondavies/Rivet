@@ -21,82 +21,36 @@
 // THE SOFTWARE.
 
 #import "RVTModule.h"
+#import "RVTDependencyMap.h"
 #import "RVTFactory.h"
-#import "RVTModule.h"
-#import "RVTProduct.h"
+#import "RVTDependency.h"
 
 @interface RVTModule ()
-@property (strong, nonatomic, readwrite) NSMutableArray *modules;
-@property (strong, nonatomic, readwrite) NSMutableDictionary *factoryMap;
+@property (strong, nonatomic, readwrite) RVTDependencyMap *definitions;
 @end
 
 @implementation RVTModule
 
-- (NSMutableArray *)modules
+- (id)initWithDefinitions:(RVTDependencyMap *)definitions
 {
-    if (_modules) return _modules;
-    _modules = [[NSMutableArray alloc] init];
-    [self declareModules];
-    return _modules;
-}
-
-- (NSMutableDictionary *)factoryMap
-{
-    if (_factoryMap) return _factoryMap;
-    _factoryMap = [[NSMutableDictionary alloc] init];
-    [self declareFactories];
-    return _factoryMap;
-}
-
-- (void)declareModules
-{
-}
-
-- (void)declareFactories
-{
-}
-
-- (void)addModule:(RVTModule *)module
-{
-    [[self modules] addObject:module];
-}
-
-- (void)setFactory:(RVTFactory *)factory forProduct:(RVTProduct *)product
-{
-    [[self factoryMap] setObject:factory forKey:product];
-}
-
-- (RVTFactory *)factoryForProduct:(RVTProduct *)product
-{
-    RVTFactory *factory = nil;
-    
-    NSLog(@"Find factory in %@", [self factoryMap]);
-    
-    // look for one in the factory map
-    for (RVTProduct *potential in [[self factoryMap] allKeys]) {
-        if ([potential isApplicableToProduct:product]) {
-            factory = [[self factoryMap] objectForKey:potential];
-        }
+    if (self = [self initWithDefinitions:definitions]) {
+        self.definitions = definitions;
     }
-    
-    // look for one in the submodules
-    if (!factory) {
-        for (RVTModule *module in [self modules]) {
-            factory = [module factoryForProduct:product];
-        }
-    }
-    
-    return factory;
+    return self;
 }
 
-- (id)supplyProduct:(RVTProduct *)product
+- (void)configure
 {
-    RVTFactory *factory = [self factoryForProduct:product];
+}
+
+- (id)supplyProduct:(RVTDependency *)dependency
+{
+    RVTFactory *factory = [[self definitions] factoryForDependency:dependency];
     if (!factory) {
-        NSString *reason = [NSString stringWithFormat:@"No factory for %@", product];
+        NSString *reason = [NSString stringWithFormat:@"No factory for %@", dependency];
         @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:reason userInfo:nil];
     }
-    return [factory supplyProduct:product inModule:self];
+    return [factory supplyDependency:dependency inModule:self];
 }
 
 @end

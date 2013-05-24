@@ -21,7 +21,8 @@
 // THE SOFTWARE.
 
 #import "RVTCarModule.h"
-#import "RVTProduct.h"
+#import "RVTDependencyMap.h"
+#import "RVTDependency.h"
 #import "RVTRadioModule.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
@@ -34,22 +35,12 @@
 
 @implementation RVTCarModule
 
-- (void)declareModules
+- (void)configure
 {
-    [self addModule:[RVTRadioModule new]];
-}
-
-- (void)declareFactories
-{
-    RVTProduct *car    = [[RVTProduct alloc] initWithClass:[RVTCar    class] name:nil];
-    RVTProduct *engine = [[RVTProduct alloc] initWithClass:[RVTEngine class] name:nil];
-    RVTProduct *radio  = [[RVTProduct alloc] initWithClass:[RVTRadio  class] name:nil];
-    RVTProduct *wheel  = [[RVTProduct alloc] initWithClass:[RVTWheel  class] name:nil];
-    
-    [self setFactory:[RVTCarFactory    new] forProduct:car];
-    [self setFactory:[RVTEngineFactory new] forProduct:engine];
-    [self setFactory:[RVTRadioFactory  new] forProduct:radio];
-    [self setFactory:[RVTWheelFactory  new] forProduct:wheel];
+    [[self definitions] setFactory:[RVTCarFactory    new] forDependency:[RVTDependency dependencyWithClass:[RVTCar    class] name:nil]];
+    [[self definitions] setFactory:[RVTEngineFactory new] forDependency:[RVTDependency dependencyWithClass:[RVTEngine class] name:nil]];
+    [[self definitions] setFactory:[RVTRadioFactory  new] forDependency:[RVTDependency dependencyWithClass:[RVTRadio  class] name:nil]];
+    [[self definitions] setFactory:[RVTWheelFactory  new] forDependency:[RVTDependency dependencyWithClass:[RVTWheel  class] name:nil]];
 }
 
 @end

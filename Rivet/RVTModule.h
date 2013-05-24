@@ -21,16 +21,15 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTProduct, RVTFactory;
+@class RVTDependencyMap, RVTDependency;
 
 @interface RVTModule : NSObject
 
-- (id)supplyProduct:(RVTProduct *)product;
+- (id)initWithDefinitions:(RVTDependencyMap *)definitions;
+- (void)configure;
 
-- (void)declareModules;
-- (void)addModule:(RVTModule *)module;
+@property (strong, nonatomic, readonly) RVTDependencyMap *definitions;
 
-- (void)declareFactories;
-- (void)setFactory:(RVTFactory *)factory forProduct:(RVTProduct *)product;
+- (id)supplyProduct:(RVTDependency *)dependency; // out of place
 
 @end
