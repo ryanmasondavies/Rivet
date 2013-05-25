@@ -16,6 +16,14 @@
 		94956A281750C5990054954D /* RVTWheelsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A271750C5990054954D /* RVTWheelsFactory.m */; };
 		94956A2B1750C6BA0054954D /* RVTConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2A1750C6BA0054954D /* RVTConfiguration.m */; };
 		94956A2E1750EEA70054954D /* RVTObjectPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2D1750EEA70054954D /* RVTObjectPool.m */; };
+		94956A301750F3250054954D /* RVTConfigurationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2F1750F3250054954D /* RVTConfigurationSpec.m */; };
+		94956A321750F3340054954D /* RVTModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A311750F3330054954D /* RVTModuleSpec.m */; };
+		94956A341750F3500054954D /* RVTObjectDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A331750F3500054954D /* RVTObjectDescriptionSpec.m */; };
+		94956A361750F35B0054954D /* RVTObjectFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A351750F35B0054954D /* RVTObjectFactorySpec.m */; };
+		94956A381750F36C0054954D /* RVTObjectGraphFactorySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A371750F36C0054954D /* RVTObjectGraphFactorySpec.m */; };
+		94956A3A1750F37D0054954D /* RVTObjectModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A391750F37D0054954D /* RVTObjectModelSpec.m */; };
+		94956A3C1750F38A0054954D /* RVTObjectPoolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A3B1750F38A0054954D /* RVTObjectPoolSpec.m */; };
+		94956A3E1750F3960054954D /* RVTRelationshipDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A3D1750F3960054954D /* RVTRelationshipDescriptionSpec.m */; };
 		9497EBA3175009DD00EEBB28 /* RVTObjectDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBA2175009DD00EEBB28 /* RVTObjectDescription.m */; };
 		9497EBA617500B0C00EEBB28 /* RVTRelationshipDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBA517500B0C00EEBB28 /* RVTRelationshipDescription.m */; };
 		9497EBA917500B1700EEBB28 /* RVTObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBA817500B1700EEBB28 /* RVTObjectModel.m */; };
@@ -72,6 +80,14 @@
 		94956A2A1750C6BA0054954D /* RVTConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConfiguration.m; sourceTree = "<group>"; };
 		94956A2C1750EEA70054954D /* RVTObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectPool.h; sourceTree = "<group>"; };
 		94956A2D1750EEA70054954D /* RVTObjectPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectPool.m; sourceTree = "<group>"; };
+		94956A2F1750F3250054954D /* RVTConfigurationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConfigurationSpec.m; sourceTree = "<group>"; };
+		94956A311750F3330054954D /* RVTModuleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModuleSpec.m; sourceTree = "<group>"; };
+		94956A331750F3500054954D /* RVTObjectDescriptionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectDescriptionSpec.m; sourceTree = "<group>"; };
+		94956A351750F35B0054954D /* RVTObjectFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectFactorySpec.m; sourceTree = "<group>"; };
+		94956A371750F36C0054954D /* RVTObjectGraphFactorySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectGraphFactorySpec.m; sourceTree = "<group>"; };
+		94956A391750F37D0054954D /* RVTObjectModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectModelSpec.m; sourceTree = "<group>"; };
+		94956A3B1750F38A0054954D /* RVTObjectPoolSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectPoolSpec.m; sourceTree = "<group>"; };
+		94956A3D1750F3960054954D /* RVTRelationshipDescriptionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRelationshipDescriptionSpec.m; sourceTree = "<group>"; };
 		9497EBA1175009DD00EEBB28 /* RVTObjectDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectDescription.h; sourceTree = "<group>"; };
 		9497EBA2175009DD00EEBB28 /* RVTObjectDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectDescription.m; sourceTree = "<group>"; };
 		9497EBA417500B0C00EEBB28 /* RVTRelationshipDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTRelationshipDescription.h; sourceTree = "<group>"; };
@@ -199,6 +215,14 @@
 		94B321F8174EDC5700578851 /* Unit Specs */ = {
 			isa = PBXGroup;
 			children = (
+				94956A2F1750F3250054954D /* RVTConfigurationSpec.m */,
+				94956A311750F3330054954D /* RVTModuleSpec.m */,
+				94956A331750F3500054954D /* RVTObjectDescriptionSpec.m */,
+				94956A351750F35B0054954D /* RVTObjectFactorySpec.m */,
+				94956A371750F36C0054954D /* RVTObjectGraphFactorySpec.m */,
+				94956A391750F37D0054954D /* RVTObjectModelSpec.m */,
+				94956A3B1750F38A0054954D /* RVTObjectPoolSpec.m */,
+				94956A3D1750F3960054954D /* RVTRelationshipDescriptionSpec.m */,
 			);
 			path = "Unit Specs";
 			sourceTree = "<group>";
@@ -447,6 +471,14 @@
 				94B3221E174EDC5700578851 /* RVTRadioModule.m in Sources */,
 				94B32220174EEBD100578851 /* RVTCarManufacturingSpec.m in Sources */,
 				94956A281750C5990054954D /* RVTWheelsFactory.m in Sources */,
+				94956A301750F3250054954D /* RVTConfigurationSpec.m in Sources */,
+				94956A321750F3340054954D /* RVTModuleSpec.m in Sources */,
+				94956A341750F3500054954D /* RVTObjectDescriptionSpec.m in Sources */,
+				94956A361750F35B0054954D /* RVTObjectFactorySpec.m in Sources */,
+				94956A381750F36C0054954D /* RVTObjectGraphFactorySpec.m in Sources */,
+				94956A3A1750F37D0054954D /* RVTObjectModelSpec.m in Sources */,
+				94956A3C1750F38A0054954D /* RVTObjectPoolSpec.m in Sources */,
+				94956A3E1750F3960054954D /* RVTRelationshipDescriptionSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
