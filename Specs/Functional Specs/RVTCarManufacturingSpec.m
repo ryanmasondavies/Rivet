@@ -22,9 +22,9 @@
 
 // library
 #import "RVTConfiguration.h"
-#import "RVTModelDrivenFactory.h"
 #import "RVTModule.h"
 #import "RVTObjectDescription.h"
+#import "RVTObjectGraphFactory.h"
 #import "RVTObjectModel.h"
 #import "RVTRelationshipDescription.h"
 
@@ -50,12 +50,12 @@ SpecBegin(RVTObjectGraphSpec)
 
 __block RVTConfiguration      *configuration;
 __block RVTObjectModel        *model;
-__block RVTModelDrivenFactory *factory;
+__block RVTObjectGraphFactory *factory;
 
 before(^{
     configuration = [RVTConfiguration configuration];
     model = [RVTObjectModel objectModel];
-    factory = [RVTModelDrivenFactory modelDrivenFactoryWithConfiguration:configuration objectModel:model];
+    factory = [RVTObjectGraphFactory objectGraphFactoryWithConfiguration:configuration objectModel:model];
     
     [[RVTCarModule new] addToObjectModel:model];
     [[RVTCarModule new] addToConfiguration:configuration];

@@ -26,6 +26,7 @@
 @interface RVTObjectModel : NSObject
 
 + (id)objectModel;
+- (id)init;
 
 - (void)addObjectDescription:(RVTObjectDescription *)objectDescription;
 - (void)addRelationshipDescription:(RVTRelationshipDescription *)relationshipDescription;

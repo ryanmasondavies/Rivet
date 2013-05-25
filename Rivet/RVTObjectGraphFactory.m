@@ -20,21 +20,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTModelDrivenFactory.h"
+#import "RVTObjectGraphFactory.h"
 #import "RVTConfiguration.h"
 #import "RVTObjectDescription.h"
 #import "RVTObjectFactory.h"
 #import "RVTObjectModel.h"
 #import "RVTRelationshipDescription.h"
 
-@interface RVTModelDrivenFactory ()
+@interface RVTObjectGraphFactory ()
 @property (strong, nonatomic, readwrite) RVTConfiguration *configuration;
 @property (strong, nonatomic, readwrite) RVTObjectModel   *objectModel;
 @end
 
-@implementation RVTModelDrivenFactory
+@implementation RVTObjectGraphFactory
 
-+ (id)modelDrivenFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel
++ (id)objectGraphFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel
 {
     return [[self alloc] initWithConfiguration:configuration objectModel:objectModel];
 }

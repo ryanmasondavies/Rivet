@@ -23,9 +23,9 @@
 #import <Foundation/Foundation.h>
 @class RVTConfiguration, RVTObjectModel, RVTObjectDescription;
 
-@interface RVTModelDrivenFactory : NSObject
+@interface RVTObjectGraphFactory : NSObject
 
-+ (id)modelDrivenFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
++ (id)objectGraphFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
 - (id)initWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
 
 - (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription;
