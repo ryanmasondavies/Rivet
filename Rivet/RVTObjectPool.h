@@ -21,13 +21,13 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectDescription, RVTObjectModel, RVTObjectPool;
+@class RVTObjectDescription, RVTObjectGraphFactory;
 
-@interface RVTObjectGraphFactory : NSObject
+@interface RVTObjectPool : NSObject
 
-+ (id)objectGraphFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
-- (id)initWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
++ (id)objectPoolWithFactory:(RVTObjectGraphFactory *)factory;
+- (id)initWithFactory:(RVTObjectGraphFactory *)factory;
 
-- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription pool:(RVTObjectPool *)pool;
+- (id)objectWithDescription:(RVTObjectDescription *)objectDescription;
 
 @end

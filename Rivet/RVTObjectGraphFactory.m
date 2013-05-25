@@ -25,6 +25,7 @@
 #import "RVTObjectDescription.h"
 #import "RVTObjectFactory.h"
 #import "RVTObjectModel.h"
+#import "RVTObjectPool.h"
 #import "RVTRelationshipDescription.h"
 
 @interface RVTObjectGraphFactory ()
@@ -48,12 +49,12 @@
     return self;
 }
 
-- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription pool:(RVTObjectPool *)pool
 {
     NSMutableDictionary *dependencies = [NSMutableDictionary dictionary];
     for (RVTRelationshipDescription *relationship in [[self objectModel] relationshipDescriptionsWithSourceObjectDescription:objectDescription]) {
         RVTObjectDescription *dependencyDescription = [relationship destinationObjectDescription];
-        dependencies[dependencyDescription] = [self createObjectWithDescription:dependencyDescription];
+        dependencies[dependencyDescription] = [pool objectWithDescription:dependencyDescription];
     }
     
     RVTObjectFactory *factory = [[self configuration] factoryForObjectDescription:objectDescription];

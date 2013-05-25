@@ -20,14 +20,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectDescription, RVTObjectModel, RVTObjectPool;
+#import "RVTObjectPool.h"
+#import "RVTObjectDescription.h"
+#import "RVTObjectGraphFactory.h"
 
-@interface RVTObjectGraphFactory : NSObject
+@interface RVTObjectPool ()
+@property (strong, nonatomic, readwrite) RVTObjectGraphFactory *factory;
+@property (strong, nonatomic, readwrite) NSMutableDictionary *objects;
+@end
 
-+ (id)objectGraphFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
-- (id)initWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
+@implementation RVTObjectPool
 
-- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription pool:(RVTObjectPool *)pool;
++ (id)objectPoolWithFactory:(RVTObjectGraphFactory *)factory
+{
+    return [[self alloc] initWithFactory:factory];
+}
+
+- (id)initWithFactory:(RVTObjectGraphFactory *)factory
+{
+    if (self = [self init]) {
+        self.factory = factory;
+        self.objects = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+- (id)objectWithDescription:(RVTObjectDescription *)objectDescription
+{
+    id object = [[self objects] objectForKey:objectDescription];
+    
+    if (!object) {
+        object = [[self factory] createObjectWithDescription:objectDescription pool:self];
+        [[self objects] setObject:object forKey:objectDescription];
+    }
+    
+    return object;
+}
 
 @end

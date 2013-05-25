@@ -26,36 +26,26 @@
 #import "RVTObjectDescription.h"
 #import "RVTObjectGraphFactory.h"
 #import "RVTObjectModel.h"
+#import "RVTObjectPool.h"
 #import "RVTRelationshipDescription.h"
 
-// model
+// models
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTRadio.h"
-#import "RVTWheel.h"
 
 // modules
 #import "RVTCarModule.h"
-#import "RVTRadioModule.h"
-
-// factories
-#import "RVTCarFactory.h"
-#import "RVTEngineFactory.h"
-#import "RVTFrequencyFactory.h"
-#import "RVTRadioFactory.h"
-#import "RVTWheelFactory.h"
-#import "RVTWheelsFactory.h"
 
 SpecBegin(RVTObjectGraphSpec)
 
-__block RVTConfiguration      *configuration;
-__block RVTObjectModel        *model;
-__block RVTObjectGraphFactory *factory;
+__block RVTObjectPool *pool;
 
 before(^{
-    configuration = [RVTConfiguration configuration];
-    model = [RVTObjectModel objectModel];
-    factory = [RVTObjectGraphFactory objectGraphFactoryWithConfiguration:configuration objectModel:model];
+    RVTConfiguration *configuration = [RVTConfiguration configuration];
+    RVTObjectModel *model = [RVTObjectModel objectModel];
+    RVTObjectGraphFactory *factory = [RVTObjectGraphFactory objectGraphFactoryWithConfiguration:configuration objectModel:model];
+    pool = [RVTObjectPool objectPoolWithFactory:factory];
     
     [[RVTCarModule new] addToObjectModel:model];
     [[RVTCarModule new] addToConfiguration:configuration];
@@ -63,7 +53,7 @@ before(^{
 
 describe(@"an independent radio", ^{
     it(@"has a frequency of 102.8", ^{
-        RVTRadio *radio = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+        RVTRadio *radio = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
         expect([radio frequency]).to.equal(@102.8);
     });
 });
@@ -72,7 +62,7 @@ describe(@"a car", ^{
     __block RVTCar *car;
     
     before(^{
-        car = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
+        car = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
     });
     
     it(@"has an engine", ^{
@@ -87,6 +77,14 @@ describe(@"a car", ^{
         it(@"has a frequency of 102.8", ^{
             expect([[car radio] frequency]).to.equal(@102.8);
         });
+    });
+});
+
+describe(@"building the radio and then building the car", ^{
+    it(@"results in a car with the same instance of RVTRadio", ^{
+        RVTRadio *radio = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+        RVTCar *car = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
+        expect([car radio]).to.equal(radio);
     });
 });
 
