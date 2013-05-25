@@ -20,15 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// library
-#import "RVTConfiguration.h"
-#import "RVTModule.h"
-#import "RVTObjectDescription.h"
-#import "RVTObjectGraphFactory.h"
-#import "RVTObjectModel.h"
-#import "RVTObjectPool.h"
-#import "RVTRelationshipDescription.h"
-
 // models
 #import "RVTCar.h"
 #import "RVTEngine.h"
