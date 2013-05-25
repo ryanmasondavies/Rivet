@@ -25,6 +25,11 @@
 
 @interface RVTObjectFactory : NSObject
 
+// The dependencies could be accessed directly through the pool, but instead it is intentionally left as a dictionary for several reasons:
+// - Simplicity of implementation. The factory is aware only of the objects in its domain, and cannot access others.
+// - Objects built in advance, not when they are needed. KISS.
+// - Allows the object graph factory to perform inspection on object and relationship descriptions to create placeholders for lazy loading or proxies to break circular references.
+
 - (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies;
 
 @end
