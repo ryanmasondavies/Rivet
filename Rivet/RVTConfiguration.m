@@ -20,12 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectModel;
+#import "RVTConfiguration.h"
+#import "RVTObjectDescription.h"
+#import "RVTObjectFactory.h"
 
-@interface RVTModule : NSObject
+@interface RVTConfiguration ()
+@property (strong, nonatomic, readwrite) NSMutableDictionary *descriptions;
+@end
 
-- (void)addToConfiguration:(RVTConfiguration *)configuration;
-- (void)addToObjectModel:(RVTObjectModel *)objectModel;
+@implementation RVTConfiguration
+
+- (id)init
+{
+    if (self = [self init]) {
+        self.descriptions = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+- (void)setFactory:(RVTObjectFactory *)factory forDescription:(RVTObjectDescription *)objectDescription
+{
+    [[self descriptions] setObject:factory forKey:objectDescription];
+}
 
 @end

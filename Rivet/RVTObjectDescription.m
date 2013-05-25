@@ -43,6 +43,11 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    return [[[self class] alloc] initWithClass:[self klass] identifier:[self identifier]];
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@: %p, class: %@, name: %@>", [self class], self, [self klass], [self identifier]];

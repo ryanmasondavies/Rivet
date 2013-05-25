@@ -20,12 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectModel;
+#import "RVTObjectFactory.h"
 
-@interface RVTModule : NSObject
-
-- (void)addToConfiguration:(RVTConfiguration *)configuration;
-- (void)addToObjectModel:(RVTObjectModel *)objectModel;
+@interface RVTWheelsFactory : RVTObjectFactory
 
 @end

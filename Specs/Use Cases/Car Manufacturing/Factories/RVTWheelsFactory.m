@@ -20,12 +20,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectModel;
+#import "RVTWheelsFactory.h"
+#import "RVTObjectDescription.h"
+#import "RVTWheel.h"
 
-@interface RVTModule : NSObject
+@implementation RVTWheelsFactory
 
-- (void)addToConfiguration:(RVTConfiguration *)configuration;
-- (void)addToObjectModel:(RVTObjectModel *)objectModel;
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
+{
+    RVTWheel *frontLeftWheel  = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"FrontLeftWheel"]];
+    RVTWheel *frontRightWheel = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"FrontRightWheel"]];
+    RVTWheel *rearLeftWheel   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"RearLeftWheel"]];
+    RVTWheel *rearRightWheel  = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"RearRightWheel"]];
+    return @[frontLeftWheel, frontRightWheel, rearLeftWheel, rearRightWheel];
+}
 
 @end

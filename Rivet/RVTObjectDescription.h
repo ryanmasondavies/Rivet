@@ -22,7 +22,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RVTObjectDescription : NSObject
+@interface RVTObjectDescription : NSObject <NSCopying>
 
 + (id)objectDescriptionWithClass:(Class)klass identifier:(NSString *)identifier;
 - (id)initWithClass:(Class)klass identifier:(NSString *)identifier;

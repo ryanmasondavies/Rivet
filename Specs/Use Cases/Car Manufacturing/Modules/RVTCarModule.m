@@ -21,9 +21,9 @@
 // THE SOFTWARE.
 
 #import "RVTCarModule.h"
-#import "RVTDependencyMap.h"
-#import "RVTDependency.h"
-#import "RVTRadioModule.h"
+#import "RVTConfiguration.h"
+#import "RVTObjectDescription.h"
+#import "RVTObjectModel.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTRadio.h"
@@ -32,15 +32,31 @@
 #import "RVTEngineFactory.h"
 #import "RVTRadioFactory.h"
 #import "RVTWheelFactory.h"
+#import "RVTWheelsFactory.h"
+#import "RVTRadioModule.h"
 
 @implementation RVTCarModule
 
-- (void)configure
+- (void)addToConfiguration:(RVTConfiguration *)configuration
 {
-    [[self definitions] setFactory:[RVTCarFactory    new] forDependency:[RVTDependency dependencyWithClass:[RVTCar    class] name:nil]];
-    [[self definitions] setFactory:[RVTEngineFactory new] forDependency:[RVTDependency dependencyWithClass:[RVTEngine class] name:nil]];
-    [[self definitions] setFactory:[RVTRadioFactory  new] forDependency:[RVTDependency dependencyWithClass:[RVTRadio  class] name:nil]];
-    [[self definitions] setFactory:[RVTWheelFactory  new] forDependency:[RVTDependency dependencyWithClass:[RVTWheel  class] name:nil]];
+    [configuration setFactory:[RVTCarFactory    new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""]];
+    [configuration setFactory:[RVTEngineFactory new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""]];
+    [configuration setFactory:[RVTRadioFactory  new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""]];
+    [configuration setFactory:[RVTWheelFactory  new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@""]];
+    [configuration setFactory:[RVTWheelsFactory new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"]];
+    
+    [[RVTRadioModule new] addToConfiguration:configuration];
+}
+
+- (void)addToObjectModel:(RVTObjectModel *)objectModel
+{
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""]];
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""]];
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""]];
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@""]];
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"]];
+    
+    [[RVTRadioModule new] addToObjectModel:objectModel];
 }
 
 @end

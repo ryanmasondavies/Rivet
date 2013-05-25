@@ -21,11 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectModel;
+@class RVTObjectDescription, RVTObjectFactory;
 
-@interface RVTModule : NSObject
+@interface RVTConfiguration : NSObject
 
-- (void)addToConfiguration:(RVTConfiguration *)configuration;
-- (void)addToObjectModel:(RVTObjectModel *)objectModel;
+- (void)setFactory:(RVTObjectFactory *)factory forDescription:(RVTObjectDescription *)objectDescription;
 
 @end

@@ -21,18 +21,25 @@
 // THE SOFTWARE.
 
 #import "RVTRadioModule.h"
-#import "RVTDependencyMap.h"
-#import "RVTDependency.h"
+#import "RVTConfiguration.h"
+#import "RVTObjectDescription.h"
+#import "RVTObjectModel.h"
 #import "RVTRadio.h"
-#import "RVTFrequencyFactory.h"
 #import "RVTRadioFactory.h"
+#import "RVTFrequencyFactory.h"
 
 @implementation RVTRadioModule
 
-- (void)configure
+- (void)addToConfiguration:(RVTConfiguration *)configuration
 {
-    [[self definitions] setFactory:[RVTRadioFactory     new] forDependency:[RVTDependency dependencyWithClass:[RVTRadio class] name:nil]];
-    [[self definitions] setFactory:[RVTFrequencyFactory new] forDependency:[RVTDependency dependencyWithClass:[NSNumber class] name:@"Frequency"]];
+    [configuration setFactory:[RVTRadioFactory     new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+    [configuration setFactory:[RVTFrequencyFactory new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"]];
+}
+
+- (void)addToObjectModel:(RVTObjectModel *)objectModel
+{
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"]];
 }
 
 @end

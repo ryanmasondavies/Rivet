@@ -21,9 +21,14 @@
 // THE SOFTWARE.
 
 #import "RVTModule.h"
+#import "RVTConfiguration.h"
 #import "RVTObjectModel.h"
 
 @implementation RVTModule
+
+- (void)addToConfiguration:(RVTConfiguration *)configuration
+{
+}
 
 - (void)addToObjectModel:(RVTObjectModel *)objectModel
 {
