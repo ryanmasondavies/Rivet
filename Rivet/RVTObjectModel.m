@@ -52,6 +52,7 @@
 
 - (void)addRelationshipDescription:(RVTRelationshipDescription *)relationshipDescription
 {
+    [[self relationshipDescriptions] addObject:relationshipDescription];
 }
 
 @end

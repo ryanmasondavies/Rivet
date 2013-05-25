@@ -39,11 +39,11 @@
 
 - (void)addToConfiguration:(RVTConfiguration *)configuration
 {
-    [configuration setFactory:[RVTCarFactory    new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""]];
-    [configuration setFactory:[RVTEngineFactory new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""]];
-    [configuration setFactory:[RVTRadioFactory  new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""]];
-    [configuration setFactory:[RVTWheelFactory  new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@""]];
-    [configuration setFactory:[RVTWheelsFactory new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"]];
+    [configuration setFactory:[RVTCarFactory    new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""]];
+    [configuration setFactory:[RVTEngineFactory new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""]];
+    [configuration setFactory:[RVTRadioFactory  new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""]];
+    [configuration setFactory:[RVTWheelFactory  new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@""]];
+    [configuration setFactory:[RVTWheelsFactory new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"]];
     
     [[RVTRadioModule new] addToConfiguration:configuration];
 }

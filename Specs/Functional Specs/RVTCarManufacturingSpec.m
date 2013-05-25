@@ -48,50 +48,22 @@
 
 SpecBegin(RVTObjectGraphSpec)
 
+__block RVTConfiguration      *configuration;
 __block RVTObjectModel        *model;
 __block RVTModelDrivenFactory *factory;
-__block RVTConfiguration      *configuration;
 
 before(^{
+    configuration = [RVTConfiguration configuration];
     model = [RVTObjectModel objectModel];
-    factory = [RVTModelDrivenFactory modelDrivenFactoryWithObjectModel:model];
+    factory = [RVTModelDrivenFactory modelDrivenFactoryWithConfiguration:configuration objectModel:model];
     
-    RVTObjectDescription *engine    = [RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""];
-    RVTObjectDescription *frequency = [RVTObjectDescription objectDescriptionWithClass:[NSNumber  class] identifier:@"Frequency"];
-    RVTObjectDescription *radio     = [RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""];
-    RVTObjectDescription *wheel     = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@""];
-    RVTObjectDescription *wheels    = [RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"];
-    RVTObjectDescription *car       = [RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""];
-    
-    RVTRelationshipDescription *carToEngine = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:car destinationObjectDescription:engine];
-    RVTRelationshipDescription *carToRadio = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:car destinationObjectDescription:radio];
-    RVTRelationshipDescription *carToWheels = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:car destinationObjectDescription:wheels];
-    RVTRelationshipDescription *radioToFrequency = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:radio destinationObjectDescription:frequency];
-    
-    [model addObjectDescription:engine];
-    [model addObjectDescription:frequency];
-    [model addObjectDescription:radio];
-    [model addObjectDescription:wheel];
-    [model addObjectDescription:wheels]; // collection?
-    [model addObjectDescription:car];
-    
-    [model addRelationshipDescription:carToEngine];
-    [model addRelationshipDescription:carToRadio];
-    [model addRelationshipDescription:carToWheels];
-    [model addRelationshipDescription:radioToFrequency];
-    
-    [configuration setFactory:[RVTCarFactory       new] forDescription:car];
-    [configuration setFactory:[RVTEngineFactory    new] forDescription:engine];
-    [configuration setFactory:[RVTFrequencyFactory new] forDescription:frequency];
-    [configuration setFactory:[RVTRadioFactory     new] forDescription:radio];
-    [configuration setFactory:[RVTWheelFactory     new] forDescription:wheel];
-    [configuration setFactory:[RVTWheelsFactory    new] forDescription:wheels];
+    [[RVTCarModule new] addToObjectModel:model];
+    [[RVTCarModule new] addToConfiguration:configuration];
 });
 
 //describe(@"an independent radio", ^{
 //    it(@"has a frequency of 102.8", ^{
-//        RVTDependency *radioProduct = [[RVTDependency alloc] initWithClass:[RVTRadio class] name:nil];
-//        RVTRadio *radio = [factory supplyDependency:radioProduct inModule:nil];
+//        RVTRadio *radio = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
 //        expect([radio frequency]).to.equal(@102.8);
 //    });
 //});
@@ -100,8 +72,7 @@ before(^{
 //    __block RVTCar *car;
 //    
 //    before(^{
-//        RVTDependency *dependency = [[RVTDependency alloc] initWithClass:[RVTCar class] name:nil];
-//        car = [factory supplyDependency:dependency inModule:nil];
+//        car = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
 //    });
 //    
 //    it(@"has an engine", ^{
@@ -120,12 +91,10 @@ before(^{
 //});
 
 it(@"builds an object with its dependencies", ^{
-    RVTModelDrivenFactory *factory = [RVTModelDrivenFactory modelDrivenFactoryWithObjectModel:model];
     RVTCar *car = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
-    
-    NSLog(@"Car: %@", car);
+    NSLog(@"Car:    %@", car);
     NSLog(@"Engine: %@", [car engine]);
-    NSLog(@"Radio: %@", [car radio]);
+    NSLog(@"Radio:  %@", [car radio]);
     NSLog(@"Wheels: %@", [car wheels]);
 });
 

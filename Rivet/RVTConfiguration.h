@@ -25,6 +25,10 @@
 
 @interface RVTConfiguration : NSObject
 
-- (void)setFactory:(RVTObjectFactory *)factory forDescription:(RVTObjectDescription *)objectDescription;
++ (id)configuration;
+- (id)init;
+
+- (void)setFactory:(RVTObjectFactory *)factory forObjectDescription:(RVTObjectDescription *)objectDescription;
+- (RVTObjectFactory *)factoryForObjectDescription:(RVTObjectDescription *)objectDescription;
 
 @end

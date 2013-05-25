@@ -32,8 +32,8 @@
 
 - (void)addToConfiguration:(RVTConfiguration *)configuration
 {
-    [configuration setFactory:[RVTRadioFactory     new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
-    [configuration setFactory:[RVTFrequencyFactory new] forDescription:[RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"]];
+    [configuration setFactory:[RVTRadioFactory     new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+    [configuration setFactory:[RVTFrequencyFactory new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"]];
 }
 
 - (void)addToObjectModel:(RVTObjectModel *)objectModel

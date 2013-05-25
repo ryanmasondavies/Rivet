@@ -25,22 +25,32 @@
 #import "RVTObjectFactory.h"
 
 @interface RVTConfiguration ()
-@property (strong, nonatomic, readwrite) NSMutableDictionary *descriptions;
+@property (strong, nonatomic, readwrite) NSMutableDictionary *objectFactories;
 @end
 
 @implementation RVTConfiguration
 
++ (id)configuration
+{
+    return [[[self class] alloc] init];
+}
+
 - (id)init
 {
-    if (self = [self init]) {
-        self.descriptions = [[NSMutableDictionary alloc] init];
+    if (self = [super init]) {
+        self.objectFactories = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-- (void)setFactory:(RVTObjectFactory *)factory forDescription:(RVTObjectDescription *)objectDescription
+- (RVTObjectFactory *)factoryForObjectDescription:(RVTObjectDescription *)objectDescription
 {
-    [[self descriptions] setObject:factory forKey:objectDescription];
+    return [[self objectFactories] objectForKey:objectDescription];
+}
+
+- (void)setFactory:(RVTObjectFactory *)factory forObjectDescription:(RVTObjectDescription *)objectDescription
+{
+    [[self objectFactories] setObject:factory forKey:objectDescription];
 }
 
 @end

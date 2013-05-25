@@ -53,6 +53,11 @@
     return [NSString stringWithFormat:@"<%@: %p, class: %@, name: %@>", [self class], self, [self klass], [self identifier]];
 }
 
+- (NSUInteger)hash
+{
+    return (NSUInteger)[self klass] ^ [[self identifier] hash];
+}
+
 - (BOOL)isEqual:(RVTObjectDescription *)objectDescription
 {
     if (![self identifier]) {

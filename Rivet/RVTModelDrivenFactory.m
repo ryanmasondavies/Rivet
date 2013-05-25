@@ -21,30 +21,35 @@
 // THE SOFTWARE.
 
 #import "RVTModelDrivenFactory.h"
+#import "RVTConfiguration.h"
+#import "RVTObjectFactory.h"
 #import "RVTObjectModel.h"
 
 @interface RVTModelDrivenFactory ()
-@property (strong, nonatomic, readwrite) RVTObjectModel *objectModel;
+@property (strong, nonatomic, readwrite) RVTConfiguration *configuration;
+@property (strong, nonatomic, readwrite) RVTObjectModel   *objectModel;
 @end
 
 @implementation RVTModelDrivenFactory
 
-+ (id)modelDrivenFactoryWithObjectModel:(RVTObjectModel *)objectModel
++ (id)modelDrivenFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel
 {
-    return [[self alloc] initWithObjectModel:objectModel];
+    return [[self alloc] initWithConfiguration:configuration objectModel:objectModel];
 }
 
-- (id)initWithObjectModel:(RVTObjectModel *)objectModel
+- (id)initWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel
 {
     if (self = [self init]) {
-        self.objectModel = objectModel;
+        self.configuration = configuration;
+        self.objectModel   = objectModel;
     }
     return self;
 }
 
 - (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription
 {
-    return nil;
+    RVTObjectFactory *factory = [[self configuration] factoryForObjectDescription:objectDescription];
+    return [factory createObjectWithDescription:objectDescription dependencies:nil];
 }
 
 @end
