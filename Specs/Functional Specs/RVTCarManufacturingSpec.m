@@ -61,41 +61,33 @@ before(^{
     [[RVTCarModule new] addToConfiguration:configuration];
 });
 
-//describe(@"an independent radio", ^{
-//    it(@"has a frequency of 102.8", ^{
-//        RVTRadio *radio = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
-//        expect([radio frequency]).to.equal(@102.8);
-//    });
-//});
-//
-//describe(@"a car", ^{
-//    __block RVTCar *car;
-//    
-//    before(^{
-//        car = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
-//    });
-//    
-//    it(@"has an engine", ^{
-//        expect([car engine]).to.beKindOf([RVTEngine class]);
-//    });
-//    
-//    it(@"has 4 wheels", ^{
-//        expect([car wheels]).to.haveCountOf(4);
-//    });
-//    
-//    describe(@"radio", ^{
-//        it(@"has a frequency of 102.8", ^{
-//            expect([[car radio] frequency]).to.equal(@102.8);
-//        });
-//    });
-//});
+describe(@"an independent radio", ^{
+    it(@"has a frequency of 102.8", ^{
+        RVTRadio *radio = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+        expect([radio frequency]).to.equal(@102.8);
+    });
+});
 
-it(@"builds an object with its dependencies", ^{
-    RVTCar *car = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
-    NSLog(@"Car:    %@", car);
-    NSLog(@"Engine: %@", [car engine]);
-    NSLog(@"Radio:  %@", [car radio]);
-    NSLog(@"Wheels: %@", [car wheels]);
+describe(@"a car", ^{
+    __block RVTCar *car;
+    
+    before(^{
+        car = [factory createObjectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
+    });
+    
+    it(@"has an engine", ^{
+        expect([car engine]).to.beKindOf([RVTEngine class]);
+    });
+    
+    it(@"has 4 wheels", ^{
+        expect([car wheels]).to.haveCountOf(4);
+    });
+    
+    describe(@"radio", ^{
+        it(@"has a frequency of 102.8", ^{
+            expect([[car radio] frequency]).to.equal(@102.8);
+        });
+    });
 });
 
 SpecEnd

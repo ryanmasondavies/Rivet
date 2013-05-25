@@ -30,4 +30,6 @@
 - (void)addObjectDescription:(RVTObjectDescription *)objectDescription;
 - (void)addRelationshipDescription:(RVTRelationshipDescription *)relationshipDescription;
 
+- (NSArray *)relationshipDescriptionsWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription;
+
 @end

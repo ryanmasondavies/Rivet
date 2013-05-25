@@ -28,10 +28,10 @@
 
 - (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
 {
-    RVTWheel *frontLeftWheel  = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"FrontLeftWheel"]];
-    RVTWheel *frontRightWheel = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"FrontRightWheel"]];
-    RVTWheel *rearLeftWheel   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"RearLeftWheel"]];
-    RVTWheel *rearRightWheel  = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"RearRightWheel"]];
+    RVTWheel *frontLeftWheel  = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Front Left Wheel"]];
+    RVTWheel *frontRightWheel = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Front Right Wheel"]];
+    RVTWheel *rearLeftWheel   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Rear Left Wheel"]];
+    RVTWheel *rearRightWheel  = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Rear Right Wheel"]];
     return @[frontLeftWheel, frontRightWheel, rearLeftWheel, rearRightWheel];
 }
 

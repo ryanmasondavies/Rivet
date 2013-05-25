@@ -22,8 +22,10 @@
 
 #import "RVTModelDrivenFactory.h"
 #import "RVTConfiguration.h"
+#import "RVTObjectDescription.h"
 #import "RVTObjectFactory.h"
 #import "RVTObjectModel.h"
+#import "RVTRelationshipDescription.h"
 
 @interface RVTModelDrivenFactory ()
 @property (strong, nonatomic, readwrite) RVTConfiguration *configuration;
@@ -48,8 +50,14 @@
 
 - (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription
 {
+    NSMutableDictionary *dependencies = [NSMutableDictionary dictionary];
+    for (RVTRelationshipDescription *relationship in [[self objectModel] relationshipDescriptionsWithSourceObjectDescription:objectDescription]) {
+        RVTObjectDescription *dependencyDescription = [relationship destinationObjectDescription];
+        dependencies[dependencyDescription] = [self createObjectWithDescription:dependencyDescription];
+    }
+    
     RVTObjectFactory *factory = [[self configuration] factoryForObjectDescription:objectDescription];
-    return [factory createObjectWithDescription:objectDescription dependencies:nil];
+    return [factory createObjectWithDescription:objectDescription dependencies:dependencies];
 }
 
 @end

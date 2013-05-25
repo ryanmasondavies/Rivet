@@ -31,9 +31,9 @@
 
 - (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
 {
-    RVTEngine *engine = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTCar   class] identifier:@""]];
-    RVTRadio *radio   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
-    NSArray *wheels   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[NSArray  class] identifier:@"Wheels"]];
+    RVTEngine *engine = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""]];
+    RVTRadio *radio   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""]];
+    NSArray *wheels   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"]];
     return [[RVTCar alloc] initWithRVTEngine:engine radio:radio wheels:wheels];
 }
 

@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "RVTRelationshipDescription.h"
+#import "RVTObjectDescription.h"
 
 @interface RVTRelationshipDescription ()
 @property (strong, nonatomic, readwrite) RVTObjectDescription *sourceObjectDescription;

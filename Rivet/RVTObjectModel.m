@@ -55,4 +55,12 @@
     [[self relationshipDescriptions] addObject:relationshipDescription];
 }
 
+- (NSArray *)relationshipDescriptionsWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription
+{
+    NSIndexSet *indexes = [[self relationshipDescriptions] indexesOfObjectsPassingTest:^BOOL(RVTRelationshipDescription *relationshipDescription, NSUInteger idx, BOOL *stop) {
+        return [[relationshipDescription sourceObjectDescription] isEqual:sourceObjectDescription];
+    }];
+    return [[self relationshipDescriptions] objectsAtIndexes:indexes];
+}
+
 @end

@@ -28,4 +28,7 @@
 + (id)relationshipDescriptionWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription destinationObjectDescription:(RVTObjectDescription *)destinationObjectDescription;
 - (id)initWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription destinationObjectDescription:(RVTObjectDescription *)destinationObjectDescription;
 
+@property (strong, nonatomic, readonly) RVTObjectDescription *sourceObjectDescription;
+@property (strong, nonatomic, readonly) RVTObjectDescription *destinationObjectDescription;
+
 @end

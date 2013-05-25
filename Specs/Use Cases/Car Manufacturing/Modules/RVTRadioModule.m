@@ -24,6 +24,7 @@
 #import "RVTConfiguration.h"
 #import "RVTObjectDescription.h"
 #import "RVTObjectModel.h"
+#import "RVTRelationshipDescription.h"
 #import "RVTRadio.h"
 #import "RVTRadioFactory.h"
 #import "RVTFrequencyFactory.h"
@@ -32,14 +33,28 @@
 
 - (void)addToConfiguration:(RVTConfiguration *)configuration
 {
-    [configuration setFactory:[RVTRadioFactory     new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
-    [configuration setFactory:[RVTFrequencyFactory new] forObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"]];
+    [configuration setFactory:[RVTRadioFactory     new] forObjectDescription:[self radioDescription]];
+    [configuration setFactory:[RVTFrequencyFactory new] forObjectDescription:[self frequencyDescription]];
 }
 
 - (void)addToObjectModel:(RVTObjectModel *)objectModel
 {
-    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
-    [objectModel addObjectDescription:[RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"]];
+    RVTRelationshipDescription *radioToFrequency = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self radioDescription] destinationObjectDescription:[self frequencyDescription]];
+    
+    [objectModel addObjectDescription:[self radioDescription]];
+    [objectModel addObjectDescription:[self frequencyDescription]];
+    
+    [objectModel addRelationshipDescription:radioToFrequency];
+}
+
+- (RVTObjectDescription *)radioDescription
+{
+    return [RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""];
+}
+
+- (RVTObjectDescription *)frequencyDescription
+{
+    return [RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"];
 }
 
 @end
