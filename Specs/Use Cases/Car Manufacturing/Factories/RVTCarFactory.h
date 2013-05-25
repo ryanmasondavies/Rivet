@@ -20,8 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTFactory.h"
+#import "RVTObjectFactory.h"
 
-@interface RVTCarFactory : RVTFactory
+@interface RVTCarFactory : RVTObjectFactory
 
 @end

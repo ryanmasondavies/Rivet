@@ -20,11 +20,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTDependency, RVTModule;
+#import "RVTObjectDescription.h"
 
-@interface RVTFactory : NSObject
+@interface RVTObjectDescription ()
+@property (strong, nonatomic, readwrite) Class klass;
+@property (strong, nonatomic, readwrite) NSString *identifier;
+@end
 
-- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module;
+@implementation RVTObjectDescription
+
++ (id)objectDescriptionWithClass:(Class)klass identifier:(NSString *)identifier
+{
+    return [[self alloc] initWithClass:klass identifier:identifier];
+}
+
+- (id)initWithClass:(Class)klass identifier:(NSString *)identifier
+{
+    if (self = [self init]) {
+        self.klass = klass;
+        self.identifier = identifier;
+    }
+    return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p, class: %@, name: %@>", [self class], self, [self klass], [self identifier]];
+}
+
+- (BOOL)isEqual:(RVTObjectDescription *)objectDescription
+{
+    if (![self identifier]) {
+        return [self klass] == [objectDescription klass];
+    } else {
+        return [self klass] == [objectDescription klass] && [[self identifier] isEqualToString:[objectDescription identifier]];
+    }
+}
 
 @end

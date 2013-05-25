@@ -20,12 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTFactory, RVTDependency;
+#import "RVTRelationshipDescription.h"
 
-@interface RVTDependencyMap : NSObject
+@interface RVTRelationshipDescription ()
+@property (strong, nonatomic, readwrite) RVTObjectDescription *sourceObjectDescription;
+@property (strong, nonatomic, readwrite) RVTObjectDescription *destinationObjectDescription;
+@end
 
-- (void)setFactory:(RVTFactory *)factory forDependency:(RVTDependency *)dependency;
-- (RVTFactory *)factoryForDependency:(RVTDependency *)dependency;
+@implementation RVTRelationshipDescription
+
++ (id)relationshipDescriptionWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription destinationObjectDescription:(RVTObjectDescription *)destinationObjectDescription
+{
+    return [[self alloc] initWithSourceObjectDescription:sourceObjectDescription destinationObjectDescription:destinationObjectDescription];
+}
+
+- (id)initWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription destinationObjectDescription:(RVTObjectDescription *)destinationObjectDescription
+{
+    if (self = [self init]) {
+        self.sourceObjectDescription = sourceObjectDescription;
+        self.destinationObjectDescription = destinationObjectDescription;
+    }
+    return self;
+}
 
 @end

@@ -25,7 +25,7 @@
 
 @implementation RVTEngineFactory
 
-- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
 {
     return [[RVTEngine alloc] init];
 }

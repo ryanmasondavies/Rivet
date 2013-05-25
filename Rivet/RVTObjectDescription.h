@@ -22,11 +22,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RVTDependency : NSObject <NSCopying>
+@interface RVTObjectDescription : NSObject
 
-+ (id)dependencyWithClass:(Class)klass name:(NSString *)name;
-- (id)initWithClass:(Class)klass name:(NSString *)name;
-
-- (BOOL)isApplicableToDependency:(RVTDependency *)dependency;
++ (id)objectDescriptionWithClass:(Class)klass identifier:(NSString *)identifier;
+- (id)initWithClass:(Class)klass identifier:(NSString *)identifier;
 
 @end

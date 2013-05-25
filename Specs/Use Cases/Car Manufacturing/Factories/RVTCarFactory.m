@@ -21,8 +21,7 @@
 // THE SOFTWARE.
 
 #import "RVTCarFactory.h"
-#import "RVTDependency.h"
-#import "RVTModule.h"
+#import "RVTObjectDescription.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTRadio.h"
@@ -30,20 +29,12 @@
 
 @implementation RVTCarFactory
 
-- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
 {
-    RVTDependency *engineProduct = [[RVTDependency alloc] initWithClass:[RVTEngine class] name:nil];
-    RVTDependency *radioProduct = [[RVTDependency alloc] initWithClass:[RVTRadio class] name:nil];
-    RVTDependency *wheelProduct = [[RVTDependency alloc] initWithClass:[RVTWheel class] name:nil];
-    
-    RVTEngine *engine = [module supplyProduct:engineProduct];
-    RVTRadio *radio = [module supplyProduct:radioProduct];
-    RVTWheel *frontLeftRVTWheel = [module supplyProduct:wheelProduct];
-    RVTWheel *frontRightRVTWheel = [module supplyProduct:wheelProduct];
-    RVTWheel *rearLeftRVTWheel = [module supplyProduct:wheelProduct];
-    RVTWheel *rearRightRVTWheel = [module supplyProduct:wheelProduct];
-    
-    return [[RVTCar alloc] initWithRVTEngine:engine radio:radio wheels:@[frontLeftRVTWheel, frontRightRVTWheel, rearLeftRVTWheel, rearRightRVTWheel]];
+    RVTEngine *engine = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTCar   class] identifier:@""]];
+    RVTRadio *radio   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+    NSArray *wheels   = [dependencies objectForKey:[RVTObjectDescription objectDescriptionWithClass:[NSArray  class] identifier:@"Wheels"]];
+    return [[RVTCar alloc] initWithRVTEngine:engine radio:radio wheels:wheels];
 }
 
 @end

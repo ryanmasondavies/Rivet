@@ -21,36 +21,12 @@
 // THE SOFTWARE.
 
 #import "RVTModule.h"
-#import "RVTDependencyMap.h"
-#import "RVTFactory.h"
-#import "RVTDependency.h"
-
-@interface RVTModule ()
-@property (strong, nonatomic, readwrite) RVTDependencyMap *definitions;
-@end
+#import "RVTObjectModel.h"
 
 @implementation RVTModule
 
-- (id)initWithDefinitions:(RVTDependencyMap *)definitions
+- (void)addToObjectModel:(RVTObjectModel *)objectModel
 {
-    if (self = [self initWithDefinitions:definitions]) {
-        self.definitions = definitions;
-    }
-    return self;
-}
-
-- (void)configure
-{
-}
-
-- (id)supplyProduct:(RVTDependency *)dependency
-{
-    RVTFactory *factory = [[self definitions] factoryForDependency:dependency];
-    if (!factory) {
-        NSString *reason = [NSString stringWithFormat:@"No factory for %@", dependency];
-        @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:reason userInfo:nil];
-    }
-    return [factory supplyDependency:dependency inModule:self];
 }
 
 @end

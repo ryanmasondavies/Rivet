@@ -21,15 +21,10 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTDependencyMap, RVTDependency;
+@class RVTObjectModel;
 
 @interface RVTModule : NSObject
 
-- (id)initWithDefinitions:(RVTDependencyMap *)definitions;
-- (void)configure;
-
-@property (strong, nonatomic, readonly) RVTDependencyMap *definitions;
-
-- (id)supplyProduct:(RVTDependency *)dependency; // out of place
+- (void)addToObjectModel:(RVTObjectModel *)objectModel;
 
 @end

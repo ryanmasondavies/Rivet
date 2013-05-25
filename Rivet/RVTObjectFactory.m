@@ -21,7 +21,13 @@
 // THE SOFTWARE.
 
 #import "RVTObjectFactory.h"
+#import "RVTObjectDescription.h"
 
-@interface RVTWheelFactory : RVTObjectFactory
+@implementation RVTObjectFactory
+
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
+{
+    return nil;
+}
 
 @end

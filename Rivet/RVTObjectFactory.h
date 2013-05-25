@@ -20,41 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTDependencyMap.h"
-#import "RVTFactory.h"
-#import "RVTDependency.h"
+#import <Foundation/Foundation.h>
+@class RVTObjectDescription;
 
-@interface RVTDependencyMap ()
-@property (strong, nonatomic) NSMutableDictionary *dependencies;
-@end
+@interface RVTObjectFactory : NSObject
 
-@implementation RVTDependencyMap
-
-- (id)init
-{
-    if (self = [self init]) {
-        self.dependencies = [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
-
-- (void)setFactory:(RVTFactory *)factory forDependency:(RVTDependency *)dependency
-{
-    [[self dependencies] setObject:factory forKey:dependency];
-}
-
-- (RVTFactory *)factoryForDependency:(RVTDependency *)dependency
-{
-    RVTFactory *factory = nil;
-    
-    // look for one in the factory map
-    for (RVTDependency *potential in [[self dependencies] allKeys]) {
-        if ([potential isApplicableToDependency:dependency]) {
-            factory = [[self dependencies] objectForKey:potential];
-        }
-    }
-    
-    return factory;
-}
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies;
 
 @end

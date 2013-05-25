@@ -20,42 +20,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTDependency.h"
+#import "RVTObjectModel.h"
+#import "RVTObjectDescription.h"
+#import "RVTRelationshipDescription.h"
 
-@interface RVTDependency ()
-@property (strong, nonatomic, readwrite) Class klass;
-@property (strong, nonatomic, readwrite) NSString *name;
+@interface RVTObjectModel ()
+@property (strong, nonatomic) NSMutableArray *objectDescriptions;
+@property (strong, nonatomic) NSMutableArray *relationshipDescriptions;
 @end
 
-@implementation RVTDependency
+@implementation RVTObjectModel
 
-+ (id)dependencyWithClass:(Class)klass name:(NSString *)name
++ (id)objectModel
 {
-    return [[self alloc] initWithClass:klass name:name];
+    return [[self alloc] init];
 }
 
-- (id)initWithClass:(Class)klass name:(NSString *)name
+- (id)init
 {
-    if (self = [self init]) {
-        self.klass = klass;
-        self.name = name;
+    if (self = [super init]) {
+        self.objectDescriptions = [[NSMutableArray alloc] init];
+        self.relationshipDescriptions = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone
+- (void)addObjectDescription:(RVTObjectDescription *)objectDescription
 {
-    return [[[self class] alloc] initWithClass:[self klass] name:[self name]];
+    [[self objectDescriptions] addObject:objectDescription];
 }
 
-- (NSString *)description
+- (void)addRelationshipDescription:(RVTRelationshipDescription *)relationshipDescription
 {
-    return [NSString stringWithFormat:@"<%@: %p, klass: '%@', name: '%@'>", [self class], self, [self klass], [self name]];
-}
-
-- (BOOL)isApplicableToDependency:(RVTDependency *)dependency
-{
-    return [self klass] == [dependency klass];
 }
 
 @end

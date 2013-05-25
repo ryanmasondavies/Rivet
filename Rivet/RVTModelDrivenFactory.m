@@ -20,15 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTFactory.h"
-#import "RVTDependency.h"
-#import "RVTModule.h"
+#import "RVTModelDrivenFactory.h"
+#import "RVTObjectModel.h"
 
-@implementation RVTFactory
+@interface RVTModelDrivenFactory ()
+@property (strong, nonatomic, readwrite) RVTObjectModel *objectModel;
+@end
 
-- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
+@implementation RVTModelDrivenFactory
+
++ (id)modelDrivenFactoryWithObjectModel:(RVTObjectModel *)objectModel
 {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Method must be overridden by subclass." userInfo:nil];
+    return [[self alloc] initWithObjectModel:objectModel];
+}
+
+- (id)initWithObjectModel:(RVTObjectModel *)objectModel
+{
+    if (self = [self init]) {
+        self.objectModel = objectModel;
+    }
+    return self;
+}
+
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription
+{
+    return nil;
 }
 
 @end

@@ -25,7 +25,7 @@
 
 @implementation RVTWheelFactory
 
-- (id)supplyDependency:(RVTDependency *)dependency inModule:(RVTModule *)module
+- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription dependencies:(NSDictionary *)dependencies
 {
     return [[RVTWheel alloc] init];
 }
