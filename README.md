@@ -3,6 +3,13 @@ Rivet
 
 Bolt your application together with dependency injection for iOS.
 
+Installation
+============
+
+Rivet can be installed with CocoaPods by adding the following line to your Podfile:
+
+    pod `Rivet`, '~> 0.0.3'
+
 License
 =======
 
