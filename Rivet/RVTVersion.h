@@ -27,4 +27,4 @@
 #define RIVET_MINOR_VERSION 0
 
 /** The patch version component. */
-#define RIVET_PATCH_VERSION 3
+#define RIVET_PATCH_VERSION 4
