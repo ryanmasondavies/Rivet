@@ -40,87 +40,29 @@
 
 - (void)addToConfiguration:(RVTConfiguration *)configuration
 {
-    [configuration setFactory:[RVTCarFactory    new] forObjectDescription:[self carDescription]];
-    [configuration setFactory:[RVTEngineFactory new] forObjectDescription:[self engineDescription]];
-    [configuration setFactory:[RVTRadioFactory  new] forObjectDescription:[self radioDescription]];
-    [configuration setFactory:[RVTWheelFactory  new] forObjectDescription:[self frontLeftWheelDescription]];
-    [configuration setFactory:[RVTWheelFactory  new] forObjectDescription:[self frontRightWheelDescription]];
-    [configuration setFactory:[RVTWheelFactory  new] forObjectDescription:[self rearLeftWheelDescription]];
-    [configuration setFactory:[RVTWheelFactory  new] forObjectDescription:[self rearRightWheelDescription]];
-    [configuration setFactory:[RVTWheelsFactory new] forObjectDescription:[self wheelsDescription]];
+    RVTObjectDescription *carDescription             = [RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""];
+    RVTObjectDescription *engineDescription          = [RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""];
+    RVTObjectDescription *radioDescription           = [RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""];
+    RVTObjectDescription *frontLeftWheelDescription  = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Front Left Wheel"];
+    RVTObjectDescription *frontRightWheelDescription = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Front Right Wheel"];
+    RVTObjectDescription *rearLeftWheelDescription   = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Rear Left Wheel"];
+    RVTObjectDescription *rearRightWheelDescription  = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Rear Right Wheel"];
+    RVTObjectDescription *wheelsDescription          = [RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"];
     
-    [[RVTRadioModule new] addToConfiguration:configuration];
-}
-
-- (void)addToObjectModel:(RVTObjectModel *)objectModel
-{
-    RVTRelationshipDescription *carToEngine   = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self carDescription] destinationObjectDescription:[self engineDescription]];
-    RVTRelationshipDescription *carToRadio    = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self carDescription] destinationObjectDescription:[self radioDescription]];
-    RVTRelationshipDescription *carToWheels   = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self carDescription] destinationObjectDescription:[self wheelsDescription]];
+    [self declareThat:carDescription dependsOn:engineDescription];
+    [self declareThat:carDescription dependsOn:radioDescription];
+    [self declareThat:carDescription dependsOn:wheelsDescription];
     
-    RVTRelationshipDescription *wheelsToFrontLeftWheel  = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self wheelsDescription] destinationObjectDescription:[self frontLeftWheelDescription]];
-    RVTRelationshipDescription *wheelsToFrontRightWheel = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self wheelsDescription] destinationObjectDescription:[self frontRightWheelDescription]];
-    RVTRelationshipDescription *wheelsToRearLeftWheel   = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self wheelsDescription] destinationObjectDescription:[self rearLeftWheelDescription]];
-    RVTRelationshipDescription *wheelsToRearRightWheel  = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self wheelsDescription] destinationObjectDescription:[self rearRightWheelDescription]];
+    [self useFactory:[RVTCarFactory    new] toCreateInstancesOf:carDescription];
+    [self useFactory:[RVTEngineFactory new] toCreateInstancesOf:engineDescription];
+    [self useFactory:[RVTRadioFactory  new] toCreateInstancesOf:radioDescription];
+    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:frontLeftWheelDescription];
+    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:frontRightWheelDescription];
+    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:rearLeftWheelDescription];
+    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:rearRightWheelDescription];
+    [self useFactory:[RVTWheelsFactory new] toCreateInstancesOf:wheelsDescription];
     
-    [objectModel addObjectDescription:[self carDescription]];
-    [objectModel addObjectDescription:[self engineDescription]];
-    [objectModel addObjectDescription:[self radioDescription]];
-    [objectModel addObjectDescription:[self frontLeftWheelDescription]];
-    [objectModel addObjectDescription:[self frontRightWheelDescription]];
-    [objectModel addObjectDescription:[self rearLeftWheelDescription]];
-    [objectModel addObjectDescription:[self rearRightWheelDescription]];
-    [objectModel addObjectDescription:[self wheelsDescription]];
-    
-    [objectModel addRelationshipDescription:carToEngine];
-    [objectModel addRelationshipDescription:carToRadio];
-    [objectModel addRelationshipDescription:carToWheels];
-    [objectModel addRelationshipDescription:wheelsToFrontLeftWheel];
-    [objectModel addRelationshipDescription:wheelsToFrontRightWheel];
-    [objectModel addRelationshipDescription:wheelsToRearLeftWheel];
-    [objectModel addRelationshipDescription:wheelsToRearRightWheel];
-    
-    [[RVTRadioModule new] addToObjectModel:objectModel];
-}
-
-- (RVTObjectDescription *)carDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""];
-}
-
-- (RVTObjectDescription *)engineDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""];
-}
-
-- (RVTObjectDescription *)radioDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""];
-}
-
-- (RVTObjectDescription *)frontLeftWheelDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Front Left Wheel"];
-}
-
-- (RVTObjectDescription *)frontRightWheelDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Front Right Wheel"];
-}
-
-- (RVTObjectDescription *)rearLeftWheelDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Rear Left Wheel"];
-}
-
-- (RVTObjectDescription *)rearRightWheelDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTWheel class] identifier:@"Rear Right Wheel"];
-}
-
-- (RVTObjectDescription *)wheelsDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[NSArray class] identifier:@"Wheels"];
+    [self require:[RVTRadioModule class]];
 }
 
 @end

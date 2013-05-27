@@ -31,30 +31,12 @@
 
 @implementation RVTRadioModule
 
-- (void)addToConfiguration:(RVTConfiguration *)configuration
+- (void)configure
 {
-    [configuration setFactory:[RVTRadioFactory     new] forObjectDescription:[self radioDescription]];
-    [configuration setFactory:[RVTFrequencyFactory new] forObjectDescription:[self frequencyDescription]];
-}
-
-- (void)addToObjectModel:(RVTObjectModel *)objectModel
-{
-    RVTRelationshipDescription *radioToFrequency = [RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:[self radioDescription] destinationObjectDescription:[self frequencyDescription]];
+    RVTObjectDescription *radioDescription = [RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""];
+    RVTObjectDescription *frequencyDescription = [RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"];
     
-    [objectModel addObjectDescription:[self radioDescription]];
-    [objectModel addObjectDescription:[self frequencyDescription]];
-    
-    [objectModel addRelationshipDescription:radioToFrequency];
-}
-
-- (RVTObjectDescription *)radioDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""];
-}
-
-- (RVTObjectDescription *)frequencyDescription
-{
-    return [RVTObjectDescription objectDescriptionWithClass:[NSNumber class] identifier:@"Frequency"];
+    [self declareThat:radioDescription dependsOn:frequencyDescription];
 }
 
 @end

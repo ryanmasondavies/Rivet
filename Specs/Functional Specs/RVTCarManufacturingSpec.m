@@ -37,9 +37,7 @@ before(^{
     RVTObjectModel *model = [RVTObjectModel objectModel];
     RVTObjectGraphFactory *factory = [RVTObjectGraphFactory objectGraphFactoryWithConfiguration:configuration objectModel:model];
     pool = [RVTObjectPool objectPoolWithFactory:factory];
-    
-    [[RVTCarModule new] addToObjectModel:model];
-    [[RVTCarModule new] addToConfiguration:configuration];
+    [[[RVTCarModule alloc] initWithObjectModel:model configuration:configuration] configure];
 });
 
 describe(@"an independent radio", ^{
