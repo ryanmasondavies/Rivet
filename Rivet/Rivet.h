@@ -28,5 +28,6 @@
 #   import "RVTEnvironment.h"
 #   import "RVTModule.h"
 #   import "RVTObjectGraphFactory.h"
+#   import "RVTPrototypeScope.h"
 #   import "RVTSingletonScope.h"
 #endif
