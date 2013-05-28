@@ -20,11 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+@class RVTObjectGraphFactory;
 
-@interface RVTObjectDescription : NSObject <NSCopying>
+// used to define a factory as a block that accepts a single argument and returns a constructed object.
+// dependencies are acquired through the object graph factory.
 
-+ (id)objectDescriptionWithClass:(Class)klass identifier:(NSString *)identifier;
-- (id)initWithClass:(Class)klass identifier:(NSString *)identifier;
-
-@end
+typedef id(^RVTObjectFactory)(RVTObjectGraphFactory *factory);

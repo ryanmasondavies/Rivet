@@ -21,44 +21,38 @@
 // THE SOFTWARE.
 
 #import "RVTObjectGraphFactory.h"
-#import "RVTConfiguration.h"
-#import "RVTObjectDescription.h"
-#import "RVTObjectFactory.h"
-#import "RVTObjectModel.h"
-#import "RVTObjectPool.h"
-#import "RVTRelationshipDescription.h"
+#import "RVTAssembly.h"
+
+NSString * const RVTObjectGraphMissingFactoryException = @"RVTObjectGraphMissingFactoryException";
 
 @interface RVTObjectGraphFactory ()
-@property (strong, nonatomic, readwrite) RVTConfiguration *configuration;
-@property (strong, nonatomic, readwrite) RVTObjectModel   *objectModel;
+@property (strong, nonatomic, readwrite) RVTAssembly *assembly;
 @end
 
 @implementation RVTObjectGraphFactory
 
-+ (id)objectGraphFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel
++ (id)objectGraphFactoryWithAssembly:(RVTAssembly *)assembly
 {
-    return [[self alloc] initWithConfiguration:configuration objectModel:objectModel];
+    return [[self alloc] initWithAssembly:assembly];
 }
 
-- (id)initWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel
+- (id)initWithAssembly:(RVTAssembly *)assembly
 {
     if (self = [self init]) {
-        self.configuration = configuration;
-        self.objectModel   = objectModel;
+        self.assembly = assembly;
     }
     return self;
 }
 
-- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription pool:(RVTObjectPool *)pool
+- (id)objectWithName:(NSString *)name
 {
-    NSMutableDictionary *dependencies = [NSMutableDictionary dictionary];
-    for (RVTRelationshipDescription *relationship in [[self objectModel] relationshipDescriptionsWithSourceObjectDescription:objectDescription]) {
-        RVTObjectDescription *dependencyDescription = [relationship destinationObjectDescription];
-        dependencies[dependencyDescription] = [pool objectWithDescription:dependencyDescription];
-    }
-    
-    RVTObjectFactory *factory = [[self configuration] factoryForObjectDescription:objectDescription];
-    return [factory createObjectWithDescription:objectDescription dependencies:dependencies];
+    RVTObjectFactory factory = [[self assembly] factoryForName:name];
+    return factory(self);
+}
+
+- (id)objectForKeyedSubscript:(NSString *)name
+{
+    return [self objectWithName:name];
 }
 
 @end

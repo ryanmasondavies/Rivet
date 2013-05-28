@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import "RVTCarModule.h"
-#import "RVTAssembly.h"
+#import "RVTObjectGraphFactory.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTRadio.h"
@@ -31,23 +31,23 @@
 
 - (void)configure
 {
-    [self register:@"Car" with:^(RVTObjectGraphFactory *factory) {
+    [self define:@"Car" as:^id(RVTObjectGraphFactory *factory) {
         return [[RVTCar alloc] initWithEngine:factory[@"Engine"] radio:factory[@"Radio"] wheels:factory[@"Wheels"]];
     }];
     
-    [self register:@"Engine" with:^(RVTObjectGraphFactory *factory) {
+    [self define:@"Engine" as:^id(RVTObjectGraphFactory *factory) {
         return [[RVTEngine alloc] init];
     }];
     
-    [self register:@"Radio" with:^(RVTObjectGraphFactory *factory) {
+    [self define:@"Radio" as:^id(RVTObjectGraphFactory *factory) {
         return [[RVTRadio alloc] initWithFrequency:@102.8];
     }];
     
-    [self register:@"Wheels" with:^(RVTObjectGraphFactory *factory) {
+    [self define:@"Wheels" as:^id(RVTObjectGraphFactory *factory) {
         return @[factory[@"Wheel"], factory[@"Wheel"], factory[@"Wheel"], factory[@"Wheel"]];
     }];
     
-    [self register:@"Wheel" with:^(RVTObjectGraphFactory *factory) {
+    [self define:@"Wheel" as:^id(RVTObjectGraphFactory *factory) {
         return [[RVTWheel alloc] init];
     }];
 }

@@ -21,13 +21,19 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-@class RVTConfiguration, RVTObjectDescription, RVTObjectModel, RVTObjectPool;
+@class RVTAssembly;
 
+// used to construct objects based on an assembly
 @interface RVTObjectGraphFactory : NSObject
 
-+ (id)objectGraphFactoryWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
-- (id)initWithConfiguration:(RVTConfiguration *)configuration objectModel:(RVTObjectModel *)objectModel;
+// initialize an object graph factory
++ (id)objectGraphFactoryWithAssembly:(RVTAssembly *)assembly;
+- (id)initWithAssembly:(RVTAssembly *)assembly;
 
-- (id)createObjectWithDescription:(RVTObjectDescription *)objectDescription pool:(RVTObjectPool *)pool;
+// retrieve an object
+- (id)objectWithName:(NSString *)name;
+
+// subscripting
+- (id)objectForKeyedSubscript:(NSString *)name;
 
 @end

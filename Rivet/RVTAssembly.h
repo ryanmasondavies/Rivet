@@ -20,37 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTConfiguration.h"
-#import "RVTObjectDescription.h"
-#import "RVTObjectFactory.h"
+#import <Foundation/Foundation.h>
+#import "RVTTypes.h"
 
-@interface RVTConfiguration ()
-@property (strong, nonatomic, readwrite) NSMutableDictionary *objectFactories;
-@end
+// raised when there is no factory for the given name
+extern NSString * const RVTAssemblyMissingFactoryException;
 
-@implementation RVTConfiguration
+@interface RVTAssembly : NSObject
 
-+ (id)configuration
-{
-    return [[[self class] alloc] init];
-}
++ (id)assembly;
+- (id)init;
 
-- (id)init
-{
-    if (self = [super init]) {
-        self.objectFactories = [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
-
-- (RVTObjectFactory *)factoryForObjectDescription:(RVTObjectDescription *)objectDescription
-{
-    return [[self objectFactories] objectForKey:objectDescription];
-}
-
-- (void)setFactory:(RVTObjectFactory *)factory forObjectDescription:(RVTObjectDescription *)objectDescription
-{
-    [[self objectFactories] setObject:factory forKey:objectDescription];
-}
+- (RVTObjectFactory)factoryForName:(NSString *)name;
+- (void)setFactory:(RVTObjectFactory)factory forName:(NSString *)name;
 
 @end

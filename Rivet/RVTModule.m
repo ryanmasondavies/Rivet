@@ -21,24 +21,23 @@
 // THE SOFTWARE.
 
 #import "RVTModule.h"
-#import "RVTConfiguration.h"
-#import "RVTObjectDescription.h"
-#import "RVTObjectFactory.h"
-#import "RVTObjectModel.h"
-#import "RVTRelationshipDescription.h"
+#import "RVTAssembly.h"
 
 @interface RVTModule ()
-@property (strong, nonatomic, readwrite) RVTObjectModel *objectModel;
-@property (strong, nonatomic, readwrite) RVTConfiguration *configuration;
+@property (strong, nonatomic, readwrite) RVTAssembly *assembly;
 @end
 
 @implementation RVTModule
 
-- (id)initWithObjectModel:(RVTObjectModel *)objectModel configuration:(RVTConfiguration *)configuration
++ (id)moduleWithAssembly:(RVTAssembly *)assembly
+{
+    return [[self alloc] initWithAssembly:assembly];
+}
+
+- (id)initWithAssembly:(RVTAssembly *)assembly
 {
     if (self = [self init]) {
-        self.objectModel = objectModel;
-        self.configuration = configuration;
+        self.assembly = assembly;
     }
     return self;
 }
@@ -47,26 +46,9 @@
 {
 }
 
-- (void)define:(RVTObjectDescription *)objectDescription
+- (void)define:(NSString *)name as:(RVTObjectFactory)factory
 {
-    [[self objectModel] addObjectDescription:objectDescription];
-}
-
-- (void)declareThat:(RVTObjectDescription *)sourceObjectDescription dependsOn:(RVTObjectDescription *)destinationObjectDescription
-{
-    [self define:sourceObjectDescription];
-    [self define:destinationObjectDescription];
-    [[self objectModel] addRelationshipDescription:[RVTRelationshipDescription relationshipDescriptionWithSourceObjectDescription:sourceObjectDescription destinationObjectDescription:destinationObjectDescription]];
-}
-
-- (void)useFactory:(RVTObjectFactory *)factory toCreateInstancesOf:(RVTObjectDescription *)objectDescription
-{
-    [[self configuration] setFactory:factory forObjectDescription:objectDescription];
-}
-
-- (void)require:(Class)moduleClass
-{
-    [[[moduleClass alloc] initWithObjectModel:[self objectModel] configuration:[self configuration]] configure];
+    [[self assembly] setFactory:factory forName:name];
 }
 
 @end

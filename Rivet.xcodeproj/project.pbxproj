@@ -13,8 +13,7 @@
 		9415C16217319BF9003454F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C16117319BF9003454F7 /* UIKit.framework */; };
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libRivet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libRivet.a */; };
-		94956A2B1750C6BA0054954D /* RVTConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2A1750C6BA0054954D /* RVTConfiguration.m */; };
-		94956A2E1750EEA70054954D /* RVTObjectPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2D1750EEA70054954D /* RVTObjectPool.m */; };
+		94837B6217553D03000101D4 /* RVTAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 94837B6117553D03000101D4 /* RVTAssembly.m */; };
 		94956A301750F3250054954D /* RVTConfigurationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2F1750F3250054954D /* RVTConfigurationSpec.m */; };
 		94956A321750F3340054954D /* RVTModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A311750F3330054954D /* RVTModuleSpec.m */; };
 		94956A341750F3500054954D /* RVTObjectDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A331750F3500054954D /* RVTObjectDescriptionSpec.m */; };
@@ -23,11 +22,7 @@
 		94956A3A1750F37D0054954D /* RVTObjectModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A391750F37D0054954D /* RVTObjectModelSpec.m */; };
 		94956A3C1750F38A0054954D /* RVTObjectPoolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A3B1750F38A0054954D /* RVTObjectPoolSpec.m */; };
 		94956A3E1750F3960054954D /* RVTRelationshipDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A3D1750F3960054954D /* RVTRelationshipDescriptionSpec.m */; };
-		9497EBA3175009DD00EEBB28 /* RVTObjectDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBA2175009DD00EEBB28 /* RVTObjectDescription.m */; };
-		9497EBA617500B0C00EEBB28 /* RVTRelationshipDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBA517500B0C00EEBB28 /* RVTRelationshipDescription.m */; };
-		9497EBA917500B1700EEBB28 /* RVTObjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBA817500B1700EEBB28 /* RVTObjectModel.m */; };
 		9497EBAC17500D0600EEBB28 /* RVTObjectGraphFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBAB17500D0600EEBB28 /* RVTObjectGraphFactory.m */; };
-		9497EBB21750408700EEBB28 /* RVTObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9497EBB11750408700EEBB28 /* RVTObjectFactory.m */; };
 		94B321F4174EDC4D00578851 /* RVTModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B321EE174EDC4D00578851 /* RVTModule.m */; };
 		94B32219174EDC5700578851 /* RVTCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B32208174EDC5700578851 /* RVTCar.m */; };
 		94B3221A174EDC5700578851 /* RVTEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B3220A174EDC5700578851 /* RVTEngine.m */; };
@@ -65,12 +60,11 @@
 		9415C15E17319BF9003454F7 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9415C15F17319BF9003454F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		9415C16117319BF9003454F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		94837B6017553D03000101D4 /* RVTAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTAssembly.h; sourceTree = "<group>"; };
+		94837B6117553D03000101D4 /* RVTAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTAssembly.m; sourceTree = "<group>"; };
+		94837B6317553D35000101D4 /* RVTTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RVTTypes.h; sourceTree = "<group>"; };
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
-		94956A291750C6BA0054954D /* RVTConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTConfiguration.h; sourceTree = "<group>"; };
-		94956A2A1750C6BA0054954D /* RVTConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConfiguration.m; sourceTree = "<group>"; };
-		94956A2C1750EEA70054954D /* RVTObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectPool.h; sourceTree = "<group>"; };
-		94956A2D1750EEA70054954D /* RVTObjectPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectPool.m; sourceTree = "<group>"; };
 		94956A2F1750F3250054954D /* RVTConfigurationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConfigurationSpec.m; sourceTree = "<group>"; };
 		94956A311750F3330054954D /* RVTModuleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModuleSpec.m; sourceTree = "<group>"; };
 		94956A331750F3500054954D /* RVTObjectDescriptionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectDescriptionSpec.m; sourceTree = "<group>"; };
@@ -79,16 +73,8 @@
 		94956A391750F37D0054954D /* RVTObjectModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectModelSpec.m; sourceTree = "<group>"; };
 		94956A3B1750F38A0054954D /* RVTObjectPoolSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectPoolSpec.m; sourceTree = "<group>"; };
 		94956A3D1750F3960054954D /* RVTRelationshipDescriptionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRelationshipDescriptionSpec.m; sourceTree = "<group>"; };
-		9497EBA1175009DD00EEBB28 /* RVTObjectDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectDescription.h; sourceTree = "<group>"; };
-		9497EBA2175009DD00EEBB28 /* RVTObjectDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectDescription.m; sourceTree = "<group>"; };
-		9497EBA417500B0C00EEBB28 /* RVTRelationshipDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTRelationshipDescription.h; sourceTree = "<group>"; };
-		9497EBA517500B0C00EEBB28 /* RVTRelationshipDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTRelationshipDescription.m; sourceTree = "<group>"; };
-		9497EBA717500B1600EEBB28 /* RVTObjectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectModel.h; sourceTree = "<group>"; };
-		9497EBA817500B1700EEBB28 /* RVTObjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectModel.m; sourceTree = "<group>"; };
 		9497EBAA17500D0500EEBB28 /* RVTObjectGraphFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectGraphFactory.h; sourceTree = "<group>"; };
 		9497EBAB17500D0600EEBB28 /* RVTObjectGraphFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectGraphFactory.m; sourceTree = "<group>"; };
-		9497EBB01750408700EEBB28 /* RVTObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTObjectFactory.h; sourceTree = "<group>"; };
-		9497EBB11750408700EEBB28 /* RVTObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTObjectFactory.m; sourceTree = "<group>"; };
 		94B321ED174EDC4D00578851 /* RVTModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTModule.h; sourceTree = "<group>"; };
 		94B321EE174EDC4D00578851 /* RVTModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTModule.m; sourceTree = "<group>"; };
 		94B32207174EDC5700578851 /* RVTCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTCar.h; sourceTree = "<group>"; };
@@ -253,22 +239,13 @@
 			children = (
 				94B500921736596000570893 /* Rivet.h */,
 				94D2FA02173ACE820039AFAE /* RVTVersion.h */,
-				94956A291750C6BA0054954D /* RVTConfiguration.h */,
-				94956A2A1750C6BA0054954D /* RVTConfiguration.m */,
+				94837B6317553D35000101D4 /* RVTTypes.h */,
+				94837B6017553D03000101D4 /* RVTAssembly.h */,
+				94837B6117553D03000101D4 /* RVTAssembly.m */,
 				94B321ED174EDC4D00578851 /* RVTModule.h */,
 				94B321EE174EDC4D00578851 /* RVTModule.m */,
-				9497EBA1175009DD00EEBB28 /* RVTObjectDescription.h */,
-				9497EBA2175009DD00EEBB28 /* RVTObjectDescription.m */,
-				9497EBB01750408700EEBB28 /* RVTObjectFactory.h */,
-				9497EBB11750408700EEBB28 /* RVTObjectFactory.m */,
 				9497EBAA17500D0500EEBB28 /* RVTObjectGraphFactory.h */,
 				9497EBAB17500D0600EEBB28 /* RVTObjectGraphFactory.m */,
-				9497EBA717500B1600EEBB28 /* RVTObjectModel.h */,
-				9497EBA817500B1700EEBB28 /* RVTObjectModel.m */,
-				94956A2C1750EEA70054954D /* RVTObjectPool.h */,
-				94956A2D1750EEA70054954D /* RVTObjectPool.m */,
-				9497EBA417500B0C00EEBB28 /* RVTRelationshipDescription.h */,
-				9497EBA517500B0C00EEBB28 /* RVTRelationshipDescription.m */,
 			);
 			path = Rivet;
 			sourceTree = "<group>";
@@ -402,13 +379,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				94B321F4174EDC4D00578851 /* RVTModule.m in Sources */,
-				9497EBA3175009DD00EEBB28 /* RVTObjectDescription.m in Sources */,
-				9497EBA617500B0C00EEBB28 /* RVTRelationshipDescription.m in Sources */,
-				9497EBA917500B1700EEBB28 /* RVTObjectModel.m in Sources */,
 				9497EBAC17500D0600EEBB28 /* RVTObjectGraphFactory.m in Sources */,
-				9497EBB21750408700EEBB28 /* RVTObjectFactory.m in Sources */,
-				94956A2B1750C6BA0054954D /* RVTConfiguration.m in Sources */,
-				94956A2E1750EEA70054954D /* RVTObjectPool.m in Sources */,
+				94837B6217553D03000101D4 /* RVTAssembly.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

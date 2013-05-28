@@ -30,23 +30,18 @@
 
 SpecBegin(RVTObjectGraphSpec)
 
-__block RVTObjectPool *pool;
+__block RVTObjectGraphFactory *factory;
 
 before(^{
     RVTAssembly *assembly = [RVTAssembly assembly];
-    RVTObjectPool *pool = [RVTObjectPool objectPool];
-    RVTEnvironment *environment = [RVTEnvironment environmentWithName:@"Production" variables:@{@"Frequency": @102.8}];
-    
-    [[RVTCarModule moduleWithAssembly:assembly] configureWithEnvironment:environment];
-    
-    RVTObjectGraphFactory *factory = [RVTObjectGraphFactory objectGraphFactoryWithEnvironment:environment assembly:assembly];
-    [[[RVTCarModule alloc] initWithObjectModel:model configuration:configuration] configure];
+//    RVTEnvironment *environment = [RVTEnvironment environmentWithName:@"Production" variables:@{@"Frequency": @102.8}];
+    [[RVTCarModule moduleWithAssembly:assembly] configure];
+    factory = [RVTObjectGraphFactory objectGraphFactoryWithAssembly:assembly];
 });
 
 describe(@"an independent radio", ^{
     it(@"has a frequency of 102.8", ^{
-        RVTRadio *radio = [factory objectWithName:@"Radio"];
-        expect([radio frequency]).to.equal(@102.8);
+        expect([factory[@"Radio"] frequency]).to.equal(@102.8);
     });
 });
 
@@ -54,7 +49,7 @@ describe(@"a car", ^{
     __block RVTCar *car;
     
     before(^{
-        car = [factory objectWithName:@"Car"];
+        car = factory[@"Car"];
     });
     
     it(@"has an engine", ^{
@@ -74,9 +69,7 @@ describe(@"a car", ^{
 
 describe(@"building two separate cars", ^{
     it(@"results in two references to the same instance", ^{
-        RVTCar *cars[2];
-        cars[0] = [factory objectWithName:@"Car"];
-        cars[1] = [factory objectWithName:@"Car"];
+        NSArray *cars = @[factory[@"Car"], factory[@"Car"]];
         expect(cars[0]).to.equal(cars[1]);
     });
 });

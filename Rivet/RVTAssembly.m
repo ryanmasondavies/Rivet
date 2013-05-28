@@ -20,17 +20,41 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-@class RVTObjectDescription, RVTRelationshipDescription;
+#import "RVTAssembly.h"
 
-@interface RVTObjectModel : NSObject
+NSString * const RVTAssemblyMissingFactoryException = @"RVTAssemblyMissingFactoryException";
 
-+ (id)objectModel;
-- (id)init;
+@interface RVTAssembly ()
+@property (strong, nonatomic, readwrite) NSMutableDictionary *factories;
+@end
 
-- (void)addObjectDescription:(RVTObjectDescription *)objectDescription;
-- (void)addRelationshipDescription:(RVTRelationshipDescription *)relationshipDescription;
+@implementation RVTAssembly
 
-- (NSArray *)relationshipDescriptionsWithSourceObjectDescription:(RVTObjectDescription *)sourceObjectDescription;
++ (id)assembly
+{
+    return [[self alloc] init];
+}
+
+- (id)init
+{
+    if (self = [super init]) {
+        self.factories = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
+- (RVTObjectFactory)factoryForName:(NSString *)name
+{
+    RVTObjectFactory factory = [[self factories] objectForKey:name];
+    if (name == nil) {
+        @throw [NSException exceptionWithName:RVTAssemblyMissingFactoryException reason:[NSString stringWithFormat:@"No factory for '%@'", name] userInfo:nil];
+    }
+    return factory;
+}
+
+- (void)setFactory:(RVTObjectFactory)factory forName:(NSString *)name
+{
+    [[self factories] setObject:factory forKey:name];
+}
 
 @end

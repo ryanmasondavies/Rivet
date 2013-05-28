@@ -23,12 +23,8 @@
 #ifndef _RIVET_
 #   define _RIVET_
 #   import "RVTVersion.h"
-#   import "RVTConfiguration.h"
+#   import "RVTTypes.h"
+#   import "RVTAssembly.h"
 #   import "RVTModule.h"
-#   import "RVTObjectDescription.h"
-#   import "RVTObjectFactory.h"
 #   import "RVTObjectGraphFactory.h"
-#   import "RVTObjectModel.h"
-#   import "RVTObjectPool.h"
-#   import "RVTRelationshipDescription.h"
 #endif
