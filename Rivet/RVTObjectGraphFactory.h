@@ -31,7 +31,7 @@
 - (id)initWithAssembly:(RVTAssembly *)assembly;
 
 // retrieve an object
-- (id)objectWithName:(NSString *)name;
+- (id)objectForName:(NSString *)name;
 
 // subscripting
 - (id)objectForKeyedSubscript:(NSString *)name;

@@ -44,7 +44,7 @@ NSString * const RVTObjectGraphMissingFactoryException = @"RVTObjectGraphMissing
     return self;
 }
 
-- (id)objectWithName:(NSString *)name
+- (id)objectForName:(NSString *)name
 {
     RVTObjectFactory factory = [[self assembly] factoryForName:name];
     return factory(self);
@@ -52,7 +52,7 @@ NSString * const RVTObjectGraphMissingFactoryException = @"RVTObjectGraphMissing
 
 - (id)objectForKeyedSubscript:(NSString *)name
 {
-    return [self objectWithName:name];
+    return [self objectForName:name];
 }
 
 @end

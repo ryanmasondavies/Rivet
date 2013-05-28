@@ -27,7 +27,7 @@
 + (id)environmentWithName:(NSString *)name variables:(NSDictionary *)variables;
 - (id)initWithName:(NSString *)name variables:(NSDictionary *)variables;
 
-- (id)variableWithName:(NSString *)name;
+- (id)variableForName:(NSString *)name;
 - (id)objectForKeyedSubscript:(NSString *)name;
 
 @property (strong, nonatomic, readonly) NSString *name;
