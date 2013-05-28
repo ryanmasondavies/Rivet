@@ -33,5 +33,6 @@
 - (void)configure;
 
 - (void)define:(NSString *)name as:(RVTObjectFactory)factory;
+- (void)require:(Class)moduleClass;
 
 @end

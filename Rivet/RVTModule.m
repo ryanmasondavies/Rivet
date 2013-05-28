@@ -51,4 +51,9 @@
     [[self assembly] setFactory:factory forName:name];
 }
 
+- (void)require:(Class)moduleClass
+{
+    [[[moduleClass alloc] initWithAssembly:[self assembly]] configure];
+}
+
 @end
