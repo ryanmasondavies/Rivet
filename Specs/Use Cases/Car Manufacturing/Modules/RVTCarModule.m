@@ -31,6 +31,8 @@
 
 - (void)configure
 {
+    RVTEnvironment *env = [self environment];
+    
     [self define:@"Car" as:^id(RVTObjectGraphFactory *factory) {
         return [[RVTCar alloc] initWithEngine:factory[@"Engine"] radio:factory[@"Radio"] wheels:factory[@"Wheels"]];
     }];
@@ -40,7 +42,7 @@
     }];
     
     [self define:@"Radio" as:^id(RVTObjectGraphFactory *factory) {
-        return [[RVTRadio alloc] initWithFrequency:@102.8];
+        return [[RVTRadio alloc] initWithFrequency:env[@"Frequency"]];
     }];
     
     [self define:@"Wheels" as:^id(RVTObjectGraphFactory *factory) {

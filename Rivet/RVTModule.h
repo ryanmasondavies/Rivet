@@ -23,16 +23,19 @@
 #import <Foundation/Foundation.h>
 #import "RVTTypes.h"
 
-@class RVTAssembly;
+@class RVTAssembly, RVTEnvironment;
 
 @interface RVTModule : NSObject
 
-+ (id)moduleWithAssembly:(RVTAssembly *)assembly;
-- (id)initWithAssembly:(RVTAssembly *)assembly;
++ (id)moduleWithAssembly:(RVTAssembly *)assembly environment:(RVTEnvironment *)environment;
+- (id)initWithAssembly:(RVTAssembly *)assembly environment:(RVTEnvironment *)environment;
 
 - (void)configure;
 
 - (void)define:(NSString *)name as:(RVTObjectFactory)factory;
 - (void)require:(Class)moduleClass;
+
+@property (strong, nonatomic, readonly) RVTAssembly *assembly;
+@property (strong, nonatomic, readonly) RVTEnvironment *environment;
 
 @end

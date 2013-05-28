@@ -34,8 +34,8 @@ __block RVTObjectGraphFactory *factory;
 
 before(^{
     RVTAssembly *assembly = [RVTAssembly assembly];
-//    RVTEnvironment *environment = [RVTEnvironment environmentWithName:@"Production" variables:@{@"Frequency": @102.8}];
-    [[RVTCarModule moduleWithAssembly:assembly] configure];
+    RVTEnvironment *environment = [RVTEnvironment environmentWithName:@"Production" variables:@{@"Frequency": @102.8}];
+    [[RVTCarModule moduleWithAssembly:assembly environment:environment] configure];
     factory = [RVTObjectGraphFactory objectGraphFactoryWithAssembly:assembly];
 });
 

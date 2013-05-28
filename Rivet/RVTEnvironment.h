@@ -20,43 +20,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTModule.h"
-#import "RVTAssembly.h"
-#import "RVTEnvironment.h"
+#import <Foundation/Foundation.h>
 
-@interface RVTModule ()
-@property (strong, nonatomic, readwrite) RVTAssembly *assembly;
-@property (strong, nonatomic, readwrite) RVTEnvironment *environment;
-@end
+@interface RVTEnvironment : NSObject
 
-@implementation RVTModule
++ (id)environmentWithName:(NSString *)name variables:(NSDictionary *)variables;
+- (id)initWithName:(NSString *)name variables:(NSDictionary *)variables;
 
-+ (id)moduleWithAssembly:(RVTAssembly *)assembly environment:(RVTEnvironment *)environment
-{
-    return [[self alloc] initWithAssembly:assembly environment:environment];
-}
+- (id)variableWithName:(NSString *)name;
+- (id)objectForKeyedSubscript:(NSString *)name;
 
-- (id)initWithAssembly:(RVTAssembly *)assembly environment:(RVTEnvironment *)environment
-{
-    if (self = [self init]) {
-        self.assembly = assembly;
-        self.environment = environment;
-    }
-    return self;
-}
-
-- (void)configure
-{
-}
-
-- (void)define:(NSString *)name as:(RVTObjectFactory)factory
-{
-    [[self assembly] setFactory:factory forName:name];
-}
-
-- (void)require:(Class)moduleClass
-{
-    [[[moduleClass alloc] initWithAssembly:[self assembly] environment:[self environment]] configure];
-}
-
+@property (strong, nonatomic, readonly) NSString *name;
 @end

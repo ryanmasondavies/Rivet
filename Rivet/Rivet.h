@@ -25,6 +25,7 @@
 #   import "RVTVersion.h"
 #   import "RVTTypes.h"
 #   import "RVTAssembly.h"
+#   import "RVTEnvironment.h"
 #   import "RVTModule.h"
 #   import "RVTObjectGraphFactory.h"
 #endif

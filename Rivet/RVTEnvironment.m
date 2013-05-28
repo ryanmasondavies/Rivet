@@ -20,43 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RVTModule.h"
-#import "RVTAssembly.h"
 #import "RVTEnvironment.h"
 
-@interface RVTModule ()
-@property (strong, nonatomic, readwrite) RVTAssembly *assembly;
-@property (strong, nonatomic, readwrite) RVTEnvironment *environment;
+@interface RVTEnvironment ()
+@property (strong, nonatomic, readwrite) NSString *name;
+@property (strong, nonatomic, readwrite) NSDictionary *variables;
 @end
 
-@implementation RVTModule
+@implementation RVTEnvironment
 
-+ (id)moduleWithAssembly:(RVTAssembly *)assembly environment:(RVTEnvironment *)environment
++ (id)environmentWithName:(NSString *)name variables:(NSDictionary *)variables
 {
-    return [[self alloc] initWithAssembly:assembly environment:environment];
+    return [[self alloc] initWithName:name variables:variables];
 }
 
-- (id)initWithAssembly:(RVTAssembly *)assembly environment:(RVTEnvironment *)environment
+- (id)initWithName:(NSString *)name variables:(NSDictionary *)variables
 {
     if (self = [self init]) {
-        self.assembly = assembly;
-        self.environment = environment;
+        self.name = name;
+        self.variables = variables;
     }
     return self;
 }
 
-- (void)configure
+- (id)variableWithName:(NSString *)name
 {
+    return [self variables][name];
 }
 
-- (void)define:(NSString *)name as:(RVTObjectFactory)factory
+- (id)objectForKeyedSubscript:(NSString *)name
 {
-    [[self assembly] setFactory:factory forName:name];
-}
-
-- (void)require:(Class)moduleClass
-{
-    [[[moduleClass alloc] initWithAssembly:[self assembly] environment:[self environment]] configure];
+    return [self variableWithName:name];
 }
 
 @end

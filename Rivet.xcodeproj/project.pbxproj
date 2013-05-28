@@ -14,6 +14,7 @@
 		9415C16317319BF9003454F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C15017319BF9003454F7 /* Foundation.framework */; };
 		9415C16617319BF9003454F7 /* libRivet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415C14D17319BF9003454F7 /* libRivet.a */; };
 		94837B6217553D03000101D4 /* RVTAssembly.m in Sources */ = {isa = PBXBuildFile; fileRef = 94837B6117553D03000101D4 /* RVTAssembly.m */; };
+		94837B6617554541000101D4 /* RVTEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 94837B6517554541000101D4 /* RVTEnvironment.m */; };
 		94956A301750F3250054954D /* RVTConfigurationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A2F1750F3250054954D /* RVTConfigurationSpec.m */; };
 		94956A321750F3340054954D /* RVTModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A311750F3330054954D /* RVTModuleSpec.m */; };
 		94956A341750F3500054954D /* RVTObjectDescriptionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 94956A331750F3500054954D /* RVTObjectDescriptionSpec.m */; };
@@ -63,6 +64,8 @@
 		94837B6017553D03000101D4 /* RVTAssembly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTAssembly.h; sourceTree = "<group>"; };
 		94837B6117553D03000101D4 /* RVTAssembly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTAssembly.m; sourceTree = "<group>"; };
 		94837B6317553D35000101D4 /* RVTTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RVTTypes.h; sourceTree = "<group>"; };
+		94837B6417554541000101D4 /* RVTEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVTEnvironment.h; sourceTree = "<group>"; };
+		94837B6517554541000101D4 /* RVTEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTEnvironment.m; sourceTree = "<group>"; };
 		948CCC611733F901002972A8 /* Specs-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		948CCC671733F90E002972A8 /* BSTSpecHelper.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTSpecHelper.pch; sourceTree = "<group>"; };
 		94956A2F1750F3250054954D /* RVTConfigurationSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVTConfigurationSpec.m; sourceTree = "<group>"; };
@@ -242,6 +245,8 @@
 				94837B6317553D35000101D4 /* RVTTypes.h */,
 				94837B6017553D03000101D4 /* RVTAssembly.h */,
 				94837B6117553D03000101D4 /* RVTAssembly.m */,
+				94837B6417554541000101D4 /* RVTEnvironment.h */,
+				94837B6517554541000101D4 /* RVTEnvironment.m */,
 				94B321ED174EDC4D00578851 /* RVTModule.h */,
 				94B321EE174EDC4D00578851 /* RVTModule.m */,
 				9497EBAA17500D0500EEBB28 /* RVTObjectGraphFactory.h */,
@@ -381,6 +386,7 @@
 				94B321F4174EDC4D00578851 /* RVTModule.m in Sources */,
 				9497EBAC17500D0600EEBB28 /* RVTObjectGraphFactory.m in Sources */,
 				94837B6217553D03000101D4 /* RVTAssembly.m in Sources */,
+				94837B6617554541000101D4 /* RVTEnvironment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
