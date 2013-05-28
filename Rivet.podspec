@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Rivet'
-  s.version = '0.0.4'
+  s.version = '0.0.5'
   s.license = 'MIT'
   s.platform = :ios, '5.0'
   s.summary = "Bolt your apps together with dependency injection."
