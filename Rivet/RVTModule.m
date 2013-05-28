@@ -23,6 +23,7 @@
 #import "RVTModule.h"
 #import "RVTAssembly.h"
 #import "RVTEnvironment.h"
+#import "RVTObjectGraphFactory.h"
 #import "RVTPrototypeScope.h"
 #import "RVTSingletonScope.h"
 
@@ -58,8 +59,14 @@
 
 - (void)define:(NSString *)name in:(RVTScope *)scope as:(RVTObjectFactory)factory
 {
+    // add factory and scope to assembly
     [[self assembly] setFactory:factory forName:name];
     [[self assembly] setScope:scope forName:name];
+    
+    // add provider (in prototype scope, because they are lightweight) to assembly
+    NSString *providerName = [NSString stringWithFormat:@"%@ Provider", name];
+    [[self assembly] setFactory:^id(RVTObjectGraphFactory *ogf) { return ^id { return ogf[name]; }; } forName:providerName];
+    [[self assembly] setScope:[RVTPrototypeScope scope] forName:providerName];
 }
 
 - (void)require:(Class)moduleClass

@@ -41,7 +41,9 @@ before(^{
 
 describe(@"an independent radio", ^{
     it(@"has a frequency of 102.8", ^{
-        expect([factory[@"Radio"] frequency]).to.equal(@102.8);
+        RVTRadio *radio = factory[@"Radio"];
+        STAssertEqualObjects([radio frequency], @102.8, @"");
+//        expect([radio frequency]).to.equal(@102.8);
     });
 });
 
@@ -68,16 +70,44 @@ describe(@"a car", ^{
 });
 
 describe(@"building two separate cars", ^{
+    __block NSArray *cars;
+    
+    before(^{
+        cars = @[factory[@"Car"], factory[@"Car"]];
+    });
+    
     it(@"results in two references to the same instance", ^{
-        NSArray *cars = @[factory[@"Car"], factory[@"Car"]];
         expect(cars[0]).to.equal(cars[1]);
+    });
+    
+    describe(@"and then using a provider to retrieve a car", ^{
+        it(@"results in the same instance", ^{
+            RVTObjectProvider provider = factory[@"Car Provider"];
+            RVTCar *newCar = provider();
+            expect(cars[0]).to.equal(newCar);
+            expect(cars[1]).to.equal(newCar);
+        });
     });
 });
 
 describe(@"building two separate radios", ^{
+    __block NSArray *radios;
+    
+    before(^{
+        radios = @[factory[@"Radio"], factory[@"Radio"]];
+    });
+    
     it(@"results in two instances of the radio", ^{
-        NSArray *radios = @[factory[@"Radio"], factory[@"Radio"]];
         expect(radios[0]).toNot.equal(radios[1]);
+    });
+    
+    describe(@"and then using a provider to retrieve a radio", ^{
+        it(@"results in a different instance", ^{
+            RVTObjectProvider provider = factory[@"Radio Provider"];
+            radios = [radios arrayByAddingObject:provider()];
+            expect(radios[0]).toNot.equal(radios[2]);
+            expect(radios[1]).toNot.equal(radios[2]);
+        });
     });
 });
 
