@@ -20,25 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "RVTTypes.h"
-@class RVTScope;
+#import "RVTScope.h"
 
-// raised when there is no factory for the given name
-extern NSString * const RVTAssemblyMissingFactoryException;
+// returns the result of the provider each time, whether or not it returns the same instance.
+// this means multiple instances of the same type are created.
 
-// raised when there is no scope for the given name
-extern NSString * const RVTAssemblyMissingScopeException;
-
-@interface RVTAssembly : NSObject
-
-+ (id)assembly;
-- (id)init;
-
-- (RVTObjectFactory)factoryForName:(NSString *)name;
-- (void)setFactory:(RVTObjectFactory)factory forName:(NSString *)name;
-
-- (RVTScope *)scopeForName:(NSString *)name;
-- (void)setScope:(RVTScope *)scope forName:(NSString *)name;
+@interface RVTPrototypeScope : RVTScope
 
 @end

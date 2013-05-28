@@ -20,25 +20,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import "RVTTypes.h"
-@class RVTScope;
+#import "RVTSingletonScope.h"
 
-// raised when there is no factory for the given name
-extern NSString * const RVTAssemblyMissingFactoryException;
+@interface RVTSingletonScope ()
+@property (strong, nonatomic, readwrite) id object;
+@end
 
-// raised when there is no scope for the given name
-extern NSString * const RVTAssemblyMissingScopeException;
+@implementation RVTSingletonScope
 
-@interface RVTAssembly : NSObject
-
-+ (id)assembly;
-- (id)init;
-
-- (RVTObjectFactory)factoryForName:(NSString *)name;
-- (void)setFactory:(RVTObjectFactory)factory forName:(NSString *)name;
-
-- (RVTScope *)scopeForName:(NSString *)name;
-- (void)setScope:(RVTScope *)scope forName:(NSString *)name;
+- (id)objectWithProvider:(RVTObjectProvider)provider
+{
+    if ([self object] == nil) {
+        self.object = provider();
+    }
+    return [self object];
+}
 
 @end

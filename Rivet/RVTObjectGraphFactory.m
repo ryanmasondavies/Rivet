@@ -22,6 +22,7 @@
 
 #import "RVTObjectGraphFactory.h"
 #import "RVTAssembly.h"
+#import "RVTScope.h"
 
 NSString * const RVTObjectGraphMissingFactoryException = @"RVTObjectGraphMissingFactoryException";
 
@@ -47,7 +48,9 @@ NSString * const RVTObjectGraphMissingFactoryException = @"RVTObjectGraphMissing
 - (id)objectForName:(NSString *)name
 {
     RVTObjectFactory factory = [[self assembly] factoryForName:name];
-    return factory(self);
+    RVTObjectProvider provider = ^id { return factory(self); };
+    RVTScope *scope = [[self assembly] scopeForName:name];
+    return [scope objectWithProvider:provider];
 }
 
 - (id)objectForKeyedSubscript:(NSString *)name

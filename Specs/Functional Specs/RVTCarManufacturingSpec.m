@@ -74,4 +74,11 @@ describe(@"building two separate cars", ^{
     });
 });
 
+describe(@"building two separate radios", ^{
+    it(@"results in two instances of the radio", ^{
+        NSArray *radios = @[factory[@"Radio"], factory[@"Radio"]];
+        expect(radios[0]).toNot.equal(radios[1]);
+    });
+});
+
 SpecEnd

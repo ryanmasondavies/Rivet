@@ -43,14 +43,14 @@
     return self;
 }
 
-- (id)variableWithName:(NSString *)name
+- (id)variableForName:(NSString *)name
 {
     return [self variables][name];
 }
 
 - (id)objectForKeyedSubscript:(NSString *)name
 {
-    return [self variableWithName:name];
+    return [self variableForName:name];
 }
 
 @end

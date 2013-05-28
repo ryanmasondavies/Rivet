@@ -23,6 +23,8 @@
 #import "RVTModule.h"
 #import "RVTAssembly.h"
 #import "RVTEnvironment.h"
+#import "RVTPrototypeScope.h"
+#import "RVTSingletonScope.h"
 
 @interface RVTModule ()
 @property (strong, nonatomic, readwrite) RVTAssembly *assembly;
@@ -51,7 +53,13 @@
 
 - (void)define:(NSString *)name as:(RVTObjectFactory)factory
 {
+    [self define:name in:[RVTPrototypeScope scope] as:factory];
+}
+
+- (void)define:(NSString *)name in:(RVTScope *)scope as:(RVTObjectFactory)factory
+{
     [[self assembly] setFactory:factory forName:name];
+    [[self assembly] setScope:scope forName:name];
 }
 
 - (void)require:(Class)moduleClass

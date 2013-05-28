@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 #import "RVTCarModule.h"
-#import "RVTObjectGraphFactory.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTRadio.h"
@@ -33,7 +32,7 @@
 {
     RVTEnvironment *env = [self environment];
     
-    [self define:@"Car" as:^id(RVTObjectGraphFactory *factory) {
+    [self define:@"Car" in:[RVTSingletonScope scope] as:^id(RVTObjectGraphFactory *factory) {
         return [[RVTCar alloc] initWithEngine:factory[@"Engine"] radio:factory[@"Radio"] wheels:factory[@"Wheels"]];
     }];
     

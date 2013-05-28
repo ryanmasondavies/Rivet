@@ -22,23 +22,11 @@
 
 #import <Foundation/Foundation.h>
 #import "RVTTypes.h"
-@class RVTScope;
 
-// raised when there is no factory for the given name
-extern NSString * const RVTAssemblyMissingFactoryException;
+@interface RVTScope : NSObject
 
-// raised when there is no scope for the given name
-extern NSString * const RVTAssemblyMissingScopeException;
++ (id)scope;
 
-@interface RVTAssembly : NSObject
-
-+ (id)assembly;
-- (id)init;
-
-- (RVTObjectFactory)factoryForName:(NSString *)name;
-- (void)setFactory:(RVTObjectFactory)factory forName:(NSString *)name;
-
-- (RVTScope *)scopeForName:(NSString *)name;
-- (void)setScope:(RVTScope *)scope forName:(NSString *)name;
+- (id)objectWithProvider:(RVTObjectProvider)provider;
 
 @end

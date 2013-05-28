@@ -23,9 +23,11 @@
 #import "RVTAssembly.h"
 
 NSString * const RVTAssemblyMissingFactoryException = @"RVTAssemblyMissingFactoryException";
+NSString * const RVTAssemblyMissingScopeException = @"RVTAssemblyMissingScopeException";
 
 @interface RVTAssembly ()
 @property (strong, nonatomic, readwrite) NSMutableDictionary *factories;
+@property (strong, nonatomic, readwrite) NSMutableDictionary *scopes;
 @end
 
 @implementation RVTAssembly
@@ -39,6 +41,7 @@ NSString * const RVTAssemblyMissingFactoryException = @"RVTAssemblyMissingFactor
 {
     if (self = [super init]) {
         self.factories = [NSMutableDictionary dictionary];
+        self.scopes = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -46,7 +49,7 @@ NSString * const RVTAssemblyMissingFactoryException = @"RVTAssemblyMissingFactor
 - (RVTObjectFactory)factoryForName:(NSString *)name
 {
     RVTObjectFactory factory = [[self factories] objectForKey:name];
-    if (name == nil) {
+    if (factory == nil) {
         @throw [NSException exceptionWithName:RVTAssemblyMissingFactoryException reason:[NSString stringWithFormat:@"No factory for '%@'", name] userInfo:nil];
     }
     return factory;
@@ -55,6 +58,20 @@ NSString * const RVTAssemblyMissingFactoryException = @"RVTAssemblyMissingFactor
 - (void)setFactory:(RVTObjectFactory)factory forName:(NSString *)name
 {
     [[self factories] setObject:factory forKey:name];
+}
+
+- (RVTScope *)scopeForName:(NSString *)name
+{
+    RVTScope *scope = [[self scopes] objectForKey:name];
+    if (scope == nil) {
+        @throw [NSException exceptionWithName:RVTAssemblyMissingScopeException reason:[NSString stringWithFormat:@"No scope for '%@'", name] userInfo:nil];
+    }
+    return scope;
+}
+
+- (void)setScope:(RVTScope *)scope forName:(NSString *)name
+{
+    [[self scopes] setObject:scope forKey:name];
 }
 
 @end

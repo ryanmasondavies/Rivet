@@ -24,5 +24,9 @@
 
 // used to define a factory as a block that accepts a single argument and returns a constructed object.
 // dependencies are acquired through the object graph factory.
-
 typedef id(^RVTObjectFactory)(RVTObjectGraphFactory *factory);
+
+// convenient zero-argument block for retrieving an object
+// from an object graph factory without needing a reference
+// to the factory itself.
+typedef id(^RVTObjectProvider)(void);
