@@ -33,16 +33,19 @@ SpecBegin(RVTObjectGraphSpec)
 __block RVTObjectPool *pool;
 
 before(^{
-    RVTConfiguration *configuration = [RVTConfiguration configuration];
-    RVTObjectModel *model = [RVTObjectModel objectModel];
-    RVTObjectGraphFactory *factory = [RVTObjectGraphFactory objectGraphFactoryWithConfiguration:configuration objectModel:model];
-    pool = [RVTObjectPool objectPoolWithFactory:factory];
+    RVTAssembly *assembly = [RVTAssembly assembly];
+    RVTObjectPool *pool = [RVTObjectPool objectPool];
+    RVTEnvironment *environment = [RVTEnvironment environmentWithName:@"Production" variables:@{@"Frequency": @102.8}];
+    
+    [[RVTCarModule moduleWithAssembly:assembly] configureWithEnvironment:environment];
+    
+    RVTObjectGraphFactory *factory = [RVTObjectGraphFactory objectGraphFactoryWithEnvironment:environment assembly:assembly];
     [[[RVTCarModule alloc] initWithObjectModel:model configuration:configuration] configure];
 });
 
 describe(@"an independent radio", ^{
     it(@"has a frequency of 102.8", ^{
-        RVTRadio *radio = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
+        RVTRadio *radio = [factory objectWithName:@"Radio"];
         expect([radio frequency]).to.equal(@102.8);
     });
 });
@@ -51,7 +54,7 @@ describe(@"a car", ^{
     __block RVTCar *car;
     
     before(^{
-        car = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
+        car = [factory objectWithName:@"Car"];
     });
     
     it(@"has an engine", ^{
@@ -69,11 +72,12 @@ describe(@"a car", ^{
     });
 });
 
-describe(@"building the radio and then building the car", ^{
-    it(@"results in a car with the same instance of RVTRadio", ^{
-        RVTRadio *radio = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTRadio class] identifier:@""]];
-        RVTCar *car = [pool objectWithDescription:[RVTObjectDescription objectDescriptionWithClass:[RVTCar class] identifier:@""]];
-        expect([car radio]).to.equal(radio);
+describe(@"building two separate cars", ^{
+    it(@"results in two references to the same instance", ^{
+        RVTCar *cars[2];
+        cars[0] = [factory objectWithName:@"Car"];
+        cars[1] = [factory objectWithName:@"Car"];
+        expect(cars[0]).to.equal(cars[1]);
     });
 });
 

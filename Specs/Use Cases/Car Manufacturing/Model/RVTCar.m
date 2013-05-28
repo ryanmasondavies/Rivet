@@ -30,7 +30,7 @@
 
 @implementation RVTCar
 
-- (id)initWithRVTEngine:(RVTEngine *)engine radio:(RVTRadio *)radio wheels:(NSArray *)wheels
+- (id)initWithEngine:(RVTEngine *)engine radio:(RVTRadio *)radio wheels:(NSArray *)wheels
 {
     if (self = [self init]) {
         self.engine = engine;

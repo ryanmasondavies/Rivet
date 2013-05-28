@@ -25,7 +25,7 @@
 
 @interface RVTCar : NSObject
 
-- (id)initWithRVTEngine:(RVTEngine *)engine radio:(RVTRadio *)radio wheels:(NSArray *)wheels;
+- (id)initWithEngine:(RVTEngine *)engine radio:(RVTRadio *)radio wheels:(NSArray *)wheels;
 
 @property (strong, nonatomic, readonly) RVTEngine *engine;
 @property (strong, nonatomic, readonly) RVTRadio *radio;

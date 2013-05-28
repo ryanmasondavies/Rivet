@@ -21,48 +21,35 @@
 // THE SOFTWARE.
 
 #import "RVTCarModule.h"
-#import "RVTConfiguration.h"
-#import "RVTObjectDescription.h"
-#import "RVTObjectModel.h"
-#import "RVTRelationshipDescription.h"
+#import "RVTAssembly.h"
 #import "RVTCar.h"
 #import "RVTEngine.h"
 #import "RVTRadio.h"
 #import "RVTWheel.h"
-#import "RVTCarFactory.h"
-#import "RVTEngineFactory.h"
-#import "RVTRadioFactory.h"
-#import "RVTWheelFactory.h"
-#import "RVTWheelsFactory.h"
-#import "RVTRadioModule.h"
 
 @implementation RVTCarModule
 
-- (void)addToConfiguration:(RVTConfiguration *)configuration
+- (void)configure
 {
-    RVTObjectDescription *carDescription             = [RVTObjectDescription objectDescriptionWithClass:[RVTCar    class] identifier:@""];
-    RVTObjectDescription *engineDescription          = [RVTObjectDescription objectDescriptionWithClass:[RVTEngine class] identifier:@""];
-    RVTObjectDescription *radioDescription           = [RVTObjectDescription objectDescriptionWithClass:[RVTRadio  class] identifier:@""];
-    RVTObjectDescription *frontLeftWheelDescription  = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Front Left Wheel"];
-    RVTObjectDescription *frontRightWheelDescription = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Front Right Wheel"];
-    RVTObjectDescription *rearLeftWheelDescription   = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Rear Left Wheel"];
-    RVTObjectDescription *rearRightWheelDescription  = [RVTObjectDescription objectDescriptionWithClass:[RVTWheel  class] identifier:@"Rear Right Wheel"];
-    RVTObjectDescription *wheelsDescription          = [RVTObjectDescription objectDescriptionWithClass:[NSArray   class] identifier:@"Wheels"];
+    [self register:@"Car" with:^(RVTObjectGraphFactory *factory) {
+        return [[RVTCar alloc] initWithEngine:factory[@"Engine"] radio:factory[@"Radio"] wheels:factory[@"Wheels"]];
+    }];
     
-    [self declareThat:carDescription dependsOn:engineDescription];
-    [self declareThat:carDescription dependsOn:radioDescription];
-    [self declareThat:carDescription dependsOn:wheelsDescription];
+    [self register:@"Engine" with:^(RVTObjectGraphFactory *factory) {
+        return [[RVTEngine alloc] init];
+    }];
     
-    [self useFactory:[RVTCarFactory    new] toCreateInstancesOf:carDescription];
-    [self useFactory:[RVTEngineFactory new] toCreateInstancesOf:engineDescription];
-    [self useFactory:[RVTRadioFactory  new] toCreateInstancesOf:radioDescription];
-    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:frontLeftWheelDescription];
-    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:frontRightWheelDescription];
-    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:rearLeftWheelDescription];
-    [self useFactory:[RVTWheelFactory  new] toCreateInstancesOf:rearRightWheelDescription];
-    [self useFactory:[RVTWheelsFactory new] toCreateInstancesOf:wheelsDescription];
+    [self register:@"Radio" with:^(RVTObjectGraphFactory *factory) {
+        return [[RVTRadio alloc] initWithFrequency:@102.8];
+    }];
     
-    [self require:[RVTRadioModule class]];
+    [self register:@"Wheels" with:^(RVTObjectGraphFactory *factory) {
+        return @[factory[@"Wheel"], factory[@"Wheel"], factory[@"Wheel"], factory[@"Wheel"]];
+    }];
+    
+    [self register:@"Wheel" with:^(RVTObjectGraphFactory *factory) {
+        return [[RVTWheel alloc] init];
+    }];
 }
 
 @end
