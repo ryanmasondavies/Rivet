@@ -8,7 +8,7 @@ Installation
 
 Rivet can be installed with CocoaPods by adding the following line to your Podfile:
 
-    pod `Rivet`, '~> 0.0.3'
+    pod `Rivet`, '~> 0.0.5'
 
 License
 =======
