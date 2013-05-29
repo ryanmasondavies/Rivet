@@ -42,8 +42,7 @@ before(^{
 describe(@"an independent radio", ^{
     it(@"has a frequency of 102.8", ^{
         RVTRadio *radio = factory[@"Radio"];
-        STAssertEqualObjects([radio frequency], @102.8, @"");
-//        expect([radio frequency]).to.equal(@102.8);
+        expect([radio frequency]).to.equal(@102.8);
     });
 });
 
